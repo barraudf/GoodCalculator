@@ -1,5 +1,5 @@
-# SatisfactoryTools
-Satisfactory Tools for planning and building the perfect base.
+# Good Calculator
+Good Calculator for planning and building the perfect production line.
 
 ## Requirements
 - node.js
@@ -7,7 +7,7 @@ Satisfactory Tools for planning and building the perfect base.
 - PHP 7.1+
 
 ## Installation
-- `git clone git@github.com:greeny/SatisfactoryTools.git`
+- `git clone https://github.com/barraudf/GoodCalculator.git`
 - `yarn install`
 - Set up a virtual host pointing to `/www` directory (using e.g. Apache or ngnix)
 

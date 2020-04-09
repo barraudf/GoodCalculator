@@ -1,7 +1,7 @@
 import {Model} from '@src/Data/Model';
 import {IRecipeSchema} from '@src/Schema/IRecipeSchema';
 import {ItemAmount} from '@src/Data/ItemAmount';
-import {IManufacturerSchema} from '@src/Schema/IBuildingSchema';
+import {IBuildingSchema} from '@src/Schema/IBuildingSchema';
 import data from '@src/Data/Data';
 
 export class Recipe
@@ -9,7 +9,7 @@ export class Recipe
 
 	public readonly ingredients: ItemAmount[] = [];
 	public readonly products: ItemAmount[] = [];
-	public readonly machine: IManufacturerSchema;
+	public readonly machine: IBuildingSchema;
 
 	public constructor(private readonly model: Model, public readonly prototype: IRecipeSchema)
 	{

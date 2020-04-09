@@ -2,7 +2,6 @@ import rawData from '@data/data.json';
 import {IJsonSchema} from '@src/Schema/IJsonSchema';
 import {Item} from '@src/Data/Item';
 import {Recipe} from '@src/Data/Recipe';
-import {IMinerSchema} from '@src/Schema/IMinerSchema';
 
 export class Model
 {
@@ -20,9 +19,7 @@ export class Model
 		for (const k in data.recipes) {
 			if (data.recipes.hasOwnProperty(k)) {
 				const recipe = data.recipes[k];
-				if (recipe.inHand || recipe.inMachine || recipe.inWorkshop) {
-					this.recipes[k] = new Recipe(this, recipe);
-				}
+				this.recipes[k] = new Recipe(this, recipe);
 			}
 		}
 	}
@@ -41,7 +38,7 @@ export class Model
 		for (const k in this.items) {
 			if (this.items.hasOwnProperty(k)) {
 				for (const l in this.recipes) {
-					if (this.recipes.hasOwnProperty(l) && this.recipes[l].prototype.inMachine) {
+					if (this.recipes.hasOwnProperty(l)) {
 						items.push(this.items[k]);
 						break;
 					}
@@ -54,24 +51,6 @@ export class Model
 	public isRawResource(item: Item): boolean
 	{
 		return item.prototype.className in this.data.resources;
-	}
-
-	public getResourceMiners(item: Item): IMinerSchema[]
-	{
-		const result: IMinerSchema[] = [];
-		for (const k in this.data.miners) {
-			if (this.data.miners.hasOwnProperty(k)) {
-				const miner = this.data.miners[k];
-				if (miner.allowedResources.length === 0) {
-					if ((miner.allowLiquids && item.prototype.liquid) || (miner.allowSolids && !item.prototype.liquid)) {
-						result.push(miner);
-					}
-				} else if (miner.allowedResources.indexOf(item.prototype.className) !== -1) {
-					result.push(miner);
-				}
-			}
-		}
-		return result;
 	}
 
 }

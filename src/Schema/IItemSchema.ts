@@ -1,5 +1,3 @@
-import {IColorSchema} from '@src/Schema/IColorSchema';
-
 export interface IItemSchema
 {
 
@@ -8,9 +6,5 @@ export interface IItemSchema
 	description: string;
 	className: string;
 	stackSize: number;
-	energyValue: number;
-	radioactiveDecay: number;
-	liquid: boolean;
-	fluidColor: IColorSchema;
 
 }

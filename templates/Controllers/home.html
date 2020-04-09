@@ -1,5 +1,5 @@
 <ol class="breadcrumb">
-	<li class="breadcrumb-item"><a ui-sref="home">Satisfactory Tools</a></li>
+	<li class="breadcrumb-item"><a ui-sref="home">Good Calculator</a></li>
 	<li class="breadcrumb-item active">Item Browser</li>
 </ol>
 
@@ -20,7 +20,7 @@
 	<div class="recipe-list">
 		<div class="card text-center item-card" ng-repeat="className in scope.recentlyVisited.recent">
 			<a class="stretched-link recipe-name" ui-sref="item({item: scope.getItemByClassName(className).slug})">
-				<img class="recipe-image" ng-src="/assets/images/items/{{scope.getItemByClassName(className).slug}}_64.png">
+				<img class="recipe-image" ng-src="/assets/images/items/{{scope.getItemByClassName(className).slug}}.png">
 				{{scope.getItemByClassName(className).name}}
 			</a>
 		</div>
@@ -30,7 +30,7 @@
 <div class="recipe-list">
 	<div class="card text-center item-card" ng-repeat="item in scope.getFilteredItems()|orderBy:'name'|filter:scope.filter">
 		<a class="recipe-name stretched-link" ui-sref="item({item: item.slug})">
-			<img class="recipe-image" ng-src="/assets/images/items/{{item.slug}}_64.png">
+			<img class="recipe-image" ng-src="/assets/images/items/{{item.slug}}.png">
 			{{item.name}}
 		</a>
 	</div>

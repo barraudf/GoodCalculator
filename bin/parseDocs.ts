@@ -6,20 +6,14 @@ import parseItemDescriptors from '@bin/parseDocs/itemDescriptor';
 import parseRecipes from '@bin/parseDocs/recipe';
 import parseResourceDescriptors from '@bin/parseDocs/resourceDescriptor';
 import parseBuildings from '@bin/parseDocs/building';
-import parseResourceExtractors from '@bin/parseDocs/resourceExtractor';
-import parseGenerators from '@bin/parseDocs/generator';
 import parseBuildingDescriptors from '@bin/parseDocs/buildingDescriptor';
-import parseSchematics from '@bin/parseDocs/schematic';
 
 const docs = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'data', 'Docs.json')).toString());
 
 const json: IJsonSchema = {
 	recipes: {},
 	items: {},
-	schematics: {},
-	generators: {},
 	resources: {},
-	miners: {},
 	buildings: {},
 };
 
@@ -49,17 +43,6 @@ for (const definitions of docs) {
 				json.resources[resource.item] = resource;
 			}
 			break;
-		case 'Class\'/Script/FactoryGame.FGItemDescriptorBiomass\'':
-			biomass = parseItemDescriptors(definitions.Classes);
-			for (const item of biomass) {
-				json.items[item.className] = item;
-			}
-			break;
-		/*case 'Class\'/Script/FactoryGame.FGVehicleDescriptor\'': TODO add vehicles, images and name+description
-			for (const building of parseBuildings(definitions.Classes)) {
-				json.buildings[building.className] = building;
-			}
-			break;*/
 		case 'Class\'/Script/FactoryGame.FGBuildablePole\'':
 		case 'Class\'/Script/FactoryGame.FGBuildableConveyorBelt\'':
 		case 'Class\'/Script/FactoryGame.FGBuildableWire\'':
@@ -97,78 +80,19 @@ for (const definitions of docs) {
 				json.buildings[building.className] = building;
 			}
 			break;
-		case 'Class\'/Script/FactoryGame.FGBuildableResourceExtractor\'':
-			for (const miner of parseResourceExtractors(definitions.Classes)) {
-				json.miners[miner.className] = miner;
-			}
-			for (const building of parseBuildings(definitions.Classes, true)) {
-				json.buildings[building.className] = building;
-			}
-			break;
-		case 'Class\'/Script/FactoryGame.FGBuildableGeneratorFuel\'':
-		case 'Class\'/Script/FactoryGame.FGBuildableGeneratorNuclear\'':
-		case 'Class\'/Script/FactoryGame.FGBuildableGeneratorGeoThermal\'':
-			for (const building of parseBuildings(definitions.Classes, true)) {
-				json.buildings[building.className] = building;
-			}
-			for (const generator of parseGenerators(definitions.Classes)) {
-				json.generators[generator.className] = generator;
-			}
-			break;
 		case 'Class\'/Script/FactoryGame.FGBuildingDescriptor\'':
 			extraInfo = parseBuildingDescriptors(definitions.Classes);
 			break;
-		case 'Class\'/Script/FactoryGame.FGSchematic\'':
-			for (const schematic of parseSchematics(definitions.Classes)) {
-				json.schematics[schematic.className] = schematic;
-			}
-			break;
 	}
 }
-
-// add missing radar tower
-json.buildings['Desc_RadarTower_C'] = {
-	className: 'Desc_RadarTower_C',
-	categories: [],
-	buildMenuPriority: 0,
-	description: 'Reveals an area around itself on the map. The area grows over time to a max. Placing the tower higher up increases the max area revealed.',
-	slug: 'radarTower',
-	metadata: {},
-	name: 'Radar Tower',
-};
-
-// add missing nuclear waste
-json.items['Desc_NuclearWaste_C'] = {
-	className: 'Desc_NuclearWaste_C',
-	liquid: false,
-	radioactiveDecay: 0.1,
-	energyValue: 0,
-	stackSize: 500,
-	description: 'Nuclear Waste is the byproduct of nuclear power plants. You gotta find a way to handle all of this.',
-	name: 'Nuclear Waste',
-	fluidColor: {r: 0, g: 0, b: 0, a: 0},
-	slug: 'nuclear-waste',
-};
 
 // add extra info to buildings
 for (const info of extraInfo) {
 	for (const key in json.buildings) {
 		if (info.className === json.buildings[key].className) {
-			json.buildings[key].buildMenuPriority = info.priority;
 			json.buildings[key].categories = info.categories;
 			break;
 		}
-	}
-}
-
-// add biomass stuff to biomass burner
-for (const key in json.generators) {
-	const index = json.generators[key].fuel.indexOf('FGItemDescriptorBiomass');
-	if (index !== -1) {
-		json.generators[key].fuel.splice(index, 1);
-		json.generators[key].fuel.push(...biomass.map((bio) => {
-			return bio.className;
-		}));
 	}
 }
 
@@ -180,41 +104,12 @@ for (const key in json.recipes) {
 		if (!json.items[ingredient.item]) {
 			throw new Error('Invalid item ' + ingredient.item);
 		}
-		if (json.items[ingredient.item].liquid) {
-			ingredient.amount /= 1000;
-		}
 	}
 	for (const product of recipe.products) {
 		if (!json.items[product.item]) {
 			continue;
 		}
-		if (json.items[product.item].liquid) {
-			product.amount /= 1000;
-		}
 	}
 }
-
-// attach extractable resources instead of keeping empty array with "everything allowed"
-for (const minerKey in json.miners) {
-	if (json.miners[minerKey].allowedResources.length > 0) {
-		continue;
-	}
-
-	const allowedResources = [] as string[];
-	for (const resourceKey in json.resources) {
-		if (!json.items[resourceKey]) {
-			throw new Error(`Item of resource type "${resourceKey}" was not found.`);
-		}
-
-		const item = json.items[resourceKey];
-
-		if (item.liquid === json.miners[minerKey].allowLiquids) {
-			allowedResources.push(resourceKey);
-		}
-	}
-
-	json.miners[minerKey].allowedResources = allowedResources;
-}
-
 
 fs.writeFileSync(path.join(__dirname, '..', 'data', 'data.json'), JSON.stringify(json, null, '\t') + '\n');

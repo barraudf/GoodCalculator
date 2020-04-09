@@ -14,7 +14,7 @@ export class RecipeResult
 
 	public constructor(public readonly recipe: Recipe, public readonly amount: number)
 	{
-		const machines = amount * recipe.prototype.time / recipe.machine.metadata.manufacturingSpeed;
+		const machines = amount * recipe.prototype.time;
 		this.machines.push({
 			amount: machines,
 			maxAmount: null,
@@ -22,7 +22,7 @@ export class RecipeResult
 			lastMachineOverclock: 100,
 		});
 		for (const product of recipe.products) {
-			const itemsPerMachine = 60 * recipe.machine.metadata.manufacturingSpeed / recipe.prototype.time;
+			const itemsPerMachine = 15 / recipe.prototype.time;
 			this.productAmountCache.push({
 				product: product.item.prototype.className,
 				maxAmount: itemsPerMachine * machines * product.amount,

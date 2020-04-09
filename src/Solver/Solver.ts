@@ -41,13 +41,6 @@ export class Solver
 		for (const k in data.recipes) {
 			if (data.recipes.hasOwnProperty(k)) {
 				const recipe: IRecipeSchema = data.recipes[k];
-				if (recipe.alternate) {
-					continue; // TODO
-				}
-
-				if (!recipe.inMachine) {
-					continue;
-				}
 				const def: {[key: string]: number} = {};
 				for (const ingredient of recipe.ingredients) {
 					def[ingredient.item] = -ingredient.amount;

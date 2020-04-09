@@ -26,7 +26,7 @@ export class ProductionTool
 			if (!result.hasOwnProperty(k) || !(k in model.recipes) || result[k] < 1e-8) {
 				continue;
 			}
-			recipes.push(new RecipeResult(model.recipes[k], result[k] / 60));
+			recipes.push(new RecipeResult(model.recipes[k], result[k] / 15));
 		}
 
 		if (!recipes.length) {

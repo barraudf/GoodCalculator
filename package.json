@@ -1,8 +1,8 @@
 {
-	"name": "satisfactory-tools",
+	"name": "good-calculator",
 	"version": "0.0.1",
-	"description": "A collection of Satisfactory tools",
-	"author": "greeny",
+	"description": "A production calculator for Good Company game",
+	"author": "x1fr",
 	"private": true,
 	"scripts": {
 		"build": "webpack --mode production",

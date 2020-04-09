@@ -2,8 +2,7 @@ import data from '@src/Data/Data';
 import {IItemSchema} from '@src/Schema/IItemSchema';
 import {ITransitionObject} from '@src/Types/ITransitionObject';
 import {IRecipeSchema} from '@src/Schema/IRecipeSchema';
-import {IBuildingSchema, IManufacturerSchema} from '@src/Schema/IBuildingSchema';
-import {ISchematicSchema} from '@src/Schema/ISchematicSchema';
+import {IBuildingSchema} from '@src/Schema/IBuildingSchema';
 import {RecentlyVisitedItemsService} from '@src/Module/Services/RecentlyVisitedItemsService';
 
 export class ItemController
@@ -12,8 +11,6 @@ export class ItemController
 	public item: IItemSchema;
 	public recipes: IRecipeSchema[];
 	public usagesAsIngredient: IRecipeSchema[];
-	public usagesForBuilding: IRecipeSchema[];
-	public usagesForSchematics: ISchematicSchema[];
 
 	public static $inject = ['$state', '$transition$', 'RecentlyVisitedItemsService'];
 
@@ -28,8 +25,6 @@ export class ItemController
 		this.item = item;
 		this.recipes = Object.values(data.getRecipesForItem(item));
 		this.usagesAsIngredient = Object.values(data.getUsagesAsIngredientForItem(item));
-		this.usagesForBuilding = Object.values(data.getUsagesForBuildingForItem(item));
-		this.usagesForSchematics = Object.values(data.getUsagesForSchematicsForItem(item));
 	}
 
 	public getItem(className: string): IItemSchema|null
@@ -42,7 +37,7 @@ export class ItemController
 		return data.getRawData().buildings[className];
 	}
 
-	public getMachine(recipe: IRecipeSchema): IManufacturerSchema|null
+	public getMachine(recipe: IRecipeSchema): IBuildingSchema|null
 	{
 		return data.getManufacturerByClassName(recipe.producedIn[0]);
 	}

@@ -2,8 +2,7 @@ import rawData from '@data/data.json';
 import {IJsonSchema} from '@src/Schema/IJsonSchema';
 import {IItemSchema} from '@src/Schema/IItemSchema';
 import {IRecipeSchema} from '@src/Schema/IRecipeSchema';
-import {IManufacturerSchema} from '@src/Schema/IBuildingSchema';
-import {ISchematicSchema} from '@src/Schema/ISchematicSchema';
+import {IBuildingSchema} from '@src/Schema/IBuildingSchema';
 
 export class Data
 {
@@ -37,7 +36,7 @@ export class Data
 			for (const key in recipeData) {
 				const recipe = recipeData[key];
 				for (const product of recipe.products) {
-					if (product.item === item.className && recipe.alternate === alt) {
+					if (product.item === item.className) {
 						recipes[key] = recipe;
 					}
 				}
@@ -56,7 +55,7 @@ export class Data
 			for (const key in recipeData) {
 				const recipe = recipeData[key];
 				for (const ingredient of recipe.ingredients) {
-					if (item.className === ingredient.item && !recipe.forBuilding && recipe.alternate === alt) {
+					if (item.className === ingredient.item) {
 						recipes[key] = recipe;
 					}
 				}
@@ -65,36 +64,6 @@ export class Data
 		addRecipes(false);
 		addRecipes(true);
 		return recipes;
-	}
-
-	public getUsagesForBuildingForItem(item: IItemSchema): {[key: string]: IRecipeSchema}
-	{
-		const recipeData = this.getRawData().recipes;
-		const recipes: {[key: string]: IRecipeSchema} = {};
-		for (const key in recipeData) {
-			const recipe = recipeData[key];
-			for (const ingredient of recipe.ingredients) {
-				if (ingredient.item === item.className && recipe.forBuilding) {
-					recipes[key] = recipe;
-				}
-			}
-		}
-		return recipes;
-	}
-
-	public getUsagesForSchematicsForItem(item: IItemSchema): {[key: string]: ISchematicSchema}
-	{
-		const schematicData = this.getRawData().schematics;
-		const schematics: {[key: string]: ISchematicSchema} = {};
-		for (const key in schematicData) {
-			const schematic = schematicData[key];
-			for (const ingredient of schematic.cost) {
-				if (ingredient.item === item.className) {
-					schematics[key] = schematic;
-				}
-			}
-		}
-		return schematics;
 	}
 
 	public getItemByClassName(className: string): IItemSchema|null
@@ -108,12 +77,12 @@ export class Data
 		return null;
 	}
 
-	public getManufacturerByClassName(className: string): IManufacturerSchema|null
+	public getManufacturerByClassName(className: string): IBuildingSchema|null
 	{
 		const buildings = this.getRawData().buildings;
 		for (const key in buildings) {
 			if (buildings[key].className === className) {
-				return buildings[key] as IManufacturerSchema;
+				return buildings[key] as IBuildingSchema;
 			}
 		}
 		return null;

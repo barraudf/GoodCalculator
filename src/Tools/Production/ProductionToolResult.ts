@@ -10,6 +10,8 @@ export class ProductionToolResult
 		id: number,
 		label: string,
 		title?: string,
+		shape: string,
+		image: string,
 	}>();
 	public readonly edges = new vis.DataSet<{
 		from: number,
@@ -28,6 +30,8 @@ export class ProductionToolResult
 				id: id,
 				label: '',
 				title: '',
+				shape: 'image',
+				image: '',
 			});
 			recipe.nodeId = id;
 			this.updateNode(id);
@@ -37,7 +41,7 @@ export class ProductionToolResult
 		for (const recipe of recipes) {
 			ingredientLoop:
 			for (const ingredient of recipe.recipe.ingredients) {
-				let amount = ingredient.amount * recipe.getMachineCount() * 60 * recipe.recipe.machine.metadata.manufacturingSpeed / recipe.recipe.prototype.time;
+				let amount = ingredient.amount * recipe.getMachineCount() * 15 / recipe.recipe.prototype.time;
 				for (const re of recipes) {
 					for (const product of re.productAmountCache) {
 						if (product.product === ingredient.item.prototype.className && product.amount > 0) {
@@ -48,7 +52,7 @@ export class ProductionToolResult
 							this.edges.add({
 								from: re.nodeId,
 								to: recipe.nodeId,
-								label: ingredient.item.prototype.name + '\n' + diff.toFixed(2) + '/min',
+								label: ingredient.item.prototype.name + '\n' + diff.toFixed(2) + '/day',
 							});
 
 							amount -= diff;
@@ -82,15 +86,17 @@ export class ProductionToolResult
 
 				this.nodes.add({
 					id: id,
-					label: ProductionToolResult.getRecipeDisplayedName(item.prototype.name) + '\n' + resource.amount.toFixed(2) + ' / min',
+					label: ProductionToolResult.getRecipeDisplayedName(item.prototype.name) + '\n' + resource.amount.toFixed(2) + ' / day',
 					title: '',
+					shape: 'image',
+					image: '/assets/images/items/' + item.prototype.slug + '.png',
 				});
 
 				for (const data of resource.data) {
 					this.edges.add({
 						from: id,
 						to: data.id,
-						label: item.prototype.name + '\n' + data.amount.toFixed(2) + ' / min',
+						label: item.prototype.name + '\n' + data.amount.toFixed(2) + ' / day',
 					});
 				}
 
@@ -115,6 +121,8 @@ export class ProductionToolResult
 			id: id,
 			label: ProductionToolResult.getRecipeDisplayedName(recipe.recipe.prototype.name) + '\n' + recipe.getMachineCount().toFixed(2) + 'x ' + recipe.recipe.machine.name,
 			title: recipe.getMachineTooltip(),
+			shape: 'image',
+			image: '/assets/images/items/' + recipe.recipe.products[0].item.prototype.slug + '.png',
 		});
 	}
 
