@@ -1,0 +1,25 @@
+<ol class="breadcrumb">
+	<li class="breadcrumb-item"><a ui-sref="home">Good Calculator</a></li>
+	<li class="breadcrumb-item active">Builder Browser</li>
+</ol>
+
+<div class="row">
+	<div class="col-sm-6">
+		<h1>Builder browser</h1>
+	</div>
+
+	<div class="col-sm-6">
+		<div class="form-group">
+			<input type="text" class="form-control" placeholder="Search for an item" ng-model="scope.filter">
+		</div>
+	</div>
+</div>
+
+<div class="recipe-list">
+	<div class="card text-center item-card" ng-repeat="builder in scope.getFilteredBuilders()|orderBy:'name'|filter:scope.filter">
+		<a class="recipe-name stretched-link" ui-sref="builder({builder: builder.slug})">
+			<img class="recipe-image" ng-src="/assets/images/items/{{builder.slug}}.png">
+			{{builder.name}}
+		</a>
+	</div>
+</div>

@@ -41,6 +41,12 @@
 							<td>{{scope.item.stackSize}}</td>
 						</tr>
 					</tbody>
+					<tbody>
+						<tr>
+							<td>Category</td>
+							<td>{{scope.item.module_category}}</td>
+						</tr>
+					</tbody>
 				</table>
 			</div>
 		</div>
@@ -60,7 +66,7 @@
 								<th>Recipe name</th>
 								<th>Products</th>
 								<th>Ingredients</th>
-								<th>Machine</th>
+								<th>Builder</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -94,7 +100,9 @@
 								</td>
 								<td>
 									<span class="item-amount">
-										<img ng-src="/assets/images/items/{{scope.getMachine(recipe).slug}}.png" width="32" height="32" title="{{scope.getMachine(recipe).name}}" tooltip> {{scope.getMachine(recipe).name}}
+										<a ui-sref="builder({builder: scope.getMachine(recipe).slug})">
+											<img ng-src="/assets/images/items/{{scope.getMachine(recipe).slug}}.png" width="32" height="32" title="{{scope.getMachine(recipe).name}}" tooltip>
+										</a>
 									</span>
 									<br>
 									<span>{{recipe.time}}s ({{15 / recipe.time|number}} cycles&nbsp;/&nbsp;day)</span>
@@ -119,7 +127,7 @@
 								<th>Recipe name</th>
 								<th>Products</th>
 								<th>Ingredients</th>
-								<th>Machine</th>
+								<th>Builder</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -153,7 +161,9 @@
 								</td>
 								<td>
 									<span class="item-amount">
-										<img ng-src="/assets/images/items/{{scope.getMachine(recipe).slug}}.png" width="32" height="32" title="{{scope.getMachine(recipe).name}}" tooltip> {{scope.getMachine(recipe).name}}
+										<a ui-sref="builder({builder: scope.getMachine(recipe).slug})">
+											<img ng-src="/assets/images/items/{{scope.getMachine(recipe).slug}}.png" width="32" height="32" title="{{scope.getMachine(recipe).name}}" tooltip>
+										</a>
 									</span>
 									<br>
 									<span>{{recipe.time}}s ({{15 / recipe.time|number}} cycles&nbsp;/&nbsp;day)</span>

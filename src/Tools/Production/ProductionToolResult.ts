@@ -1,7 +1,7 @@
 import {RecipeResult} from '@src/Tools/Production/RecipeResult';
 import {ItemAmount} from '@src/Data/ItemAmount';
 import vis from 'vis-network';
-import model from '@src/Data/Model';
+import model, {Model} from '@src/Data/Model';
 
 export class ProductionToolResult
 {
@@ -63,7 +63,7 @@ export class ProductionToolResult
 					}
 				}
 
-				if (amount >= 1e-6 && model.isRawResource(ingredient.item)) {
+				if (amount >= 1e-6 && Model.isRawResource(ingredient.item)) {
 					if (!(ingredient.item.prototype.className in this.rawResources)) {
 						this.rawResources[ingredient.item.prototype.className] = {
 							amount: 0,

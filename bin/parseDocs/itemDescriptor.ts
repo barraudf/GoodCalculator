@@ -6,11 +6,13 @@ export default function parseItemDescriptors(items: {
 	mDisplayName: string,
 	mDescription: string,
 	mStackSize: string,
+	module_category: string,
 }[])
 {
 	const result: IItemSchema[] = [];
 	for (const item of items) {
 		result.push({
+			module_category: item.module_category,
 			slug: Strings.webalize(item.mDisplayName),
 			className: item.ClassName,
 			name: item.mDisplayName,

@@ -19,7 +19,7 @@ export class Solver
 		for (const k in data.items) {
 			if (data.items.hasOwnProperty(k)) {
 				const item = data.items[k];
-				if (!(item.className in data.resources)) {
+				if (item.module_category !== 'cat_material') {
 					model.constraints[item.className] = {
 						min: 0,
 					};

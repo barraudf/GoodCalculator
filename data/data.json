@@ -49,6 +49,7 @@
 	},
 	"items": {
 		"itm_chemicals": {
+			"module_category": "cat_material", 
 			"slug": "itm_chemicals",
 			"className": "itm_chemicals",
 			"name": "Chemicals",
@@ -56,6 +57,7 @@
 			"stackSize": 40
 		},
 		"itm_plastic": {
+			"module_category": "cat_material", 
 			"slug": "itm_plastic",
 			"className": "itm_plastic",
 			"name": "Plastic",
@@ -63,6 +65,7 @@
 			"stackSize": 60
 		},
 		"itm_metal": {
+			"module_category": "cat_material", 
 			"slug": "itm_metal",
 			"className": "itm_metal",
 			"name": "Metal",
@@ -70,6 +73,7 @@
 			"stackSize": 60
 		},
 		"itm_electronic_component": {
+			"module_category": "cat_material", 
 			"slug": "itm_electronic_component",
 			"className": "itm_electronic_component",
 			"name": "Electronic Parts",
@@ -77,6 +81,7 @@
 			"stackSize": 200
 		},
 		"itm_simple_case": {
+			"module_category": "cat_mod_case", 
 			"slug": "itm_simple_case",
 			"className": "itm_simple_case",
 			"name": "Simple Case",
@@ -84,25 +89,12 @@
 			"stackSize": 20
 		},
 		"itm_plastic_case": {
+			"module_category": "cat_mod_case", 
 			"slug": "itm_plastic_case",
 			"className": "itm_plastic_case",
 			"name": "Plastic Case",
 			"description": "",
 			"stackSize": 20
-		}
-	},
-	"resources": {
-		"itm_chemicals": {
-			"item": "itm_chemicals"
-		},
-		"itm_plastic": {
-			"item": "itm_plastic"
-		},
-		"itm_metal": {
-			"item": "itm_metal"
-		},
-		"itm_electronic_component": {
-			"item": "itm_electronic_component"
 		}
 	},
 	"buildings": {

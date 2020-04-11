@@ -4,7 +4,6 @@ import {IJsonSchema} from '@src/Schema/IJsonSchema';
 import {IItemSchema} from '@src/Schema/IItemSchema';
 import parseItemDescriptors from '@bin/parseDocs/itemDescriptor';
 import parseRecipes from '@bin/parseDocs/recipe';
-import parseResourceDescriptors from '@bin/parseDocs/resourceDescriptor';
 import parseBuildings from '@bin/parseDocs/building';
 import parseBuildingDescriptors from '@bin/parseDocs/buildingDescriptor';
 
@@ -13,7 +12,6 @@ const docs = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'data', 'Docs
 const json: IJsonSchema = {
 	recipes: {},
 	items: {},
-	resources: {},
 	buildings: {},
 };
 
@@ -33,14 +31,6 @@ for (const definitions of docs) {
 		case 'Class\'/Script/FactoryGame.FGRecipe\'':
 			for (const recipe of parseRecipes(definitions.Classes)) {
 				json.recipes[recipe.className] = recipe;
-			}
-			break;
-		case 'Class\'/Script/FactoryGame.FGResourceDescriptor\'':
-			for (const item of parseItemDescriptors(definitions.Classes)) {
-				json.items[item.className] = item;
-			}
-			for (const resource of parseResourceDescriptors(definitions.Classes)) {
-				json.resources[resource.item] = resource;
 			}
 			break;
 		case 'Class\'/Script/FactoryGame.FGBuildablePole\'':

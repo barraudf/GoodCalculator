@@ -48,9 +48,9 @@ export class Model
 		return items;
 	}
 
-	public isRawResource(item: Item): boolean
+	public static isRawResource(item: Item): boolean
 	{
-		return item.prototype.className in this.data.resources;
+		return item.prototype.module_category === 'cat_material';
 	}
 
 }

@@ -3,6 +3,8 @@ import {StateProvider, UrlRouterProvider} from 'angular-ui-router';
 import {HomeController} from '@src/Module/Controllers/HomeController';
 import {AppDirective} from '@src/Module/Directives/AppDirective';
 import {ItemController} from '@src/Module/Controllers/ItemController';
+import {BuilderController} from '@src/Module/Controllers/BuilderController';
+import {BuildersController} from '@src/Module/Controllers/BuildersController';
 import {ItemIconDirective} from '@src/Module/Directives/ItemIconDirective';
 import {RecentlyVisitedItemsService} from '@src/Module/Services/RecentlyVisitedItemsService';
 import {ProductionController} from '@src/Module/Controllers/ProductionController';
@@ -49,22 +51,23 @@ export class AppModule
 				url: '/production',
 				template: require('@templates/Controllers/production.html'),
 			});
+
+			$stateProvider.state('builder', {
+				controller: 'BuilderController',
+				controllerAs: 'scope',
+				url: '/builders/{builder}',
+				template: require('@templates/Controllers/builder.html'),
+			});
+
+			$stateProvider.state('builders', {
+				controller: 'BuildersController',
+				controllerAs: 'scope',
+				url: '/builders',
+				template: require('@templates/Controllers/builders.html'),
+			});
 		}]);
 
 		this.app.run(['$transitions', '$rootScope', ($transitions: any, $rootScope: any) => {
-			$rootScope.aprilMode = false;
-
-			const now = new Date();
-			if (now.getDate() === 1 && now.getMonth() === 3) {
-				$rootScope.aprilMode = true;
-				document.body.className += ' april-mode';
-				window.scrollTo(0, document.body.scrollHeight);
-			}
-
-			$rootScope.disableApril = () => {
-				$('body').removeClass('april-mode');
-				$rootScope.aprilMode = false;
-			};
 
 			$transitions.onFinish({}, () => {
 				const elements = document.getElementsByClassName('tooltip'); // TODO fix jQLite and replace with angular.element
@@ -73,13 +76,7 @@ export class AppModule
 						elements[index].remove();
 					}
 				}
-				if ($rootScope.aprilMode) {
-					setTimeout(() => {
-						window.scrollTo(0, document.body.scrollHeight);
-					}, 0);
-				} else {
-					document.documentElement.scrollTop = 0;
-				}
+				document.documentElement.scrollTop = 0;
 			});
 		}]);
 
@@ -116,6 +113,8 @@ export class AppModule
 		this.app.controller('HomeController', HomeController);
 		this.app.controller('ItemController', ItemController);
 		this.app.controller('ProductionController', ProductionController);
+		this.app.controller('BuilderController', BuilderController);
+		this.app.controller('BuildersController', BuildersController);
 	}
 
 	private static generateNumberFormattingFunction()

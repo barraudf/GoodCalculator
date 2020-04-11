@@ -17,6 +17,11 @@ export class Data
 		return this.getRawData().items;
 	}
 
+	public getAllBuilders(): {[key: string]: IBuildingSchema}
+	{
+		return this.getRawData().buildings;
+	}
+
 	public getItemBySlug(slug: string): IItemSchema|null
 	{
 		const items = this.getRawData().items;
@@ -32,7 +37,7 @@ export class Data
 	{
 		const recipeData = this.getRawData().recipes;
 		const recipes: {[key: string]: IRecipeSchema} = {};
-		function addRecipes(alt: boolean) {
+		function addRecipes() {
 			for (const key in recipeData) {
 				const recipe = recipeData[key];
 				for (const product of recipe.products) {
@@ -42,8 +47,25 @@ export class Data
 				}
 			}
 		}
-		addRecipes(false);
-		addRecipes(true);
+		addRecipes();
+		return recipes;
+	}
+
+	public getRecipesForBuilder(builder: IBuildingSchema): {[key: string]: IRecipeSchema}
+	{
+		const recipeData = this.getRawData().recipes;
+		const recipes: {[key: string]: IRecipeSchema} = {};
+		function addRecipes() {
+			for (const key in recipeData) {
+				const recipe = recipeData[key];
+				for (const building of recipe.producedIn) {
+					if (building === builder.className) {
+						recipes[key] = recipe;
+					}
+				}
+			}
+		}
+		addRecipes();
 		return recipes;
 	}
 
@@ -51,7 +73,7 @@ export class Data
 	{
 		const recipeData = this.getRawData().recipes;
 		const recipes: {[key: string]: IRecipeSchema} = {};
-		function addRecipes(alt: boolean) {
+		function addRecipes() {
 			for (const key in recipeData) {
 				const recipe = recipeData[key];
 				for (const ingredient of recipe.ingredients) {
@@ -61,8 +83,7 @@ export class Data
 				}
 			}
 		}
-		addRecipes(false);
-		addRecipes(true);
+		addRecipes();
 		return recipes;
 	}
 

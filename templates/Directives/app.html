@@ -16,6 +16,12 @@
 					</a>
 				</li>
 				<li class="nav-item" ui-sref-active="active">
+					<a class="nav-link" ui-sref="builders">
+						<span class="fas fa-fw fa-wrench"></span>
+						Builder browser
+					</a>
+				</li>
+				<li class="nav-item" ui-sref-active="active">
 					<a class="nav-link" ui-sref="production">
 						<span class="fas fa-fw fa-chart-line"></span>
 						Production
@@ -23,13 +29,6 @@
 				</li>
 			</ul>
 			<ul class="navbar-nav">
-				<li class="april-mode-toggle nav-item" ng-if="$root.aprilMode">
-					<a class="nav-link" href="javascript: void(0);" ng-click="$root.disableApril();">
-						<b>
-							<span class="fas fa-sync-alt"></span> Disable April mode
-						</b>
-					</a>
-				</li>
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="javascript: void(0);" data-toggle="dropdown">
 						<span class="fas fa-users"></span>
