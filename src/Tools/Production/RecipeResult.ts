@@ -24,7 +24,7 @@ export class RecipeResult
 		for (const product of recipe.products) {
 			const itemsPerMachine = 15 / recipe.prototype.time;
 			this.productAmountCache.push({
-				product: product.item.prototype.className,
+				product: product.item.prototype.slug,
 				maxAmount: itemsPerMachine * machines * product.amount,
 				amount: itemsPerMachine * machines * product.amount,
 			});

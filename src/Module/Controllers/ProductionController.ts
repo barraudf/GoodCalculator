@@ -1,7 +1,8 @@
 import {ProductionTool} from '@src/Tools/Production/ProductionTool';
 import model from '@src/Data/Model';
-import {Item} from '@src/Data/Item';
-import {ItemAmount} from '@src/Data/ItemAmount';
+import {Material} from '@src/Data/Material';
+import {MaterialAmount} from '@src/Data/MaterialAmount';
+import {IMaterialAmountSchema} from '@src/Schema/IMaterialAmountSchema';
 import vis from 'vis-network';
 import {IRootScopeService} from 'angular';
 
@@ -9,7 +10,7 @@ export class ProductionController
 {
 
 	public readonly tool: ProductionTool;
-	public readonly craftableItems: Item[] = model.getAutomatableItems();
+	public readonly craftableMaterials: Material[] = model.getCraftableMaterials();
 	public result: string;
 
 	public static $inject = ['$rootScope'];
@@ -19,8 +20,8 @@ export class ProductionController
 		this.tool = new ProductionTool;
 		this.recalculate();
 		rootScope.$watch(() => {
-			return this.tool.production.map((itemAmount: ItemAmount) => {
-				return [itemAmount.item.prototype.className, itemAmount.amount];
+			return this.tool.production.map((itemAmount: MaterialAmount) => {
+				return [itemAmount.material.prototype.materialId, itemAmount.prototype.amount];
 			});
 		}, () => {
 			this.recalculate();
@@ -29,11 +30,11 @@ export class ProductionController
 
 	public addEmptyProduct(): void
 	{
-		this.tool.production.push(new ItemAmount(this.craftableItems[0], 1));
+		this.tool.production.push(new MaterialAmount(this.craftableMaterials[0], { materialId: this.craftableMaterials[0].prototype.materialId, amount: 1 }));
 		this.recalculate();
 	}
 
-	public removeProduct(product: ItemAmount): void
+	public removeProduct(product: MaterialAmount): void
 	{
 		const index = this.tool.production.indexOf(product);
 		if (index in this.tool.production) {

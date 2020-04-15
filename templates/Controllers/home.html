@@ -1,16 +1,16 @@
 <ol class="breadcrumb">
 	<li class="breadcrumb-item"><a ui-sref="home">Good Calculator</a></li>
-	<li class="breadcrumb-item active">Item Browser</li>
+	<li class="breadcrumb-item active">Material Browser</li>
 </ol>
 
 <div class="row">
 	<div class="col-sm-6">
-		<h1>Item browser</h1>
+		<h1>Material browser</h1>
 	</div>
 
 	<div class="col-sm-6">
 		<div class="form-group">
-			<input type="text" class="form-control" placeholder="Search for an item" ng-model="scope.filter">
+			<input type="text" class="form-control" placeholder="Search for a material" ng-model="scope.filter">
 		</div>
 	</div>
 </div>
@@ -18,20 +18,20 @@
 <div class="card bg-tertiary p-3 mb-3" ng-if="scope.recentlyVisited.recent.length">
 	<h3>Recently visited</h3>
 	<div class="recipe-list">
-		<div class="card text-center item-card" ng-repeat="className in scope.recentlyVisited.recent">
-			<a class="stretched-link recipe-name" ui-sref="item({item: scope.getItemByClassName(className).slug})">
-				<img class="recipe-image" ng-src="/assets/images/items/{{scope.getItemByClassName(className).slug}}.png">
-				{{scope.getItemByClassName(className).name}}
+		<div class="card text-center material-card" ng-repeat="materialId in scope.recentlyVisited.recent">
+			<a class="stretched-link recipe-name" ui-sref="material({material: materialId})">
+				<img class="recipe-image" ng-src="/assets/images/{{scope.getMaterialById(materialId).iconSprite}}/{{scope.getMaterialById(materialId).iconId}}.png">
+				{{scope.getMaterialById(materialId).name['en']}}
 			</a>
 		</div>
 	</div>
 </div>
 
 <div class="recipe-list">
-	<div class="card text-center item-card" ng-repeat="item in scope.getFilteredItems()|orderBy:'name'|filter:scope.filter">
-		<a class="recipe-name stretched-link" ui-sref="item({item: item.slug})">
-			<img class="recipe-image" ng-src="/assets/images/items/{{item.slug}}.png">
-			{{item.name}}
+	<div class="card text-center material-card" ng-repeat="material in scope.getFilteredMaterials()|orderBy:'name'|filter:scope.filter">
+		<a class="recipe-name stretched-link" ui-sref="material({material: material.materialId})">
+			<img class="recipe-image" ng-src="/assets/images/{{material.iconSprite}}/{{material.iconId}}.png">
+			{{material.name['en']}}
 		</a>
 	</div>
 </div>

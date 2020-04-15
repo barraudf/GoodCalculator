@@ -1,31 +1,31 @@
 import data from '@src/Data/Data';
-import {IItemSchema} from '@src/Schema/IItemSchema';
-import {RecentlyVisitedItemsService} from '@src/Module/Services/RecentlyVisitedItemsService';
+import {IMaterialSchema} from '@src/Schema/IMaterialSchema';
+import {RecentlyVisitedMaterialsService} from '@src/Module/Services/RecentlyVisitedItemsService';
 
 export class HomeController
 {
 
-	public items: IItemSchema[] = Object.values(data.getAllItems());
+	public materials: IMaterialSchema[] = Object.values(data.getAllMaterials());
 	public filter = '';
 
-	public static $inject = ['RecentlyVisitedItemsService'];
+	public static $inject = ['RecentlyVisitedMaterialsService'];
 
-	public constructor(public recentlyVisited: RecentlyVisitedItemsService) {}
+	public constructor(public recentlyVisited: RecentlyVisitedMaterialsService) {}
 
-	public getFilteredItems(): IItemSchema[]
+	public getFilteredMaterials(): IMaterialSchema[]
 	{
 		if (!this.filter) {
-			return this.items;
+			return this.materials;
 		}
 
-		return this.items.filter((item) => {
-			return item.name.toLowerCase().indexOf(this.filter.toLowerCase()) !== -1;
+		return this.materials.filter((material) => {
+			return material.name['en'].toLowerCase().indexOf(this.filter.toLowerCase()) !== -1;
 		});
 	}
 
-	public getItemByClassName(className: string): IItemSchema|null
+	public getMaterialById(materialId: number): IMaterialSchema|null
 	{
-		return data.getItemByClassName(className);
+		return data.getMaterialById(materialId);
 	}
 
 }

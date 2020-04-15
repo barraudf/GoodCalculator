@@ -1,8 +1,8 @@
 import rawData from '@data/data.json';
 import {IJsonSchema} from '@src/Schema/IJsonSchema';
-import {IItemSchema} from '@src/Schema/IItemSchema';
-import {IRecipeSchema} from '@src/Schema/IRecipeSchema';
-import {IBuildingSchema} from '@src/Schema/IBuildingSchema';
+import {IMaterialSchema} from '@src/Schema/IMaterialSchema';
+import {ICrafterSchema} from '@src/Schema/ICrafterSchema';
+import { ICraftDetailSchema } from '@src/Schema/ICraftDetailSchema';
 
 export class Data
 {
@@ -12,37 +12,54 @@ export class Data
 		return rawData as any;
 	}
 
-	public getAllItems(): {[key: string]: IItemSchema}
+	public getAllMaterials(): IMaterialSchema[]
 	{
-		return this.getRawData().items;
+		return this.getRawData().materials;
 	}
 
-	public getAllBuilders(): {[key: string]: IBuildingSchema}
+	public getAllCrafters(): ICrafterSchema[]
 	{
-		return this.getRawData().buildings;
+		return this.getRawData().crafters;
 	}
 
-	public getItemBySlug(slug: string): IItemSchema|null
+	public getMaterialById(materialId: number): IMaterialSchema|null
 	{
-		const items = this.getRawData().items;
-		for (const key in items) {
-			if (items[key].slug === slug) {
-				return items[key];
+		const materials = this.getRawData().materials;
+		for (const key in materials) {
+			const material = materials[key];
+			if (material.materialId === materialId) {
+				return material;
 			}
 		}
 		return null;
 	}
 
-	public getRecipesForItem(item: IItemSchema): {[key: string]: IRecipeSchema}
+	public getCrafterById(equipId: number): ICrafterSchema|null
 	{
-		const recipeData = this.getRawData().recipes;
-		const recipes: {[key: string]: IRecipeSchema} = {};
+		const crafters = this.getRawData().crafters;
+		for (const key in crafters) {
+			const crafter = crafters[key];
+			if (crafter.equipId === equipId) {
+				return crafter;
+			}
+		}
+		return null;
+	}
+
+	public getRecipesForMaterialOutput(material: IMaterialSchema): ICraftDetailSchema[]
+	{
+		const recipes: ICraftDetailSchema[] = [];
+		if (!material.moduleId) {
+			return recipes;
+		}
+		const crafters = this.getRawData().crafters;
 		function addRecipes() {
-			for (const key in recipeData) {
-				const recipe = recipeData[key];
-				for (const product of recipe.products) {
-					if (product.item === item.className) {
-						recipes[key] = recipe;
+			for (const key in crafters) {
+				const crafter = crafters[key];
+				for (const craft of crafter.craftingList) {
+					if (craft.moduleId === material.moduleId) {
+						craft.equipId = crafter.equipId;
+						recipes.push(craft);
 					}
 				}
 			}
@@ -51,62 +68,24 @@ export class Data
 		return recipes;
 	}
 
-	public getRecipesForBuilder(builder: IBuildingSchema): {[key: string]: IRecipeSchema}
+	public getRecipesForMaterialInput(material: IMaterialSchema): IMaterialSchema[]
 	{
-		const recipeData = this.getRawData().recipes;
-		const recipes: {[key: string]: IRecipeSchema} = {};
+		const materials = this.getRawData().materials;
+		const recipes: IMaterialSchema[] = [];
 		function addRecipes() {
-			for (const key in recipeData) {
-				const recipe = recipeData[key];
-				for (const building of recipe.producedIn) {
-					if (building === builder.className) {
-						recipes[key] = recipe;
+			for (const key in materials) {
+				const materialOut = materials[key];
+				if (materialOut.inputMaterials) {
+					for (const materialIn of materialOut.inputMaterials) {
+						if (material.materialId === materialIn.materialId) {
+							recipes.push(materialOut);
+						}
 					}
 				}
 			}
 		}
 		addRecipes();
 		return recipes;
-	}
-
-	public getUsagesAsIngredientForItem(item: IItemSchema): {[key: string]: IRecipeSchema}
-	{
-		const recipeData = this.getRawData().recipes;
-		const recipes: {[key: string]: IRecipeSchema} = {};
-		function addRecipes() {
-			for (const key in recipeData) {
-				const recipe = recipeData[key];
-				for (const ingredient of recipe.ingredients) {
-					if (item.className === ingredient.item) {
-						recipes[key] = recipe;
-					}
-				}
-			}
-		}
-		addRecipes();
-		return recipes;
-	}
-
-	public getItemByClassName(className: string): IItemSchema|null
-	{
-		const items = this.getRawData().items;
-		for (const key in items) {
-			if (items[key].className === className) {
-				return items[key];
-			}
-		}
-		return null;
-	}
-
-	public getManufacturerByClassName(className: string): IBuildingSchema|null
-	{
-		const buildings = this.getRawData().buildings;
-		for (const key in buildings) {
-			if (buildings[key].className === className) {
-				return buildings[key] as IBuildingSchema;
-			}
-		}
-		return null;
 	}
 }
 

@@ -3,16 +3,13 @@ import * as path from 'path';
 import {IJsonSchema} from '@src/Schema/IJsonSchema';
 import {IItemSchema} from '@src/Schema/IItemSchema';
 import parseItemDescriptors from '@bin/parseDocs/itemDescriptor';
-import parseRecipes from '@bin/parseDocs/recipe';
 import parseBuildings from '@bin/parseDocs/building';
-import parseBuildingDescriptors from '@bin/parseDocs/buildingDescriptor';
 
 const docs = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'data', 'Docs.json')).toString());
 
 const json: IJsonSchema = {
-	recipes: {},
 	items: {},
-	buildings: {},
+	builders: {},
 };
 
 let biomass: IItemSchema[] = [];
@@ -25,12 +22,7 @@ for (const definitions of docs) {
 		case 'Class\'/Script/FactoryGame.FGConsumableDescriptor\'':
 		case 'Class\'/Script/FactoryGame.FGItemDescriptorNuclearFuel\'':
 			for (const item of parseItemDescriptors(definitions.Classes)) {
-				json.items[item.className] = item;
-			}
-			break;
-		case 'Class\'/Script/FactoryGame.FGRecipe\'':
-			for (const recipe of parseRecipes(definitions.Classes)) {
-				json.recipes[recipe.className] = recipe;
+				json.items[item.slug] = item
 			}
 			break;
 		case 'Class\'/Script/FactoryGame.FGBuildablePole\'':
@@ -66,38 +58,19 @@ for (const definitions of docs) {
 		case 'Class\'/Script/FactoryGame.FGBuildableTrainPlatformEmpty\'':
 		case 'Class\'/Script/FactoryGame.FGBuildableSplitterSmart\'':
 		case 'Class\'/Script/FactoryGame.FGBuildableWalkway\'':
-			for (const building of parseBuildings(definitions.Classes, true)) {
-				json.buildings[building.className] = building;
+			for (const building of parseBuildings(definitions.Classes)) {
+				json.builders[building.slug] = building;
 			}
-			break;
-		case 'Class\'/Script/FactoryGame.FGBuildingDescriptor\'':
-			extraInfo = parseBuildingDescriptors(definitions.Classes);
 			break;
 	}
 }
 
 // add extra info to buildings
 for (const info of extraInfo) {
-	for (const key in json.buildings) {
-		if (info.className === json.buildings[key].className) {
-			json.buildings[key].categories = info.categories;
+	for (const key in json.builders) {
+		if (info.slug === json.builders[key].slug) {
+			json.builders[key].categories = info.categories;
 			break;
-		}
-	}
-}
-
-// convert liquid requirements to m3
-for (const key in json.recipes) {
-	const recipe = json.recipes[key];
-
-	for (const ingredient of recipe.ingredients) {
-		if (!json.items[ingredient.item]) {
-			throw new Error('Invalid item ' + ingredient.item);
-		}
-	}
-	for (const product of recipe.products) {
-		if (!json.items[product.item]) {
-			continue;
 		}
 	}
 }

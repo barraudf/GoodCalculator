@@ -39,12 +39,13 @@ export class ProductionToolResult
 		}
 
 		for (const recipe of recipes) {
+			const item = recipe.recipe.products[0].item;
 			ingredientLoop:
-			for (const ingredient of recipe.recipe.ingredients) {
+			for (const ingredient of item.ingredients) {
 				let amount = ingredient.amount * recipe.getMachineCount() * 15 / recipe.recipe.prototype.time;
 				for (const re of recipes) {
 					for (const product of re.productAmountCache) {
-						if (product.product === ingredient.item.prototype.className && product.amount > 0) {
+						if (product.product === ingredient.item.prototype.slug && product.amount > 0) {
 							const diff = Math.min(product.amount, amount);
 
 							product.amount -= diff;
@@ -64,14 +65,14 @@ export class ProductionToolResult
 				}
 
 				if (amount >= 1e-6 && Model.isRawResource(ingredient.item)) {
-					if (!(ingredient.item.prototype.className in this.rawResources)) {
-						this.rawResources[ingredient.item.prototype.className] = {
+					if (!(ingredient.item.prototype.slug in this.rawResources)) {
+						this.rawResources[ingredient.item.prototype.slug] = {
 							amount: 0,
 							data: [],
 						};
 					}
-					this.rawResources[ingredient.item.prototype.className].amount += amount;
-					this.rawResources[ingredient.item.prototype.className].data.push({
+					this.rawResources[ingredient.item.prototype.slug].amount += amount;
+					this.rawResources[ingredient.item.prototype.slug].data.push({
 						id: recipe.nodeId,
 						amount: amount,
 					});

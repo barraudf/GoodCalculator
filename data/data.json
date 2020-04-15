@@ -1,111 +1,159 @@
 {
-	"recipes": {
-		"rcp_simple_case": {
-			"slug": "rcp_simple_case",
-			"name": "Simple Case",
-			"className": "rcp_simple_case",
-			"time": 10,
-			"ingredients": [
+	"materials": [
+		{
+			"materialId": 238,
+			"moduleCategory": "cat_material", 
+			"iconId": "itm_chemicals",
+			"stackBuyPrice": 400,
+			"iconSprite": "icons_materials",
+			"stackSize": 40,
+			"name": {
+				"en": "Chemicals",
+				"de": "",
+				"fr": "",
+				"es": "",
+				"pt": "",
+				"ru": "",
+				"ja": "",
+				"zh": ""
+			}
+		},
+		{
+			"materialId": 237,
+			"moduleCategory": "cat_material", 
+			"iconId": "itm_plastic",
+			"stackBuyPrice": 240,
+			"iconSprite": "icons_materials",
+			"stackSize": 60,
+			"name": {
+				"en": "Plastic",
+				"de": "",
+				"fr": "",
+				"es": "",
+				"pt": "",
+				"ru": "",
+				"ja": "",
+				"zh": ""
+			}
+		},
+		{
+			"materialId": 236,
+			"moduleCategory": "cat_material", 
+			"iconId": "itm_metal",
+			"stackBuyPrice": 360,
+			"iconSprite": "icons_materials",
+			"stackSize": 60,
+			"name": {
+				"en": "Metal",
+				"de": "",
+				"fr": "",
+				"es": "",
+				"pt": "",
+				"ru": "",
+				"ja": "",
+				"zh": ""
+			}
+		},
+		{
+			"materialId": 251,
+			"moduleCategory": "cat_material", 
+			"iconId": "itm_electronic_component",
+			"stackBuyPrice": 400,
+			"iconSprite": "icons_materials",
+			"stackSize": 200,
+			"name": {
+				"en": "Electronic",
+				"de": "",
+				"fr": "",
+				"es": "",
+				"pt": "",
+				"ru": "",
+				"ja": "",
+				"zh": ""
+			}
+		},
+		{
+			"materialId": 241,
+			"inputMaterials": [
 				{
-					"item": "itm_plastic",
+					"materialId": 237,
 					"amount": 10
 				}
 			],
-			"products": [
-				{
-					"item": "itm_simple_case",
-					"amount": 1
-				}
-			],
-			"producedIn": [
-				"bld_tinker_tier01"
-			]
+			"moduleCategory": "cat_mod_case", 
+			"iconId": "itm_simple_case",
+			"sellPrice": 70.0, 
+			"iconSprite": "icons_modules", 
+			"outputAmount": 1,
+			"moduleId": 182, 
+			"stackSize": 20,
+			"name": {
+				"en": "Simple case",
+				"de": "",
+				"fr": "",
+				"es": "",
+				"pt": "",
+				"ru": "",
+				"ja": "",
+				"zh": ""
+			}
 		},
-		"rcp_plastic_case": {
-			"slug": "rcp_plastic_case",
-			"name": "Plastic Case",
-			"className": "rcp_plastic_case",
-			"time": 10,
-			"ingredients": [
+		{
+			"materialId": 245,
+			"inputMaterials": [
 				{
-					"item": "itm_plastic",
+					"materialId": 237,
 					"amount": 5
 				},
 				{
-					"item": "itm_simple_case",
+					"materialId": 241,
 					"amount": 1
 				}
 			],
-			"products": [
+			"moduleCategory": "cat_mod_case", 
+			"iconId": "itm_plastic_case",
+			"sellPrice": 70.0, 
+			"iconSprite": "icons_modules", 
+			"outputAmount": 1,
+			"moduleId": 186, 
+			"stackSize": 20,
+			"name": {
+				"en": "Plastic case",
+				"de": "",
+				"fr": "",
+				"es": "",
+				"pt": "",
+				"ru": "",
+				"ja": "",
+				"zh": ""
+			}
+		}
+	],
+	"crafters": [
+		{
+			"equipId": 23,
+			"iconSprite": "icons_buildables", 
+			"iconId": "bld_tinker_tier01",
+			"craftingList": [
 				{
-					"item": "itm_plastic_case",
-					"amount": 1
+					"moduleId": 182,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 186,
+					"craftDuration": 10
 				}
 			],
-			"producedIn": [
-				"bld_tinker_tier01"
-			]
+			"name": {
+				"en": "Tinker table",
+				"de": "",
+				"fr": "",
+				"es": "",
+				"pt": "",
+				"ru": "",
+				"ja": "",
+				"zh": ""
+			}
 		}
-	},
-	"items": {
-		"itm_chemicals": {
-			"module_category": "cat_material", 
-			"slug": "itm_chemicals",
-			"className": "itm_chemicals",
-			"name": "Chemicals",
-			"description": "Crafting Material",
-			"stackSize": 40
-		},
-		"itm_plastic": {
-			"module_category": "cat_material", 
-			"slug": "itm_plastic",
-			"className": "itm_plastic",
-			"name": "Plastic",
-			"description": "Crafting Material",
-			"stackSize": 60
-		},
-		"itm_metal": {
-			"module_category": "cat_material", 
-			"slug": "itm_metal",
-			"className": "itm_metal",
-			"name": "Metal",
-			"description": "Crafting Material",
-			"stackSize": 60
-		},
-		"itm_electronic_component": {
-			"module_category": "cat_material", 
-			"slug": "itm_electronic_component",
-			"className": "itm_electronic_component",
-			"name": "Electronic Parts",
-			"description": "Crafting Material",
-			"stackSize": 200
-		},
-		"itm_simple_case": {
-			"module_category": "cat_mod_case", 
-			"slug": "itm_simple_case",
-			"className": "itm_simple_case",
-			"name": "Simple Case",
-			"description": "",
-			"stackSize": 20
-		},
-		"itm_plastic_case": {
-			"module_category": "cat_mod_case", 
-			"slug": "itm_plastic_case",
-			"className": "itm_plastic_case",
-			"name": "Plastic Case",
-			"description": "",
-			"stackSize": 20
-		}
-	},
-	"buildings": {
-		"bld_tinker_tier01": {
-			"slug": "bld_tinker_tier01",
-			"name": "Tinker Table",
-			"description": "Builds basic materials and components.",
-			"categories": [
-				"SC_Smelters_C"
-			],
-			"className": "bld_tinker_tier01"
-		}
-	}
+	]
 }

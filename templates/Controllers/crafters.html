@@ -1,0 +1,25 @@
+<ol class="breadcrumb">
+	<li class="breadcrumb-item"><a ui-sref="home">Good Calculator</a></li>
+	<li class="breadcrumb-item active">Crafter Browser</li>
+</ol>
+
+<div class="row">
+	<div class="col-sm-6">
+		<h1>Crafter browser</h1>
+	</div>
+
+	<div class="col-sm-6">
+		<div class="form-group">
+			<input type="text" class="form-control" placeholder="Search for a crafter" ng-model="scope.filter">
+		</div>
+	</div>
+</div>
+
+<div class="recipe-list">
+	<div class="card text-center material-card" ng-repeat="crafter in scope.getFilteredCrafters()|orderBy:'name'|filter:scope.filter">
+		<a class="recipe-name stretched-link" ui-sref="crafter({crafter: crafter.equipId})">
+			<img class="recipe-image" ng-src="/assets/images/{{crafter.iconSprite}}/{{crafter.iconId}}.png">
+			{{crafter.name['en']}}
+		</a>
+	</div>
+</div>

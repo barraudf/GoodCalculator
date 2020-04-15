@@ -2,11 +2,11 @@ import {ILocationProvider, IModule, ISCEProvider} from 'angular';
 import {StateProvider, UrlRouterProvider} from 'angular-ui-router';
 import {HomeController} from '@src/Module/Controllers/HomeController';
 import {AppDirective} from '@src/Module/Directives/AppDirective';
-import {ItemController} from '@src/Module/Controllers/ItemController';
-import {BuilderController} from '@src/Module/Controllers/BuilderController';
-import {BuildersController} from '@src/Module/Controllers/BuildersController';
-import {ItemIconDirective} from '@src/Module/Directives/ItemIconDirective';
-import {RecentlyVisitedItemsService} from '@src/Module/Services/RecentlyVisitedItemsService';
+import {MaterialController} from '@src/Module/Controllers/MaterialController';
+import {CrafterController} from '@src/Module/Controllers/CrafterController';
+import {CraftersController} from '@src/Module/Controllers/CraftersController';
+import {MaterialIconDirective} from '@src/Module/Directives/MaterialIconDirective';
+import {RecentlyVisitedMaterialsService} from '@src/Module/Services/RecentlyVisitedItemsService';
 import {ProductionController} from '@src/Module/Controllers/ProductionController';
 
 export class AppModule
@@ -38,11 +38,11 @@ export class AppModule
 				template: require('@templates/Controllers/home.html'),
 			});
 
-			$stateProvider.state('item', {
-				controller: 'ItemController',
+			$stateProvider.state('material', {
+				controller: 'MaterialController',
 				controllerAs: 'scope',
-				url: '/items/{item}',
-				template: require('@templates/Controllers/item.html'),
+				url: '/materials/{material}',
+				template: require('@templates/Controllers/material.html'),
 			});
 
 			$stateProvider.state('production', {
@@ -52,18 +52,18 @@ export class AppModule
 				template: require('@templates/Controllers/production.html'),
 			});
 
-			$stateProvider.state('builder', {
-				controller: 'BuilderController',
+			$stateProvider.state('crafter', {
+				controller: 'CrafterController',
 				controllerAs: 'scope',
-				url: '/builders/{builder}',
-				template: require('@templates/Controllers/builder.html'),
+				url: '/crafters/{crafter}',
+				template: require('@templates/Controllers/crafter.html'),
 			});
 
-			$stateProvider.state('builders', {
-				controller: 'BuildersController',
+			$stateProvider.state('crafters', {
+				controller: 'CraftersController',
 				controllerAs: 'scope',
-				url: '/builders',
-				template: require('@templates/Controllers/builders.html'),
+				url: '/crafters',
+				template: require('@templates/Controllers/crafters.html'),
 			});
 		}]);
 
@@ -88,8 +88,8 @@ export class AppModule
 			return new AppDirective;
 		});
 
-		this.app.directive('item-icon', () => {
-			return new ItemIconDirective;
+		this.app.directive('material-icon', () => {
+			return new MaterialIconDirective;
 		});
 
 		this.app.directive('tooltip', () => {
@@ -108,13 +108,13 @@ export class AppModule
 			};
 		});
 
-		this.app.service('RecentlyVisitedItemsService', RecentlyVisitedItemsService);
+		this.app.service('RecentlyVisitedMaterialsService', RecentlyVisitedMaterialsService);
 
 		this.app.controller('HomeController', HomeController);
-		this.app.controller('ItemController', ItemController);
+		this.app.controller('MaterialController', MaterialController);
 		this.app.controller('ProductionController', ProductionController);
-		this.app.controller('BuilderController', BuilderController);
-		this.app.controller('BuildersController', BuildersController);
+		this.app.controller('CrafterController', CrafterController);
+		this.app.controller('CraftersController', CraftersController);
 	}
 
 	private static generateNumberFormattingFunction()

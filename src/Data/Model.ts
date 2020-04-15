@@ -1,56 +1,52 @@
 import rawData from '@data/data.json';
 import {IJsonSchema} from '@src/Schema/IJsonSchema';
-import {Item} from '@src/Data/Item';
-import {Recipe} from '@src/Data/Recipe';
+import {Material} from '@src/Data/Material';
+import {Crafter} from '@src/Data/Crafter';
 
 export class Model
 {
 
-	public items: {[key: string]: Item} = {};
-	public recipes: {[key: string]: Recipe} = {};
+	public materials: {[key: number]: Material} = {};
+	public crafters: {[key: number]: Crafter} = {};
 
 	public constructor(public readonly data: IJsonSchema)
 	{
-		for (const k in data.items) {
-			if (data.items.hasOwnProperty(k)) {
-				this.items[k] = new Item(this, data.items[k]);
-			}
+		for (const k in data.materials) {
+			const material = data.materials[k];
+			this.materials[material.materialId] = new Material(this, material);
 		}
-		for (const k in data.recipes) {
-			if (data.recipes.hasOwnProperty(k)) {
-				const recipe = data.recipes[k];
-				this.recipes[k] = new Recipe(this, recipe);
-			}
+		for (const k in data.crafters) {
+			const crafter = data.crafters[k];
+			this.crafters[crafter.equipId] = new Crafter(this, crafter);
 		}
 	}
 
-	public getItem(className: string): Item
+	public getMaterial(materialId: number): Material
 	{
-		if (className in this.items) {
-			return this.items[className];
+		if (materialId in this.materials) {
+			return this.materials[materialId];
 		}
-		throw new Error('Unknown item ' + className);
+		throw new Error('Unknown material ' + materialId.toString());
 	}
 
-	public getAutomatableItems(): Item[]
+	public getCraftableMaterials(): Material[]
 	{
-		const items: Item[] = [];
-		for (const k in this.items) {
-			if (this.items.hasOwnProperty(k)) {
-				for (const l in this.recipes) {
-					if (this.recipes.hasOwnProperty(l)) {
-						items.push(this.items[k]);
-						break;
-					}
-				}
+		const materials: Material[] = [];
+		for (const k in this.materials) {
+			const material = this.materials[k];
+			if (!Material.isRawResource(material)) {
+				materials.push(material);
 			}
 		}
-		return items;
+		return materials;
 	}
 
-	public static isRawResource(item: Item): boolean
+	public getCrafter(equipId: number): Crafter
 	{
-		return item.prototype.module_category === 'cat_material';
+		if (equipId in this.crafters) {
+			return this.crafters[equipId];
+		}
+		throw new Error('Unknown material ' + equipId.toString());
 	}
 
 }

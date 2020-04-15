@@ -1,12 +1,10 @@
-import {IItemSchema} from '@src/Schema/IItemSchema';
-import {IRecipeSchema} from '@src/Schema/IRecipeSchema';
-import {IBuildingSchema} from '@src/Schema/IBuildingSchema';
+import {IMaterialSchema} from '@src/Schema/IMaterialSchema';
+import {ICrafterSchema} from '@src/Schema/ICrafterSchema';
 
 export interface IJsonSchema
 {
 
-	items: {[key: string]: IItemSchema};
-	recipes: {[key: string]: IRecipeSchema};
-	buildings: {[key: string]: IBuildingSchema};
+	materials: IMaterialSchema[];
+	crafters: ICrafterSchema[];
 
 }

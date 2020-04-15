@@ -1,12 +1,14 @@
 import {IItemSchema} from '@src/Schema/IItemSchema';
 import {Strings} from '@src/Utils/Strings';
+import {Arrays} from '@src/Utils/Arrays';
+import parseItemAmount from '@bin/parseDocs/itemAmount';
 
 export default function parseItemDescriptors(items: {
-	ClassName: string,
 	mDisplayName: string,
 	mDescription: string,
 	mStackSize: string,
 	module_category: string,
+	mIngredients: string;
 }[])
 {
 	const result: IItemSchema[] = [];
@@ -14,10 +16,10 @@ export default function parseItemDescriptors(items: {
 		result.push({
 			module_category: item.module_category,
 			slug: Strings.webalize(item.mDisplayName),
-			className: item.ClassName,
 			name: item.mDisplayName,
 			description: item.mDescription.replace(/\r\n/ig, '\n'),
 			stackSize: Strings.stackSizeFromEnum(item.mStackSize),
+			ingredients: Arrays.ensureArray(Strings.unserializeDocs(item.mIngredients)).map(parseItemAmount),
 		});
 	}
 	return result;

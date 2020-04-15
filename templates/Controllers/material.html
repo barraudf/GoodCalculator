@@ -1,0 +1,164 @@
+<ol class="breadcrumb">
+	<li class="breadcrumb-item"><a ui-sref="home">Good Calculator</a></li>
+	<li class="breadcrumb-item"><a ui-sref="home">Material Browser</a></li>
+	<li class="breadcrumb-item active">{{scope.material.name['en']}}</li>
+</ol>
+
+<div class="d-flex flex-column flex-sm-row">
+	<div class="p-2 flex-grow-1">
+		<h1>{{scope.material.name['en']}}</h1>
+	</div>
+	<div class="p-2">
+		<a ui-sref="home" class="btn btn-secondary">Back to material list</a>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-6">
+		<div class="card mb-3">
+			<div class="card-body">
+				<span class="float-left mr-3">
+					<img ng-src="/assets/images/{{scope.material.iconSprite}}/{{scope.material.iconId}}.png" width="128" height="128" class="float-left" title="{{scope.material.name['en']}}" tooltip>
+				</span>
+				<p style="white-space: pre-line;">description</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-md-6">
+		<div class="card mb-3">
+			<div class="card-body">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Material</th>
+							<th>{{scope.material.name['en']}}</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Stack size</td>
+							<td>{{scope.material.stackSize}}</td>
+						</tr>
+					</tbody>
+					<tbody>
+						<tr>
+							<td>Category</td>
+							<td>{{scope.material.moduleCategory}}</td>
+						</tr>
+						<tr>
+							<th>Input</th>
+							<td>
+								<div ng-repeat="input in scope.material.inputMaterials" class="d-inline-block p-2">
+									<span class="material-amount">
+										{{input.amount}}x
+										<a ui-sref="material({material: input.materialId})">
+											<img ng-src="/assets/images/{{scope.getMaterial(input.materialId).iconSprite}}/{{scope.getMaterial(input.materialId).iconId}}.png" width="32" height="32" title="{{scope.getMaterial(input.materialId).name['en']}}" tooltip>
+										</a>
+									</span>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-lg-6">
+		<div class="card mb-3">
+			<div class="card-body">
+				<h2>Crafters</h2>
+
+				<div class="table-responsive">
+					<table class="table recipe-table table-hover">
+						<thead>
+							<tr>
+								<th>Crafter</th>
+								<th>Input</th>
+								<th>Output</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="output in scope.recipesAsOutput">
+								<td>
+									<span class="material-amount">
+										<a ui-sref="crafter({crafter: output.equipId})">
+											<img ng-src="/assets/images/{{scope.getCrafter(output.equipId).iconSprite}}/{{scope.getCrafter(output.equipId).iconId}}.png" width="32" height="32" title="{{scope.getCrafter(output.equipId).name['en']}}" tooltip>
+										</a>
+									</span>
+									<br>
+									<span>{{output.craftDuration}}s ({{15 / output.craftDuration|number}} cycles&nbsp;/&nbsp;day)</span>
+								</td>
+								<td>
+									<div ng-repeat="input in scope.material.inputMaterials" class="d-inline-block p-2">
+										<span class="material-amount">
+											{{input.amount}}x
+											<a ui-sref="material({material: input.materialId})">
+												<img ng-src="/assets/images/{{scope.getMaterial(input.materialId).iconSprite}}/{{scope.getMaterial(input.materialId).iconId}}.png" width="32" height="32" title="{{scope.getMaterial(input.materialId).name['en']}}" tooltip>
+											</a>
+											<br>
+										</span>
+										<span>{{input.amount * 15 / output.craftDuration|number}}&nbsp;/&nbsp;day</span>
+									</div>
+								</td>
+								<td>
+									<div class="d-inline-block p-2">
+										<span>{{scope.material.outputAmount * 15 / output.craftDuration|number}}&nbsp;/&nbsp;day</span>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-lg-6">
+		<div class="card mb-3">
+			<div class="card-body">
+				<h2>Usages as ingredient</h2>
+
+				<div class="table-responsive">
+					<table class="table recipe-table table-hover">
+						<thead>
+							<tr>
+								<th>Products</th>
+								<th>Input</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="output in scope.recipesAsInput">
+								<td>
+									<div class="d-inline-block p-2">
+										<span class="material-amount">
+											{{output.outputAmount}}x
+											<a ui-sref="material({material: output.materialId})">
+												<img ng-src="/assets/images/{{scope.getMaterial(output.materialId).iconSprite}}/{{scope.getMaterial(output.materialId).iconId}}.png" width="32" height="32" title="{{scope.getMaterial(output.materialId).name['en']}}" tooltip>
+											</a>
+											<br>
+										</span>
+									</div>
+								</td>
+								<td>
+									<div ng-repeat="input in output.inputMaterials" class="d-inline-block p-2">
+										<span class="material-amount">
+											{{input.amount}}x
+											<a ui-sref="material({material: input.materialId})">
+												<img ng-src="/assets/images/{{scope.getMaterial(input.materialId).iconSprite}}/{{scope.getMaterial(input.materialId).iconId}}.png" width="32" height="32" title="{{scope.getMaterial(input.materialId).name['en']}}" tooltip>
+											</a>
+											<br>
+										</span>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

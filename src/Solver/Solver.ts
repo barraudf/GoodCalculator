@@ -20,11 +20,11 @@ export class Solver
 			if (data.items.hasOwnProperty(k)) {
 				const item = data.items[k];
 				if (item.module_category !== 'cat_material') {
-					model.constraints[item.className] = {
+					model.constraints[item.slug] = {
 						min: 0,
 					};
 				} else {
-					model.constraints[item.className] = {
+					model.constraints[item.slug] = {
 						max: 0,
 					};
 				}
@@ -32,8 +32,8 @@ export class Solver
 		}
 
 		for (const itemAmount of production) {
-			delete model.optimize[itemAmount.item.prototype.className];
-			model.constraints[itemAmount.item.prototype.className] = {
+			delete model.optimize[itemAmount.item.prototype.slug];
+			model.constraints[itemAmount.item.prototype.slug] = {
 				equal: parseFloat(itemAmount.amount + ''),
 			};
 		}
@@ -42,9 +42,10 @@ export class Solver
 			if (data.recipes.hasOwnProperty(k)) {
 				const recipe: IRecipeSchema = data.recipes[k];
 				const def: {[key: string]: number} = {};
-				for (const ingredient of recipe.ingredients) {
-					def[ingredient.item] = -ingredient.amount;
-				}
+				const itemName = recipe.products[0].item;
+				// for (const ingredient of recipe.ingredients) {
+				// 	def[ingredient.item] = -ingredient.amount;
+				// }
 				for (const product of recipe.products) {
 					def[product.item] = product.amount;
 				}

@@ -1,21 +1,24 @@
 import {Strings} from '@src/Utils/Strings';
-import {IBuildingSchema} from '@src/Schema/IBuildingSchema';
+import {IBuilderSchema} from '@src/Schema/IBuilderSchema';
+import { IItemAmountSchema } from '@src/Schema/IItemAmountSchema';
 
-export default function parseBuildings(buildings: {
-	ClassName: string,
+export default function parseBuilders(builders: {
+	slug: string,
 	mDisplayName: string,
 	mDescription: string,
-}[], fixClassName: boolean = false): IBuildingSchema[]
+	categories: string[],
+	products: IItemAmountSchema
+}[]): IBuilderSchema[]
 {
-	const result: IBuildingSchema[] = [];
-	for (const building of buildings) {
+	const result: IBuilderSchema[] = [];
+	for (const building of builders) {
 
 		result.push({
 			slug: Strings.webalize(building.mDisplayName),
 			name: building.mDisplayName,
 			description: building.mDescription.replace(/\r\n/ig, '\n'),
 			categories: [],
-			className: fixClassName ? building.ClassName.replace('Build_', 'Desc_') : building.ClassName,
+			products: []
 		});
 	}
 	return result;
