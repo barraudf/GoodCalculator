@@ -8,11 +8,11 @@ export class Crafter
 	public readonly craftingList: {[key: string]: CraftDetail} = {};
 	public unlocked: boolean = true;
 
-	public constructor(public readonly model: Model, public readonly prototype: ICrafterSchema)
+	public constructor(private readonly model: Model, public readonly prototype: ICrafterSchema)
 	{
 		for (const craft of prototype.craftingList) {
 			craft.equipId = prototype.equipId;
-			this.craftingList[craft.moduleId] = new CraftDetail(this, craft);
+			this.craftingList[craft.moduleId] = new CraftDetail(model, this, craft);
 		}
 	}
 

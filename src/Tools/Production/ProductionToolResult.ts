@@ -43,7 +43,7 @@ export class ProductionToolResult
 			const material: Material = model.getMaterialByModuleId(recipe.recipe.prototype.moduleId);
 			ingredientLoop:
 			for (const input of material.inputMaterials) {
-				let amount = input.prototype.amount * recipe.getMachineCount() * 15  / recipe.recipe.prototype.craftDuration;
+				let amount = input.prototype.amount * recipe.getMachineCount() * 15  / recipe.recipe.getTotalCraftingTime();
 				for (const re of recipes) {
 					const product = re.productAmountCache;
 					if (product.product.prototype.materialId === input.prototype.materialId && product.amount > 0) {
