@@ -2,8 +2,17 @@
 .idea
 .vscode
 
-# Satisfactory Data file for parsing
-data/Docs.json
+# Good Company Data file for parsing
+data/equipment.json
+data/goodcompanyBase_de.json
+data/goodcompanyBase_en.json
+data/goodcompanyBase_es.json
+data/goodcompanyBase_fr.json
+data/goodcompanyBase_ja.json
+data/goodcompanyBase_pt.json
+data/goodcompanyBase_ru.json
+data/goodcompanyBase_zh.json
+data/materials.json
 
 # Node stuff
 node_modules
@@ -11,3 +20,5 @@ yarn-error.log
 
 # Generated sources
 www/assets/app.js
+
+Thumbs.db

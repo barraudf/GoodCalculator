@@ -1,59 +1,67 @@
-import rawData from '@data/data.json';
+import model from '@src/Data/Model';
 import {default as solver, ISolverModel, ISolverResult, ISolverResultSingle} from 'javascript-lp-solver';
-import {IRecipeSchema} from '@src/Schema/IRecipeSchema';
-import {IJsonSchema} from '@src/Schema/IJsonSchema';
-import {ItemAmount} from '@src/Data/ItemAmount';
+import {MaterialAmount} from '@src/Data/MaterialAmount';
+import {Material} from '@src/Data/Material';
+import { CraftDetail } from '@src/Data/CraftDetail';
 
 export class Solver
 {
 
-	public static solveProduction(production: ItemAmount[]): ISolverResult|ISolverResultSingle
+	public static solveProduction(production: MaterialAmount[]): ISolverResult|ISolverResultSingle
 	{
-		const data: IJsonSchema = rawData as any;
-		const model: ISolverModel = {
+		const solverModel: ISolverModel = {
 			optimize: {},
 			constraints: {},
 			variables: {},
 		};
 
-		for (const k in data.items) {
-			if (data.items.hasOwnProperty(k)) {
-				const item = data.items[k];
-				if (item.module_category !== 'cat_material') {
-					model.constraints[item.slug] = {
-						min: 0,
-					};
-				} else {
-					model.constraints[item.slug] = {
-						max: 0,
-					};
+		for (const k in model.materials) {
+			const material = model.materials[k];
+			if (!Material.isRawResource(material)) {
+				solverModel.constraints[material.prototype.materialId] = {
+					min: 0,
+				};
+			} else {
+				solverModel.constraints[material.prototype.materialId] = {
+					max: 0,
+				};
+			}
+
+			let fastest: CraftDetail | null = null ;
+			for (const l in model.crafters) {
+				const crafter = model.crafters[l];
+
+				for (const m in crafter.craftingList) {
+					const craft = crafter.craftingList[m];
+
+					if (craft.prototype.moduleId !== material.prototype.moduleId || crafter.unlocked === false) {
+						continue;
+					}
+
+					if (fastest === null || craft.prototype.craftDuration < fastest.prototype.craftDuration) {
+						fastest = craft;
+					}
 				}
+			}
+
+			if (fastest != null) {
+				const def: {[key: string]: number} = {};
+				for (const input of material.inputMaterials) {
+					def[input.prototype.materialId] = -input.prototype.amount;
+				}
+				def[material.prototype.materialId] = material.prototype.outputAmount ? material.prototype.outputAmount : 0;
+				solverModel.variables[fastest.prototype.equipId + '|' + material.prototype.moduleId] = def;
 			}
 		}
 
-		for (const itemAmount of production) {
-			delete model.optimize[itemAmount.item.prototype.slug];
-			model.constraints[itemAmount.item.prototype.slug] = {
-				equal: parseFloat(itemAmount.amount + ''),
+		for (const materialAmount of production) {
+			delete solverModel.optimize[materialAmount.material.prototype.materialId];
+			solverModel.constraints[materialAmount.material.prototype.materialId] = {
+				equal: materialAmount.prototype.amount,
 			};
 		}
 
-		for (const k in data.recipes) {
-			if (data.recipes.hasOwnProperty(k)) {
-				const recipe: IRecipeSchema = data.recipes[k];
-				const def: {[key: string]: number} = {};
-				const itemName = recipe.products[0].item;
-				// for (const ingredient of recipe.ingredients) {
-				// 	def[ingredient.item] = -ingredient.amount;
-				// }
-				for (const product of recipe.products) {
-					def[product.item] = product.amount;
-				}
-				model.variables[recipe.className] = def;
-			}
-		}
-
-		return solver.Solve(model);
+		return solver.Solve(solverModel);
 	}
 
 }

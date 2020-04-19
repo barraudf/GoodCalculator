@@ -8,6 +8,7 @@ import {CraftersController} from '@src/Module/Controllers/CraftersController';
 import {MaterialIconDirective} from '@src/Module/Directives/MaterialIconDirective';
 import {RecentlyVisitedMaterialsService} from '@src/Module/Services/RecentlyVisitedItemsService';
 import {ProductionController} from '@src/Module/Controllers/ProductionController';
+import { SettingsController } from './Controllers/SettingsController';
 
 export class AppModule
 {
@@ -65,6 +66,13 @@ export class AppModule
 				url: '/crafters',
 				template: require('@templates/Controllers/crafters.html'),
 			});
+
+			$stateProvider.state('settings', {
+				controller: 'SettingsController',
+				controllerAs: 'scope',
+				url: '/settings',
+				template: require('@templates/Controllers/settings.html'),
+			});
 		}]);
 
 		this.app.run(['$transitions', '$rootScope', ($transitions: any, $rootScope: any) => {
@@ -115,6 +123,7 @@ export class AppModule
 		this.app.controller('ProductionController', ProductionController);
 		this.app.controller('CrafterController', CrafterController);
 		this.app.controller('CraftersController', CraftersController);
+		this.app.controller('SettingsController', SettingsController);
 	}
 
 	private static generateNumberFormattingFunction()

@@ -8,7 +8,8 @@
 		"build": "webpack --mode production",
 		"start": "webpack --mode development --progress --color --watch",
 		"parseDocs": "ts-node -r tsconfig-paths/register bin/parseDocs.ts",
-		"images": "ts-node -r tsconfig-paths/register bin/images.ts"
+		"images": "ts-node -r tsconfig-paths/register bin/images.ts",
+		"downloadData": "ts-node -r tsconfig-paths/register bin/downloadData.ts"
 	},
 	"devDependencies": {
 		"@types/angular": "^1.6.56",
@@ -36,11 +37,13 @@
 		"angular": "^1.7.8",
 		"angular-sanitize": "^1.7.9",
 		"angular-ui-router": "^1.0.25",
+		"angular-cookies": "^1.7.9",
 		"bootstrap": "^4.4.1",
 		"javascript-lp-solver": "^0.4.24",
 		"jquery": "^3.4.1",
 		"popper.js": "^1.16.1",
 		"vis-data": "^6.4.1",
-		"vis-network": "^7.3.6"
+		"vis-network": "^7.3.6",
+		"download":"^8.0.0"
 	}
 }

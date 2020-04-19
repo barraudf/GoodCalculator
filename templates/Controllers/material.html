@@ -20,7 +20,7 @@
 				<span class="float-left mr-3">
 					<img ng-src="/assets/images/{{scope.material.iconSprite}}/{{scope.material.iconId}}.png" width="128" height="128" class="float-left" title="{{scope.material.name['en']}}" tooltip>
 				</span>
-				<p style="white-space: pre-line;">description</p>
+				<p style="white-space: pre-line;"><!--description --></p>
 			</div>
 		</div>
 	</div>
@@ -90,7 +90,7 @@
 										</a>
 									</span>
 									<br>
-									<span>{{output.craftDuration}}s ({{15 / output.craftDuration|number}} cycles&nbsp;/&nbsp;day)</span>
+									<span>{{output.craftDuration}}s ({{15 / output.craftDuration | number:2}} cycles&nbsp;/&nbsp;day)</span>
 								</td>
 								<td>
 									<div ng-repeat="input in scope.material.inputMaterials" class="d-inline-block p-2">
@@ -101,12 +101,12 @@
 											</a>
 											<br>
 										</span>
-										<span>{{input.amount * 15 / output.craftDuration|number}}&nbsp;/&nbsp;day</span>
+										<span>{{input.amount * 15 / output.craftDuration | number:2}}&nbsp;/&nbsp;day</span>
 									</div>
 								</td>
 								<td>
 									<div class="d-inline-block p-2">
-										<span>{{scope.material.outputAmount * 15 / output.craftDuration|number}}&nbsp;/&nbsp;day</span>
+										<span>{{scope.material.outputAmount * 15 / output.craftDuration | number:2}}&nbsp;/&nbsp;day</span>
 									</div>
 								</td>
 							</tr>

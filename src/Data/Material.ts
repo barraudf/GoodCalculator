@@ -8,9 +8,13 @@ export class Material
 
 	public constructor(private readonly model: Model, public readonly prototype: IMaterialSchema)
 	{
-		if (prototype.inputMaterials) {
-			for (const ingredient of prototype.inputMaterials) {
-				this.inputMaterials.push(new MaterialAmount(model.getMaterial(ingredient.materialId), ingredient));
+	}
+
+	public LoadInputMaterials()
+	{
+		if (this.prototype.inputMaterials) {
+			for (const ingredient of this.prototype.inputMaterials) {
+				this.inputMaterials.push(new MaterialAmount(this.model.getMaterial(ingredient.materialId), ingredient));
 			}
 		}
 	}

@@ -1,105 +1,2283 @@
 {
 	"materials": [
 		{
+			"materialId": 261,
+			"moduleCategory": "cat_mod_small_display",
+			"iconId": "itm_16segment_display",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 30,
+			"outputAmount": 1,
+			"sellPrice": 210,
+			"moduleId": 199,
+			"name": {
+				"en": "16-Segment Display",
+				"de": "16-Segment-Anzeige",
+				"fr": "Affichage à 16 segments",
+				"es": "Exhibidor de 16 segmentos",
+				"pt": "Exibição de 16-Segmentos",
+				"ru": "16-сегментный индикатор",
+				"ja": "16セグメントディスプレイ",
+				"zh": "16段显示器"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 250,
+					"amount": 1
+				},
+				{
+					"materialId": 273,
+					"amount": 5
+				},
+				{
+					"materialId": 291,
+					"amount": 1
+				}
+			]
+		},
+		{
+			"materialId": 250,
+			"moduleCategory": "cat_mod_small_display",
+			"iconId": "itm_7segment_display",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 30,
+			"outputAmount": 1,
+			"sellPrice": 150,
+			"moduleId": 191,
+			"name": {
+				"en": "7-Segment Display",
+				"de": "7-Segment-Anzeige",
+				"fr": "Affichage à 7 segments",
+				"es": "Exhibidor de 7 segmentos",
+				"pt": "Exibição de 7-Segmentos",
+				"ru": "7-сегментный индикатор",
+				"ja": "7セグメントディスプレイ",
+				"zh": "7段显示器"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 248,
+					"amount": 1
+				},
+				{
+					"materialId": 272,
+					"amount": 1
+				},
+				{
+					"materialId": 273,
+					"amount": 5
+				}
+			]
+		},
+		{
+			"materialId": 319,
+			"moduleCategory": "cat_mod_audio",
+			"iconId": "itm_advanced_audio_module",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 20,
+			"outputAmount": 1,
+			"sellPrice": 360,
+			"moduleId": 256,
+			"name": {
+				"en": "Advanced Audio Module",
+				"de": "Fortgeschrittenes Audiomodul",
+				"fr": "Module audio avancé",
+				"es": "Módulo de sonido avanzado",
+				"pt": "Módulo de Áudio Avançado",
+				"ru": "Улучшенный аудиомодуль",
+				"ja": "高性能音声モジュール",
+				"zh": "高级音频模块"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 289,
+					"amount": 1
+				},
+				{
+					"materialId": 304,
+					"amount": 1
+				},
+				{
+					"materialId": 294,
+					"amount": 10
+				}
+			]
+		},
+		{
+			"materialId": 317,
+			"moduleCategory": "cat_mod_low_power",
+			"iconId": "itm_battery_block",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 20,
+			"outputAmount": 1,
+			"sellPrice": 460,
+			"moduleId": 254,
+			"name": {
+				"en": "Battery Block",
+				"de": "Batterieblock",
+				"fr": "Bloc de batteries",
+				"es": "Bloque de carga",
+				"pt": "Bloco de Bateria",
+				"ru": "Блок батарей",
+				"ja": "電源ブロック",
+				"zh": "电池块"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 315,
+					"amount": 1
+				},
+				{
+					"materialId": 291,
+					"amount": 1
+				},
+				{
+					"materialId": 271,
+					"amount": 5
+				}
+			]
+		},
+		{
+			"materialId": 315,
+			"moduleCategory": "cat_mod_low_power",
+			"iconId": "itm_battery_matrix",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 20,
+			"outputAmount": 1,
+			"sellPrice": 400,
+			"moduleId": 252,
+			"name": {
+				"en": "Battery Matrix",
+				"de": "Batteriematrix",
+				"fr": "Matrice de batteries",
+				"es": "Matriz de carga",
+				"pt": "Matriz de Bateria",
+				"ru": "Набор батарей",
+				"ja": "電源マトリックス",
+				"zh": "电池矩阵"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 296,
+					"amount": 1
+				},
+				{
+					"materialId": 236,
+					"amount": 2
+				},
+				{
+					"materialId": 291,
+					"amount": 2
+				}
+			]
+		},
+		{
+			"materialId": 246,
+			"moduleCategory": "cat_mod_low_power",
+			"iconId": "itm_battery_stack",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 20,
+			"outputAmount": 1,
+			"sellPrice": 110,
+			"moduleId": 187,
+			"name": {
+				"en": "Battery Stack",
+				"de": "Batteriepack",
+				"fr": "Pile de batteries",
+				"es": "Pila de carga",
+				"pt": "Conjunto de Bateria",
+				"ru": "Пакет батарей",
+				"ja": "電源スタック",
+				"zh": "电池组"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 238,
+					"amount": 4
+				},
+				{
+					"materialId": 237,
+					"amount": 2
+				},
+				{
+					"materialId": 236,
+					"amount": 2
+				}
+			]
+		},
+		{
+			"materialId": 274,
+			"moduleCategory": "cat_mod_audio",
+			"iconId": "itm_beeper",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 30,
+			"outputAmount": 1,
+			"sellPrice": 100,
+			"moduleId": 211,
+			"name": {
+				"en": "Beeper",
+				"de": "Pieper",
+				"fr": "Téléavertisseur",
+				"es": "Emisor de tonos",
+				"pt": "Bip",
+				"ru": "Зуммер",
+				"ja": "音発生器",
+				"zh": "蜂鸣器"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 272,
+					"amount": 2
+				},
+				{
+					"materialId": 251,
+					"amount": 20
+				},
+				{
+					"materialId": 273,
+					"amount": 5
+				}
+			]
+		},
+		{
+			"materialId": 361,
+			"moduleCategory": "cat_mod_drawback_reduction",
+			"iconId": "itm_bitumen_board",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 50,
+			"outputAmount": 1,
+			"sellPrice": 60,
+			"moduleId": 299,
+			"name": {
+				"en": "Bitumen Board",
+				"de": "Bitumenplatte",
+				"fr": "Planche goudronnée",
+				"es": "Panel de asfalto espumado",
+				"pt": "Placa de Betume",
+				"ru": "Битумная пластина",
+				"ja": "ビチューメン板",
+				"zh": "沥青板"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 238,
+					"amount": 1
+				},
+				{
+					"materialId": 291,
+					"amount": 1
+				},
+				{
+					"materialId": 293,
+					"amount": 5
+				}
+			]
+		},
+		{
+			"materialId": 338,
+			"moduleCategory": "cat_mod_sensors",
+			"iconId": "itm_brightnes_sensor",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 20,
+			"outputAmount": 1,
+			"sellPrice": 150,
+			"moduleId": 275,
+			"name": {
+				"en": "Brightness Sensor",
+				"de": "Helligkeitssensor",
+				"fr": "Capteur de luminosité",
+				"es": "Sensor de brillo",
+				"pt": "Sensor de Brilho",
+				"ru": "Датчик яркости",
+				"ja": "明るさセンサー",
+				"zh": "亮度传感器"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 290,
+					"amount": 1
+				},
+				{
+					"materialId": 251,
+					"amount": 30
+				},
+				{
+					"materialId": 272,
+					"amount": 1
+				}
+			]
+		},
+		{
+			"materialId": 291,
+			"moduleCategory": "cat_mod_components",
+			"iconId": "itm_chemical_compound",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_components",
+			"stackSize": 25,
+			"outputAmount": 5,
+			"sellPrice": 20,
+			"moduleId": 228,
+			"name": {
+				"en": "Chemical Compound",
+				"de": "Chemisches Gemisch",
+				"fr": "Composé chimique",
+				"es": "Componente químico",
+				"pt": "Composto Químico",
+				"ru": "Химическое соединение",
+				"ja": "化合物",
+				"zh": "化合物"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 238,
+					"amount": 10
+				}
+			]
+		},
+		{
 			"materialId": 238,
-			"moduleCategory": "cat_material", 
+			"moduleCategory": "cat_material",
 			"iconId": "itm_chemicals",
 			"stackBuyPrice": 400,
 			"iconSprite": "icons_materials",
 			"stackSize": 40,
 			"name": {
 				"en": "Chemicals",
-				"de": "",
-				"fr": "",
-				"es": "",
-				"pt": "",
-				"ru": "",
-				"ja": "",
-				"zh": ""
+				"de": "Chemikalien",
+				"fr": "Produits chimiques",
+				"es": "Productos químicos",
+				"pt": "Substâncias Químicas",
+				"ru": "Химикаты",
+				"ja": "化学物質",
+				"zh": "化学品"
 			}
 		},
 		{
-			"materialId": 237,
-			"moduleCategory": "cat_material", 
-			"iconId": "itm_plastic",
-			"stackBuyPrice": 240,
+			"materialId": 272,
+			"moduleCategory": "cat_mod_components",
+			"iconId": "itm_circuit_board",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_components",
+			"stackSize": 50,
+			"outputAmount": 10,
+			"sellPrice": 5,
+			"moduleId": 209,
+			"name": {
+				"en": "Circuit Board",
+				"de": "Leiterplatte",
+				"fr": "Circuit imprimé",
+				"es": "Placa de circuito",
+				"pt": "Placa de Circuito",
+				"ru": "Монтажная схема",
+				"ja": "回路基板",
+				"zh": "电路板"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 236,
+					"amount": 5
+				},
+				{
+					"materialId": 237,
+					"amount": 5
+				}
+			]
+		},
+		{
+			"materialId": 290,
+			"moduleCategory": "cat_mod_components",
+			"iconId": "itm_coated_glass",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_components",
+			"stackSize": 25,
+			"outputAmount": 5,
+			"sellPrice": 12,
+			"moduleId": 227,
+			"name": {
+				"en": "Coated Glass",
+				"de": "Beschichtetes Glas",
+				"fr": "Verre à couches",
+				"es": "Vidrio revestido",
+				"pt": "Vidro Revestido",
+				"ru": "Стекло с покрытием",
+				"ja": "ガラス被覆",
+				"zh": "镀膜玻璃"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 252,
+					"amount": 5
+				},
+				{
+					"materialId": 291,
+					"amount": 2
+				}
+			]
+		},
+		{
+			"materialId": 302,
+			"moduleCategory": "cat_mod_circuits",
+			"iconId": "itm_control_unit",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 20,
+			"outputAmount": 1,
+			"sellPrice": 250,
+			"moduleId": 239,
+			"name": {
+				"en": "Control Unit",
+				"de": "Steuereinheit",
+				"fr": "Unité de contrôle",
+				"es": "Unidad de mando",
+				"pt": "Unidade de Controle",
+				"ru": "Блок управления",
+				"ja": "制御ユニット",
+				"zh": "控制单元"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 301,
+					"amount": 1
+				},
+				{
+					"materialId": 273,
+					"amount": 5
+				},
+				{
+					"materialId": 289,
+					"amount": 1
+				}
+			]
+		},
+		{
+			"materialId": 234,
+			"moduleCategory": "cat_mod_components",
+			"iconId": "itm_conveyor_part",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_components",
+			"stackSize": 50,
+			"outputAmount": 1,
+			"sellPrice": 100,
+			"moduleId": 289,
+			"name": {
+				"en": "Conveyor Parts",
+				"de": "Förderband-Teile",
+				"fr": "Pièces de tapis roulant",
+				"es": "Piezas de cintas transportadoras",
+				"pt": "Peças da Esteira",
+				"ru": "Части конвейера",
+				"ja": "コンベア部品",
+				"zh": "传送带零件"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 270,
+					"amount": 4
+				},
+				{
+					"materialId": 237,
+					"amount": 10
+				},
+				{
+					"materialId": 269,
+					"amount": 15
+				}
+			]
+		},
+		{
+			"materialId": 337,
+			"moduleCategory": "cat_mod_transmission",
+			"iconId": "itm_digital_wireless_link",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 20,
+			"outputAmount": 1,
+			"sellPrice": 220,
+			"moduleId": 274,
+			"name": {
+				"en": "Digital Wireless Link",
+				"de": "Drahtlose Digitalverbindung",
+				"fr": "Liaison numérique sans fil",
+				"es": "Enlace inalámbrico digital",
+				"pt": "Link sem fio digital",
+				"ru": "Модуль беспроводной связи",
+				"ja": "デジタル無線リンク",
+				"zh": "数字无线链路"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 336,
+					"amount": 1
+				},
+				{
+					"materialId": 289,
+					"amount": 2
+				},
+				{
+					"materialId": 294,
+					"amount": 10
+				}
+			]
+		},
+		{
+			"materialId": 256,
+			"moduleCategory": "cat_mod_low_power",
+			"iconId": "itm_double_battery_stack",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 20,
+			"outputAmount": 1,
+			"sellPrice": 200,
+			"moduleId": 194,
+			"name": {
+				"en": "Double Battery Stack",
+				"de": "Doppeltes Batteriepack",
+				"fr": "Ensemble de batteries double",
+				"es": "Doble pila de carga",
+				"pt": "Conjunto de Bateria Duplo",
+				"ru": "Двойной пакет батарей",
+				"ja": "ダブル電源スタック",
+				"zh": "双电池组"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 246,
+					"amount": 1
+				},
+				{
+					"materialId": 238,
+					"amount": 4
+				},
+				{
+					"materialId": 273,
+					"amount": 10
+				}
+			]
+		},
+		{
+			"materialId": 346,
+			"moduleCategory": "cat_mod_actuator",
+			"iconId": "itm_double_jointed_segment",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 40,
+			"outputAmount": 1,
+			"sellPrice": 60,
+			"moduleId": 283,
+			"name": {
+				"en": "Double Jointed Segment",
+				"de": "Doppel-Gelenk Segment",
+				"fr": "Double segment d'étanchéité",
+				"es": "Segmento articulado doble",
+				"pt": "Segmento Articulado Duplo",
+				"ru": "Двухшарнирный сегмент",
+				"ja": "二重関節セグメント",
+				"zh": "双节段"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 344,
+					"amount": 1
+				},
+				{
+					"materialId": 289,
+					"amount": 1
+				},
+				{
+					"materialId": 273,
+					"amount": 10
+				}
+			]
+		},
+		{
+			"materialId": 345,
+			"moduleCategory": "cat_mod_actuator",
+			"iconId": "itm_double_staged_gearbox",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 40,
+			"outputAmount": 1,
+			"sellPrice": 60,
+			"moduleId": 282,
+			"name": {
+				"en": "Double Staged Gearbox",
+				"de": "Zweistufiges Getriebe",
+				"fr": "Double boîte de vitesse",
+				"es": "Caja de cambios gradual doble",
+				"pt": "Caixa de Engrenagem Faseada Dupla",
+				"ru": "Двухступенчатый редуктор",
+				"ja": "二段式変速装置",
+				"zh": "双级变速箱"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 343,
+					"amount": 1
+				},
+				{
+					"materialId": 289,
+					"amount": 1
+				},
+				{
+					"materialId": 269,
+					"amount": 10
+				}
+			]
+		},
+		{
+			"materialId": 251,
+			"moduleCategory": "cat_material",
+			"iconId": "itm_electronic_component",
+			"stackBuyPrice": 400,
+			"iconSprite": "icons_materials",
+			"stackSize": 200,
+			"name": {
+				"en": "Electronic Parts",
+				"de": "Elektronikteile",
+				"fr": "Pièces électroniques",
+				"es": "Piezas de electrónica",
+				"pt": "Peças Eletrônicas",
+				"ru": "Электронные компоненты",
+				"ja": "電子部品",
+				"zh": "电子零件"
+			}
+		},
+		{
+			"materialId": 292,
+			"moduleCategory": "cat_mod_components",
+			"iconId": "itm_energy_cell",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_components",
+			"stackSize": 25,
+			"outputAmount": 5,
+			"sellPrice": 20,
+			"moduleId": 229,
+			"name": {
+				"en": "Energy Cell",
+				"de": "Energiezelle",
+				"fr": "Cellule énergétique",
+				"es": "Celda de energía",
+				"pt": "Célula de Energia",
+				"ru": "Энергетическая ячейка",
+				"ja": "エネルギーセル",
+				"zh": "能量电池"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 273,
+					"amount": 10
+				},
+				{
+					"materialId": 291,
+					"amount": 2
+				},
+				{
+					"materialId": 238,
+					"amount": 2
+				}
+			]
+		},
+		{
+			"materialId": 247,
+			"moduleCategory": "cat_mod_low_power",
+			"iconId": "itm_enhanced_battery_cell",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 30,
+			"outputAmount": 1,
+			"sellPrice": 130,
+			"moduleId": 188,
+			"name": {
+				"en": "Enhanced Battery Cell",
+				"de": "Verbesserte Batteriezelle",
+				"fr": "Batterie améliorée",
+				"es": "Celda de carga mejorada",
+				"pt": "Célula de Bateria Melhorada",
+				"ru": "Улучшенный батарейный элемент",
+				"ja": "拡張電源セル",
+				"zh": "增强型电池芯"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 240,
+					"amount": 1
+				},
+				{
+					"materialId": 238,
+					"amount": 2
+				},
+				{
+					"materialId": 273,
+					"amount": 15
+				}
+			]
+		},
+		{
+			"materialId": 298,
+			"moduleCategory": "cat_mod_low_power",
+			"iconId": "itm_enhanced_battery_stack",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 30,
+			"outputAmount": 1,
+			"sellPrice": 180,
+			"moduleId": 235,
+			"name": {
+				"en": "Enhanced Battery Stack",
+				"de": "Verbessertes Batteriepack",
+				"fr": "Ensemble de batteries améliorées",
+				"es": "Pila de carga mejorada",
+				"pt": "Conjunto de Bateria Melhorada",
+				"ru": "Улучшенный пакет батарей",
+				"ja": "拡張電源スタック",
+				"zh": "增强型电池组"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 247,
+					"amount": 1
+				},
+				{
+					"materialId": 271,
+					"amount": 10
+				},
+				{
+					"materialId": 291,
+					"amount": 1
+				}
+			]
+		},
+		{
+			"materialId": 309,
+			"moduleCategory": "cat_mod_bot_chassis",
+			"iconId": "itm_enhanced_bot_chassis",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 20,
+			"outputAmount": 1,
+			"sellPrice": 250,
+			"moduleId": 246,
+			"name": {
+				"en": "Enhanced Bot Chassis",
+				"de": "Verbessertes Roboter-Gehäuserahmen",
+				"fr": "Châssis de robot amélioré",
+				"es": "Chasis de robot mejorados",
+				"pt": "Chassis de Robô Melhorado",
+				"ru": "Улучшенное шасси робота",
+				"ja": "拡張ロボットシャーシ",
+				"zh": "增强型机器人底盘"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 308,
+					"amount": 1
+				},
+				{
+					"materialId": 293,
+					"amount": 5
+				},
+				{
+					"materialId": 287,
+					"amount": 1
+				}
+			]
+		},
+		{
+			"materialId": 285,
+			"moduleCategory": "cat_mod_case",
+			"iconId": "itm_enhanced_case",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 20,
+			"outputAmount": 1,
+			"sellPrice": 260,
+			"moduleId": 222,
+			"name": {
+				"en": "Enhanced Case",
+				"de": "Verbessertes Gehäuse",
+				"fr": "Boîtier amélioré",
+				"es": "Carcasa mejorada",
+				"pt": "Invólucro Melhorado",
+				"ru": "Улучшенный корпус",
+				"ja": "拡張筐体",
+				"zh": "增强型外壳"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 279,
+					"amount": 1
+				},
+				{
+					"materialId": 273,
+					"amount": 10
+				},
+				{
+					"materialId": 236,
+					"amount": 4
+				}
+			]
+		},
+		{
+			"materialId": 359,
+			"moduleCategory": "cat_mod_drawback_reduction",
+			"iconId": "itm_ester_foam",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 50,
+			"outputAmount": 1,
+			"sellPrice": 50,
+			"moduleId": 297,
+			"name": {
+				"en": "Acoustic Ester Foam",
+				"de": "Akustischer Esterschaumstoff",
+				"fr": "Mousse d'isolation à l'ester",
+				"es": "Espuma éster acústica",
+				"pt": "Espuma de Éster Acústica",
+				"ru": "Акустический поролон",
+				"ja": "音響エステルフォーム",
+				"zh": "酯类隔音泡沫"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 237,
+					"amount": 1
+				},
+				{
+					"materialId": 273,
+					"amount": 5
+				},
+				{
+					"materialId": 291,
+					"amount": 1
+				}
+			]
+		},
+		{
+			"materialId": 336,
+			"moduleCategory": "cat_mod_transmission",
+			"iconId": "itm_FM_radio_link",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 20,
+			"outputAmount": 1,
+			"sellPrice": 140,
+			"moduleId": 273,
+			"name": {
+				"en": "FM Radio Link",
+				"de": "UKW-Funkverbindung",
+				"fr": "Liaison radio FM",
+				"es": "Radioenlace FM",
+				"pt": "Link de Rádio FM",
+				"ru": "Модуль FM-связи",
+				"ja": "FMラジオリンク",
+				"zh": "调频无线电链路"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 335,
+					"amount": 1
+				},
+				{
+					"materialId": 293,
+					"amount": 10
+				},
+				{
+					"materialId": 289,
+					"amount": 1
+				}
+			]
+		},
+		{
+			"materialId": 269,
+			"moduleCategory": "cat_mod_components",
+			"iconId": "itm_gear",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_components",
+			"stackSize": 250,
+			"outputAmount": 50,
+			"sellPrice": 2,
+			"moduleId": 206,
+			"name": {
+				"en": "Gear",
+				"de": "Zahnrad",
+				"fr": "Engrenage",
+				"es": "Engranaje",
+				"pt": "Engrenagem",
+				"ru": "Шестерня",
+				"ja": "歯車",
+				"zh": "齿轮"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 236,
+					"amount": 10
+				}
+			]
+		},
+		{
+			"materialId": 252,
+			"moduleCategory": "cat_material",
+			"iconId": "itm_glass",
+			"stackBuyPrice": 480,
 			"iconSprite": "icons_materials",
 			"stackSize": 60,
 			"name": {
-				"en": "Plastic",
-				"de": "",
-				"fr": "",
-				"es": "",
-				"pt": "",
-				"ru": "",
-				"ja": "",
-				"zh": ""
+				"en": "Glass",
+				"de": "Glas",
+				"fr": "Verre",
+				"es": "Vidrio",
+				"pt": "Vidro",
+				"ru": "Стекло",
+				"ja": "ガラス",
+				"zh": "玻璃"
 			}
 		},
 		{
+			"materialId": 311,
+			"moduleCategory": "cat_mod_bot_chassis",
+			"iconId": "itm_hardened_bot_chassis",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 20,
+			"outputAmount": 1,
+			"sellPrice": 160,
+			"moduleId": 248,
+			"name": {
+				"en": "Hardened Bot Chassis",
+				"de": "Gehärteter Roboter-Gehäuserahmen",
+				"fr": "Châssis de robot renforcé",
+				"es": "Chasis de robot reforzado",
+				"pt": "Chassis de Robô Reforçado",
+				"ru": "Усиленное шасси робота",
+				"ja": "硬化ロボットシャーシ",
+				"zh": "硬化机器人底盘"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 310,
+					"amount": 1
+				},
+				{
+					"materialId": 291,
+					"amount": 1
+				},
+				{
+					"materialId": 270,
+					"amount": 4
+				}
+			]
+		},
+		{
+			"materialId": 321,
+			"moduleCategory": "cat_mod_data_storage",
+			"iconId": "itm_high_density_memory",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 40,
+			"outputAmount": 1,
+			"sellPrice": 370,
+			"moduleId": 258,
+			"name": {
+				"en": "High Density Memory Bank",
+				"de": "Hochdichte Speicherbank",
+				"fr": "Banque de mémoire à haute densité",
+				"es": "Banco de memoria de gran densidad",
+				"pt": "Banco de Memória de Alta Densidade",
+				"ru": "Банк памяти",
+				"ja": "高密度メモリバンク",
+				"zh": "高密度内存条"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 320,
+					"amount": 1
+				},
+				{
+					"materialId": 289,
+					"amount": 1
+				},
+				{
+					"materialId": 293,
+					"amount": 10
+				}
+			]
+		},
+		{
+			"materialId": 342,
+			"moduleCategory": "cat_mod_sensors",
+			"iconId": "itm_high_res_camera",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 20,
+			"outputAmount": 1,
+			"sellPrice": 380,
+			"moduleId": 279,
+			"name": {
+				"en": "High Res Camera",
+				"de": "Hochauflösende Kamera",
+				"fr": "Caméra haute résolution",
+				"es": "Cámara de alta resolución",
+				"pt": "Câmera de Alta Res",
+				"ru": "Камера высокого разрешения",
+				"ja": "高解像度カメラ",
+				"zh": "高分辨率摄像头"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 341,
+					"amount": 1
+				},
+				{
+					"materialId": 291,
+					"amount": 1
+				},
+				{
+					"materialId": 290,
+					"amount": 1
+				}
+			]
+		},
+		{
+			"materialId": 328,
+			"moduleCategory": "cat_mod_locomotion",
+			"iconId": "itm_high_speed_motor",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 30,
+			"outputAmount": 1,
+			"sellPrice": 260,
+			"moduleId": 265,
+			"name": {
+				"en": "High Speed Motor",
+				"de": "Hochgeschwindigkeitsmotor",
+				"fr": "Moteur à grande vitesse",
+				"es": "Motor de alta velocidad",
+				"pt": "Motor de Alta Velocidade",
+				"ru": "Высокооборотный двигатель",
+				"ja": "高速モーター",
+				"zh": "高速电机"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 326,
+					"amount": 1
+				},
+				{
+					"materialId": 288,
+					"amount": 1
+				},
+				{
+					"materialId": 271,
+					"amount": 10
+				}
+			]
+		},
+		{
+			"materialId": 329,
+			"moduleCategory": "cat_mod_locomotion",
+			"iconId": "itm_high_torque_motor",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 30,
+			"outputAmount": 1,
+			"sellPrice": 270,
+			"moduleId": 266,
+			"name": {
+				"en": "Torgue Motor",
+				"de": "Starker Torquemotor",
+				"fr": "Moteur couple",
+				"es": "Motor de gran torsión",
+				"pt": "Motor de Torque Alto",
+				"ru": "Моментный двигатель",
+				"ja": "ハイトルクモーター",
+				"zh": "高力矩电机"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 327,
+					"amount": 1
+				},
+				{
+					"materialId": 288,
+					"amount": 1
+				},
+				{
+					"materialId": 269,
+					"amount": 10
+				}
+			]
+		},
+		{
+			"materialId": 294,
+			"moduleCategory": "cat_mod_components",
+			"iconId": "itm_integrated_circuit",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_components",
+			"stackSize": 250,
+			"outputAmount": 50,
+			"sellPrice": 3,
+			"moduleId": 231,
+			"name": {
+				"en": "Integrated Circuit",
+				"de": "Integrierte Schaltung",
+				"fr": "Circuit intégré",
+				"es": "Circuito integrado",
+				"pt": "Circuito Integrado",
+				"ru": "Интегральная схема",
+				"ja": "集積回路",
+				"zh": "集成电路"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 251,
+					"amount": 50
+				},
+				{
+					"materialId": 273,
+					"amount": 10
+				}
+			]
+		},
+		{
+			"materialId": 333,
+			"moduleCategory": "cat_mod_storage",
+			"iconId": "itm_large_cargo_bay",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 20,
+			"outputAmount": 1,
+			"sellPrice": 220,
+			"moduleId": 270,
+			"name": {
+				"en": "Large Cargo Bay",
+				"de": "Großer Frachtraum",
+				"fr": "Grande soute",
+				"es": "Plataforma de carga grande",
+				"pt": "Compartimento de Carga Grande",
+				"ru": "Большой грузовой отсек",
+				"ja": "大型カーゴベイ",
+				"zh": "大货舱"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 332,
+					"amount": 1
+				},
+				{
+					"materialId": 287,
+					"amount": 1
+				},
+				{
+					"materialId": 270,
+					"amount": 2
+				}
+			]
+		},
+		{
+			"materialId": 331,
+			"moduleCategory": "cat_mod_storage",
+			"iconId": "itm_large_compartment",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 20,
+			"outputAmount": 1,
+			"sellPrice": 150,
+			"moduleId": 268,
+			"name": {
+				"en": "Large Compartment",
+				"de": "Großes Fach",
+				"fr": "Grand compartiment",
+				"es": "Compartimento grande",
+				"pt": "Compartimento Grande",
+				"ru": "Большой отсек",
+				"ja": "大型ケース",
+				"zh": "大隔舱"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 330,
+					"amount": 1
+				},
+				{
+					"materialId": 287,
+					"amount": 1
+				},
+				{
+					"materialId": 237,
+					"amount": 3
+				}
+			]
+		},
+		{
+			"materialId": 355,
+			"moduleCategory": "cat_mod_drawback_reduction",
+			"iconId": "itm_large_cooler",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 50,
+			"outputAmount": 1,
+			"sellPrice": 70,
+			"moduleId": 293,
+			"name": {
+				"en": "Large Fan Cooler",
+				"de": "Großer Luftkühler",
+				"fr": "Grand ventilateur",
+				"es": "Ventilador grande",
+				"pt": "Refrigerador Ventilador Grande",
+				"ru": "Большой вентилятор",
+				"ja": "大型ファンクーラー",
+				"zh": "大风扇冷却器"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 236,
+					"amount": 3
+				},
+				{
+					"materialId": 273,
+					"amount": 15
+				},
+				{
+					"materialId": 251,
+					"amount": 5
+				}
+			]
+		},
+		{
+			"materialId": 326,
+			"moduleCategory": "cat_mod_locomotion",
+			"iconId": "itm_large_DC_motor",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 20,
+			"outputAmount": 1,
+			"sellPrice": 240,
+			"moduleId": 263,
+			"name": {
+				"en": "Large DC Motor",
+				"de": "Großer Elektromotor",
+				"fr": "Grand moteur à courant continu",
+				"es": "Motor de CC grande",
+				"pt": "Motor CC Grande",
+				"ru": "Большой двигатель пост. тока",
+				"ja": "大型DCモーター",
+				"zh": "大直流电机"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 324,
+					"amount": 1
+				},
+				{
+					"materialId": 271,
+					"amount": 5
+				},
+				{
+					"materialId": 269,
+					"amount": 10
+				}
+			]
+		},
+		{
+			"materialId": 316,
+			"moduleCategory": "cat_mod_low_power",
+			"iconId": "itm_large_power_pack",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 30,
+			"outputAmount": 1,
+			"sellPrice": 290,
+			"moduleId": 253,
+			"name": {
+				"en": "Large Power Pack",
+				"de": "Großes Energiepack",
+				"fr": "Bloc d'alimentation",
+				"es": "Bloque de alimentación grande",
+				"pt": "Gerador Grande",
+				"ru": "Большой силовой агрегат",
+				"ja": "大型パワーパック",
+				"zh": "大电源组"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 297,
+					"amount": 1
+				},
+				{
+					"materialId": 292,
+					"amount": 1
+				},
+				{
+					"materialId": 270,
+					"amount": 4
+				}
+			]
+		},
+		{
+			"materialId": 327,
+			"moduleCategory": "cat_mod_locomotion",
+			"iconId": "itm_large_stepper_motor",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 20,
+			"outputAmount": 1,
+			"sellPrice": 230,
+			"moduleId": 264,
+			"name": {
+				"en": "Large Stepper Motor",
+				"de": "Großer Schrittmotor",
+				"fr": "Grand moteur pas-à-pas",
+				"es": "Motor de paso grande",
+				"pt": "Motor Deslizante Grande",
+				"ru": "Большой шаговый двигатель",
+				"ja": "大型ステッピングモーター",
+				"zh": "大步进电机"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 325,
+					"amount": 1
+				},
+				{
+					"materialId": 236,
+					"amount": 5
+				},
+				{
+					"materialId": 288,
+					"amount": 1
+				}
+			]
+		},
+		{
+			"materialId": 300,
+			"moduleCategory": "cat_mod_small_display",
+			"iconId": "itm_lcd_dot_matrix",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 20,
+			"outputAmount": 1,
+			"sellPrice": 370,
+			"moduleId": 237,
+			"name": {
+				"en": "LCD Dot Matrix",
+				"de": "LCD-Punktmatrix",
+				"fr": "Matrice à points à cristaux liquides",
+				"es": "Matriz de puntos LCD",
+				"pt": "Matriz de Pontos de LCD",
+				"ru": "Точечно-матричный индикатор",
+				"ja": "液晶ドットマトリクス",
+				"zh": "液晶显示器点阵"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 299,
+					"amount": 1
+				},
+				{
+					"materialId": 290,
+					"amount": 1
+				},
+				{
+					"materialId": 291,
+					"amount": 1
+				}
+			]
+		},
+		{
+			"materialId": 239,
+			"moduleCategory": "cat_mod_small_display",
+			"iconId": "itm_led_array",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 30,
+			"outputAmount": 1,
+			"sellPrice": 70,
+			"moduleId": 180,
+			"name": {
+				"en": "LED Array",
+				"de": "LED-Feld",
+				"fr": "Rangée de diodes électro-luminescentes",
+				"es": "Juego de ledes",
+				"pt": "Conjunto de LED",
+				"ru": "Светодиодный массив",
+				"ja": "LEDアレイ",
+				"zh": "发光二极管阵列"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 251,
+					"amount": 20
+				}
+			]
+		},
+		{
+			"materialId": 248,
+			"moduleCategory": "cat_mod_small_display",
+			"iconId": "itm_led_matrix",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 20,
+			"outputAmount": 1,
+			"sellPrice": 130,
+			"moduleId": 189,
+			"name": {
+				"en": "LED Matrix",
+				"de": "LED-Matrix",
+				"fr": "Matrice à diodes électro-luminescentes",
+				"es": "Matriz de ledes",
+				"pt": "Matriz de LED",
+				"ru": "Светодиодная матрица",
+				"ja": "LEDマトリックス",
+				"zh": "发光二极管矩阵"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 239,
+					"amount": 1
+				},
+				{
+					"materialId": 272,
+					"amount": 2
+				},
+				{
+					"materialId": 251,
+					"amount": 10
+				}
+			]
+		},
+		{
+			"materialId": 363,
+			"moduleCategory": "cat_mod_drawback_reduction",
+			"iconId": "itm_light_reinforcement",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 50,
+			"outputAmount": 1,
+			"sellPrice": 20,
+			"moduleId": 301,
+			"name": {
+				"en": "Light Reinforcement",
+				"de": "Einfache Verstärkung",
+				"fr": "Renforcement léger",
+				"es": "Refuerzo ligero",
+				"pt": "Reforço de Luz",
+				"ru": "Легкое усиление конструкции",
+				"ja": "軽量補強",
+				"zh": "轻型加固件"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 236,
+					"amount": 2
+				},
+				{
+					"materialId": 271,
+					"amount": 5
+				}
+			]
+		},
+		{
+			"materialId": 308,
+			"moduleCategory": "cat_mod_bot_chassis",
+			"iconId": "itm_lightweight_bot_chassis",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 20,
+			"outputAmount": 1,
+			"sellPrice": 220,
+			"moduleId": 245,
+			"name": {
+				"en": "Lightweight Bot Chassis",
+				"de": "Leichter Roboter-Gehäuserahmen",
+				"fr": "Châssis de robot léger",
+				"es": "Chasis de robot ligero",
+				"pt": "Chassis de Robô Leve",
+				"ru": "Легковесное шасси робота",
+				"ja": "軽量ロボットシャーシ",
+				"zh": "轻型机器人底盘"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 307,
+					"amount": 1
+				},
+				{
+					"materialId": 290,
+					"amount": 1
+				},
+				{
+					"materialId": 273,
+					"amount": 10
+				}
+			]
+		},
+		{
+			"materialId": 254,
+			"moduleCategory": "cat_mod_circuits",
+			"iconId": "itm_logic_circuit",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 20,
+			"outputAmount": 1,
+			"sellPrice": 140,
+			"moduleId": 192,
+			"name": {
+				"en": "Logic Circuit",
+				"de": "Logikschaltung",
+				"fr": "Circuit logique",
+				"es": "Circuito de lógica",
+				"pt": "Circuito Lógico",
+				"ru": "Логическая схема",
+				"ja": "論理回路",
+				"zh": "逻辑电路"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 242,
+					"amount": 1
+				},
+				{
+					"materialId": 251,
+					"amount": 15
+				},
+				{
+					"materialId": 273,
+					"amount": 5
+				}
+			]
+		},
+		{
+			"materialId": 340,
+			"moduleCategory": "cat_mod_sensors",
+			"iconId": "itm_low_res_camera",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 20,
+			"outputAmount": 1,
+			"sellPrice": 220,
+			"moduleId": 277,
+			"name": {
+				"en": "Low Res Camera",
+				"de": "Niedrigauflösende Kamera",
+				"fr": "Caméra basse résolution",
+				"es": "Cámara de baja resolución",
+				"pt": "Câmera de Baixa Res",
+				"ru": "Камера низкого разрешения",
+				"ja": "低解像度カメラ",
+				"zh": "低分辨率摄像头"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 290,
+					"amount": 1
+				},
+				{
+					"materialId": 339,
+					"amount": 1
+				},
+				{
+					"materialId": 294,
+					"amount": 5
+				}
+			]
+		},
+		{
+			"materialId": 288,
+			"moduleCategory": "cat_mod_components",
+			"iconId": "itm_mechanical_components",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_components",
+			"stackSize": 25,
+			"outputAmount": 5,
+			"sellPrice": 8,
+			"moduleId": 225,
+			"name": {
+				"en": "Mechanical Part",
+				"de": "Mechanik-Teil",
+				"fr": "Pièces mécaniques",
+				"es": "Piezas mecánicas",
+				"pt": "Peças Mecânicas",
+				"ru": "Механические компоненты",
+				"ja": "機械部品",
+				"zh": "机械零件"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 271,
+					"amount": 15
+				},
+				{
+					"materialId": 269,
+					"amount": 15
+				}
+			]
+		},
+		{
+			"materialId": 324,
+			"moduleCategory": "cat_mod_locomotion",
+			"iconId": "itm_medium_DC_motor",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 30,
+			"outputAmount": 1,
+			"sellPrice": 210,
+			"moduleId": 261,
+			"name": {
+				"en": "Medium DC Motor",
+				"de": "Mittler Elektromotor",
+				"fr": "Moteur à courant continu moyen",
+				"es": "Motor de CC mediano",
+				"pt": "Motor CC Médio",
+				"ru": "Средний двигатель пост. тока",
+				"ja": "中型DCモーター",
+				"zh": "中型直流电机"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 322,
+					"amount": 1
+				},
+				{
+					"materialId": 288,
+					"amount": 1
+				},
+				{
+					"materialId": 236,
+					"amount": 6
+				}
+			]
+		},
+		{
+			"materialId": 325,
+			"moduleCategory": "cat_mod_locomotion",
+			"iconId": "itm_medium_stepper_motor",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 30,
+			"outputAmount": 1,
+			"sellPrice": 160,
+			"moduleId": 262,
+			"name": {
+				"en": "Medium Stepper Motor",
+				"de": "Mittlerer Schrittantrieb",
+				"fr": "Moteur pas-à-pas moyen",
+				"es": "Motor de paso mediano",
+				"pt": "Motor Deslizante Médio",
+				"ru": "Средний шаговый двигатель",
+				"ja": "中型ステッピングモーター",
+				"zh": "中型步进电机"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 271,
+					"amount": 5
+				},
+				{
+					"materialId": 323,
+					"amount": 1
+				},
+				{
+					"materialId": 269,
+					"amount": 10
+				}
+			]
+		},
+		{
+			"materialId": 306,
+			"moduleCategory": "cat_mod_data_storage",
+			"iconId": "itm_memory_array",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 30,
+			"outputAmount": 1,
+			"sellPrice": 240,
+			"moduleId": 243,
+			"name": {
+				"en": "Memory Array",
+				"de": "Speicherreihe",
+				"fr": "Réseau de mémoire",
+				"es": "Memoria en serie",
+				"pt": "Conjunto de Memória",
+				"ru": "Массив памяти",
+				"ja": "メモリアレイ",
+				"zh": "内存阵列"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 305,
+					"amount": 1
+				},
+				{
+					"materialId": 289,
+					"amount": 1
+				},
+				{
+					"materialId": 294,
+					"amount": 10
+				}
+			]
+		},
+		{
+			"materialId": 305,
+			"moduleCategory": "cat_mod_data_storage",
+			"iconId": "itm_memory_bank",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 30,
+			"outputAmount": 1,
+			"sellPrice": 170,
+			"moduleId": 242,
+			"name": {
+				"en": "Memory Bank",
+				"de": "Speicherbank",
+				"fr": "Banque de mémoire",
+				"es": "Banco de memoria",
+				"pt": "Banco de Memória",
+				"ru": "Блок памяти",
+				"ja": "メモリバンク",
+				"zh": "内存条"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 278,
+					"amount": 1
+				},
+				{
+					"materialId": 294,
+					"amount": 10
+				},
+				{
+					"materialId": 272,
+					"amount": 1
+				}
+			]
+		},
+		{
+			"materialId": 320,
+			"moduleCategory": "cat_mod_data_storage",
+			"iconId": "itm_memory_matrix",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 30,
+			"outputAmount": 1,
+			"sellPrice": 320,
+			"moduleId": 257,
+			"name": {
+				"en": "Memory Matrix",
+				"de": "Speichermatrix",
+				"fr": "Matrice mémorielle",
+				"es": "Matriz de memoria",
+				"pt": "Matriz de Memória",
+				"ru": "Матрица памяти",
+				"ja": "メモリマトリックス",
+				"zh": "内存矩阵"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 306,
+					"amount": 1
+				},
+				{
+					"materialId": 291,
+					"amount": 1
+				},
+				{
+					"materialId": 293,
+					"amount": 10
+				}
+			]
+		},
+		{
 			"materialId": 236,
-			"moduleCategory": "cat_material", 
+			"moduleCategory": "cat_material",
 			"iconId": "itm_metal",
 			"stackBuyPrice": 360,
 			"iconSprite": "icons_materials",
 			"stackSize": 60,
 			"name": {
 				"en": "Metal",
-				"de": "",
-				"fr": "",
-				"es": "",
-				"pt": "",
-				"ru": "",
-				"ja": "",
-				"zh": ""
+				"de": "Metall",
+				"fr": "Métal",
+				"es": "Metal",
+				"pt": "Metal",
+				"ru": "Металл",
+				"ja": "金属",
+				"zh": "金属"
 			}
 		},
 		{
-			"materialId": 251,
-			"moduleCategory": "cat_material", 
-			"iconId": "itm_electronic_component",
-			"stackBuyPrice": 400,
-			"iconSprite": "icons_materials",
-			"stackSize": 200,
+			"materialId": 310,
+			"moduleCategory": "cat_mod_bot_chassis",
+			"iconId": "itm_metal_bot_chassis",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 20,
+			"outputAmount": 1,
+			"sellPrice": 100,
+			"moduleId": 247,
 			"name": {
-				"en": "Electronic",
-				"de": "",
-				"fr": "",
-				"es": "",
-				"pt": "",
-				"ru": "",
-				"ja": "",
-				"zh": ""
+				"en": "Metal Bot Chassis",
+				"de": "Metall-Roboter Gehäuserahmen",
+				"fr": "Châssis de robot en métal",
+				"es": "Chasis de robot metálico",
+				"pt": "Chassis de Robô de Metal",
+				"ru": "Металлическое шасси робота",
+				"ja": "金属ロボットシャーシ",
+				"zh": "金属机器人底盘"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 236,
+					"amount": 6
+				},
+				{
+					"materialId": 271,
+					"amount": 10
+				},
+				{
+					"materialId": 270,
+					"amount": 6
+				}
+			]
+		},
+		{
+			"materialId": 244,
+			"moduleCategory": "cat_mod_case",
+			"iconId": "itm_metal_case",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 20,
+			"outputAmount": 1,
+			"sellPrice": 150,
+			"moduleId": 185,
+			"name": {
+				"en": "Metal Case",
+				"de": "Metall-Gehäuse",
+				"fr": "Boîtier de métal",
+				"es": "Carcasa metálica",
+				"pt": "Invólucro de Metal",
+				"ru": "Металлический корпус",
+				"ja": "金属製筐体",
+				"zh": "金属外壳"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 236,
+					"amount": 6
+				},
+				{
+					"materialId": 241,
+					"amount": 1
+				},
+				{
+					"materialId": 237,
+					"amount": 1
+				}
+			]
+		},
+		{
+			"materialId": 287,
+			"moduleCategory": "cat_mod_components",
+			"iconId": "itm_metal_frame",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_components",
+			"stackSize": 25,
+			"outputAmount": 5,
+			"sellPrice": 12,
+			"moduleId": 224,
+			"name": {
+				"en": "Metal Frame",
+				"de": "Metall-Rahmen",
+				"fr": "Cadre de métal",
+				"es": "Marco metálico",
+				"pt": "Estrutura de Metal",
+				"ru": "Металлическая рама",
+				"ja": "金属枠",
+				"zh": "金属框架"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 270,
+					"amount": 10
+				},
+				{
+					"materialId": 271,
+					"amount": 20
+				}
+			]
+		},
+		{
+			"materialId": 271,
+			"moduleCategory": "cat_mod_components",
+			"iconId": "itm_metal_sundries",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_components",
+			"stackSize": 250,
+			"outputAmount": 50,
+			"sellPrice": 1,
+			"moduleId": 208,
+			"name": {
+				"en": "Metal Sundries",
+				"de": "Metallkleinteile",
+				"fr": "Article de métal",
+				"es": "Miscelánea metálica",
+				"pt": "Coisinha de Metal",
+				"ru": "Металлический крепеж",
+				"ja": "小型金属部品",
+				"zh": "金属杂物"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 270,
+					"amount": 4
+				}
+			]
+		},
+		{
+			"materialId": 303,
+			"moduleCategory": "cat_mod_circuits",
+			"iconId": "itm_micro_computer",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 30,
+			"outputAmount": 1,
+			"sellPrice": 300,
+			"moduleId": 240,
+			"name": {
+				"en": "Micro Computer",
+				"de": "Mikrocomputer",
+				"fr": "Micro-ordinateur",
+				"es": "Microordenador",
+				"pt": "Micro Computador",
+				"ru": "Микрокомпьютер",
+				"ja": "マイクロコンピュータ",
+				"zh": "微型计算机"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 302,
+					"amount": 1
+				},
+				{
+					"materialId": 293,
+					"amount": 5
+				},
+				{
+					"materialId": 294,
+					"amount": 5
+				}
+			]
+		},
+		{
+			"materialId": 301,
+			"moduleCategory": "cat_mod_circuits",
+			"iconId": "itm_micro_controller",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 30,
+			"outputAmount": 1,
+			"sellPrice": 220,
+			"moduleId": 238,
+			"name": {
+				"en": "Micro Controller",
+				"de": "Mikrocontroller",
+				"fr": "Microcontrôleur",
+				"es": "Micromando",
+				"pt": "Micro Controlador",
+				"ru": "Микроконтроллер",
+				"ja": "マイクロコントローラ",
+				"zh": "微型控制器"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 266,
+					"amount": 1
+				},
+				{
+					"materialId": 294,
+					"amount": 5
+				},
+				{
+					"materialId": 271,
+					"amount": 5
+				}
+			]
+		},
+		{
+			"materialId": 275,
+			"moduleCategory": "cat_mod_audio",
+			"iconId": "itm_monophone_speaker",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 20,
+			"outputAmount": 1,
+			"sellPrice": 140,
+			"moduleId": 212,
+			"name": {
+				"en": "Monophone Speaker",
+				"de": "Mono-Lautsprecher",
+				"fr": "Haut-parleur monophonique",
+				"es": "Altavoz monofónico",
+				"pt": "Alto-falante do Monofone",
+				"ru": "Монофонический динамик",
+				"ja": "モノフォンスピーカー",
+				"zh": "单声道扬声器"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 274,
+					"amount": 1
+				},
+				{
+					"materialId": 271,
+					"amount": 10
+				},
+				{
+					"materialId": 237,
+					"amount": 5
+				}
+			]
+		},
+		{
+			"materialId": 318,
+			"moduleCategory": "cat_mod_circuits",
+			"iconId": "itm_multi_core_system",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 20,
+			"outputAmount": 1,
+			"sellPrice": 370,
+			"moduleId": 255,
+			"name": {
+				"en": "Multi Core System",
+				"de": "Mehrkernsystem",
+				"fr": "Système multiprocesseur",
+				"es": "Sistema multinúcleo",
+				"pt": "Sistema Multi-Núcleo",
+				"ru": "Многоядерная система",
+				"ja": "マルチコアシステム",
+				"zh": "多核系统"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 303,
+					"amount": 1
+				},
+				{
+					"materialId": 289,
+					"amount": 2
+				},
+				{
+					"materialId": 294,
+					"amount": 5
+				}
+			]
+		},
+		{
+			"materialId": 289,
+			"moduleCategory": "cat_mod_components",
+			"iconId": "itm_multilayer_pcb",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_components",
+			"stackSize": 50,
+			"outputAmount": 10,
+			"sellPrice": 10,
+			"moduleId": 226,
+			"name": {
+				"en": "Multi-Layer PCB",
+				"de": "Mehrlagige Leiterplatte",
+				"fr": "PCB multicouches",
+				"es": "Placa de circuito impreso multicapa",
+				"pt": "PCB Multi-Camada",
+				"ru": "Многослойная плата",
+				"ja": "多層プリント回路板",
+				"zh": "多层印刷电路板"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 272,
+					"amount": 5
+				},
+				{
+					"materialId": 237,
+					"amount": 5
+				},
+				{
+					"materialId": 291,
+					"amount": 1
+				}
+			]
+		},
+		{
+			"materialId": 356,
+			"moduleCategory": "cat_mod_drawback_reduction",
+			"iconId": "itm_optimizing_circuit",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 50,
+			"outputAmount": 1,
+			"sellPrice": 40,
+			"moduleId": 294,
+			"name": {
+				"en": "Optimizing Circuit",
+				"de": "Optimierende Schaltung",
+				"fr": "Circuit d'optimisation",
+				"es": "Circuito de optimización",
+				"pt": "Circuito de Otimização",
+				"ru": "Оптимизирующая схема",
+				"ja": "最適化回路",
+				"zh": "优化电路"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 294,
+					"amount": 5
+				},
+				{
+					"materialId": 272,
+					"amount": 2
+				}
+			]
+		},
+		{
+			"materialId": 354,
+			"moduleCategory": "cat_mod_drawback_reduction",
+			"iconId": "itm_passive_cooler",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 50,
+			"outputAmount": 1,
+			"sellPrice": 50,
+			"moduleId": 292,
+			"name": {
+				"en": "Passive Cooler",
+				"de": "Passivkühler",
+				"fr": "Refroidisseur passif",
+				"es": "Ventilador pasivo",
+				"pt": "Refrigerador Passivo",
+				"ru": "Пассивный охладитель",
+				"ja": "パッシブクーラー",
+				"zh": "被动冷却器"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 236,
+					"amount": 4
+				},
+				{
+					"materialId": 271,
+					"amount": 10
+				}
+			]
+		},
+		{
+			"materialId": 270,
+			"moduleCategory": "cat_mod_components",
+			"iconId": "itm_pipe",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_components",
+			"stackSize": 100,
+			"outputAmount": 20,
+			"sellPrice": 4,
+			"moduleId": 207,
+			"name": {
+				"en": "Rod",
+				"de": "Metallstab",
+				"fr": "Tige",
+				"es": "Tubo",
+				"pt": "Vara",
+				"ru": "Стержень",
+				"ja": "ロッド",
+				"zh": "连杆"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 236,
+					"amount": 10
+				}
+			]
+		},
+		{
+			"materialId": 237,
+			"moduleCategory": "cat_material",
+			"iconId": "itm_plastic",
+			"stackBuyPrice": 240,
+			"iconSprite": "icons_materials",
+			"stackSize": 60,
+			"name": {
+				"en": "Plastic",
+				"de": "Plastik",
+				"fr": "Plastique",
+				"es": "Plástico",
+				"pt": "Plástico",
+				"ru": "Пластик",
+				"ja": "プラスチック",
+				"zh": "塑料"
 			}
 		},
 		{
-			"materialId": 241,
+			"materialId": 307,
+			"moduleCategory": "cat_mod_bot_chassis",
+			"iconId": "itm_plastic_bot_chassis",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 20,
+			"outputAmount": 1,
+			"sellPrice": 160,
+			"moduleId": 244,
+			"name": {
+				"en": "Plastic Bot Chassis",
+				"de": "Plastik Roboter-Gehäuserahmen",
+				"fr": "Châssis de robot en plastique",
+				"es": "Chasis de robot de plástico",
+				"pt": "Chassis de Robô de Plástico",
+				"ru": "Пластиковое шасси робота",
+				"ja": "プラスチック製ロボットシャーシ",
+				"zh": "塑料机器人底盘"
+			},
 			"inputMaterials": [
 				{
 					"materialId": 237,
-					"amount": 10
+					"amount": 15
+				},
+				{
+					"materialId": 293,
+					"amount": 20
+				},
+				{
+					"materialId": 270,
+					"amount": 4
 				}
-			],
-			"moduleCategory": "cat_mod_case", 
-			"iconId": "itm_simple_case",
-			"sellPrice": 70.0, 
-			"iconSprite": "icons_modules", 
-			"outputAmount": 1,
-			"moduleId": 182, 
-			"stackSize": 20,
-			"name": {
-				"en": "Simple case",
-				"de": "",
-				"fr": "",
-				"es": "",
-				"pt": "",
-				"ru": "",
-				"ja": "",
-				"zh": ""
-			}
+			]
 		},
 		{
 			"materialId": 245,
+			"moduleCategory": "cat_mod_case",
+			"iconId": "itm_plastic_case",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 20,
+			"outputAmount": 1,
+			"sellPrice": 110,
+			"moduleId": 186,
+			"name": {
+				"en": "Plastic Case",
+				"de": "Plastikgehäuse",
+				"fr": "Boîtier en plastique",
+				"es": "Carcasa de plástico",
+				"pt": "Invólucro de Plástico",
+				"ru": "Пластиковый корпус",
+				"ja": "プラスチック筐体",
+				"zh": "塑料外壳"
+			},
 			"inputMaterials": [
 				{
 					"materialId": 237,
@@ -109,32 +2287,1805 @@
 					"materialId": 241,
 					"amount": 1
 				}
-			],
-			"moduleCategory": "cat_mod_case", 
-			"iconId": "itm_plastic_case",
-			"sellPrice": 70.0, 
-			"iconSprite": "icons_modules", 
-			"outputAmount": 1,
-			"moduleId": 186, 
-			"stackSize": 20,
+			]
+		},
+		{
+			"materialId": 273,
+			"moduleCategory": "cat_mod_components",
+			"iconId": "itm_plastic_components",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_components",
+			"stackSize": 250,
+			"outputAmount": 50,
+			"sellPrice": 1,
+			"moduleId": 210,
 			"name": {
-				"en": "Plastic case",
-				"de": "",
-				"fr": "",
-				"es": "",
-				"pt": "",
-				"ru": "",
-				"ja": "",
-				"zh": ""
+				"en": "Plastic Parts",
+				"de": "Plastikteile",
+				"fr": "Pièces en plastique",
+				"es": "Piezas de plástico",
+				"pt": "Peças de Plástico",
+				"ru": "Пластиковые детали",
+				"ja": "プラスチック部品",
+				"zh": "塑料零件"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 237,
+					"amount": 10
+				}
+			]
+		},
+		{
+			"materialId": 293,
+			"moduleCategory": "cat_mod_components",
+			"iconId": "itm_plastic_sundries",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_components",
+			"stackSize": 250,
+			"outputAmount": 50,
+			"sellPrice": 2,
+			"moduleId": 230,
+			"name": {
+				"en": "Plastic Sundries",
+				"de": "Plastikkleinteile",
+				"fr": "Articles en plastique",
+				"es": "Miscelánea de plástico",
+				"pt": "Coisinha de Plástico",
+				"ru": "Пластиковый крепеж",
+				"ja": "小型プラスチック部品",
+				"zh": "塑料杂物"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 273,
+					"amount": 25
+				},
+				{
+					"materialId": 236,
+					"amount": 5
+				}
+			]
+		},
+		{
+			"materialId": 314,
+			"moduleCategory": "cat_mod_bot_chassis",
+			"iconId": "itm_polished_bot_chassis",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 20,
+			"outputAmount": 1,
+			"sellPrice": 140,
+			"moduleId": 251,
+			"name": {
+				"en": "Polished Bot Chassis",
+				"de": "Polierter Roboter-Gehäuserahmen",
+				"fr": "Châssis de robot poli",
+				"es": "Chasis de robot refinado",
+				"pt": "Chassis de Robô Polido",
+				"ru": "Полированное шасси робота",
+				"ja": "光沢ロボットシャーシ",
+				"zh": "抛光机器人底盘"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 313,
+					"amount": 1
+				},
+				{
+					"materialId": 295,
+					"amount": 1
+				},
+				{
+					"materialId": 271,
+					"amount": 10
+				}
+			]
+		},
+		{
+			"materialId": 286,
+			"moduleCategory": "cat_mod_case",
+			"iconId": "itm_polished_case",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 20,
+			"outputAmount": 1,
+			"sellPrice": 240,
+			"moduleId": 223,
+			"name": {
+				"en": "Polished Case",
+				"de": "Poliertes Gehäuse",
+				"fr": "Boîtier poli",
+				"es": "Carcasa de madera",
+				"pt": "Invólucro Polido",
+				"ru": "Полированный корпус",
+				"ja": "光沢仕上げ筐体",
+				"zh": "抛光外壳"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 271,
+					"amount": 5
+				},
+				{
+					"materialId": 280,
+					"amount": 1
+				},
+				{
+					"materialId": 282,
+					"amount": 1
+				}
+			]
+		},
+		{
+			"materialId": 295,
+			"moduleCategory": "cat_mod_components",
+			"iconId": "itm_polished_wood",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_components",
+			"stackSize": 25,
+			"outputAmount": 5,
+			"sellPrice": 30,
+			"moduleId": 232,
+			"name": {
+				"en": "Polished Wood",
+				"de": "Poliertes Holz",
+				"fr": "Bois poli",
+				"es": "Madera pulida",
+				"pt": "Madeira Polida",
+				"ru": "Полированная древесина",
+				"ja": "光沢仕上げの木材",
+				"zh": "抛光木"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 282,
+					"amount": 2
+				},
+				{
+					"materialId": 291,
+					"amount": 1
+				},
+				{
+					"materialId": 253,
+					"amount": 3
+				}
+			]
+		},
+		{
+			"materialId": 276,
+			"moduleCategory": "cat_mod_audio",
+			"iconId": "itm_polyphone_speaker",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 20,
+			"outputAmount": 1,
+			"sellPrice": 250,
+			"moduleId": 213,
+			"name": {
+				"en": "Polyphone Speaker",
+				"de": "Mehrstimmiger Lautsprecher",
+				"fr": "Haut-parleur polyphonique",
+				"es": "Altavoz polifónico",
+				"pt": "Alto-falante do Polifone",
+				"ru": "Полифонический динамик",
+				"ja": "ポリフォンスピーカー",
+				"zh": "多声道扬声器"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 236,
+					"amount": 5
+				},
+				{
+					"materialId": 275,
+					"amount": 1
+				},
+				{
+					"materialId": 294,
+					"amount": 10
+				}
+			]
+		},
+		{
+			"materialId": 297,
+			"moduleCategory": "cat_mod_low_power",
+			"iconId": "itm_power_pack",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 30,
+			"outputAmount": 1,
+			"sellPrice": 220,
+			"moduleId": 234,
+			"name": {
+				"en": "Power Pack",
+				"de": "Energiepack",
+				"fr": "Bloc d'alimentation",
+				"es": "Bloque de alimentación",
+				"pt": "Gerador",
+				"ru": "Силовой агрегат",
+				"ja": "パワーパック",
+				"zh": "电源组"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 298,
+					"amount": 1
+				},
+				{
+					"materialId": 292,
+					"amount": 1
+				},
+				{
+					"materialId": 293,
+					"amount": 5
+				}
+			]
+		},
+		{
+			"materialId": 357,
+			"moduleCategory": "cat_mod_drawback_reduction",
+			"iconId": "itm_power_throttle",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 50,
+			"outputAmount": 1,
+			"sellPrice": 40,
+			"moduleId": 295,
+			"name": {
+				"en": "Power Throttle",
+				"de": "Energiebegrenzer",
+				"fr": "Accélérateur de puissance",
+				"es": "Obturador de alimentación",
+				"pt": "Acelerador de Potência",
+				"ru": "Регулятор мощности",
+				"ja": "パワースロットル",
+				"zh": "电源节流阀"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 273,
+					"amount": 10
+				},
+				{
+					"materialId": 251,
+					"amount": 5
+				},
+				{
+					"materialId": 272,
+					"amount": 1
+				}
+			]
+		},
+		{
+			"materialId": 266,
+			"moduleCategory": "cat_mod_circuits",
+			"iconId": "itm_programmable_circuit",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 30,
+			"outputAmount": 1,
+			"sellPrice": 180,
+			"moduleId": 203,
+			"name": {
+				"en": "Programmable Circuit",
+				"de": "Programmierbare Schaltung",
+				"fr": "Circuit programmable",
+				"es": "Circuito programable",
+				"pt": "Circuito Programável",
+				"ru": "Программируемая схема",
+				"ja": "プログラマブルサーキット",
+				"zh": "可编程电路"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 254,
+					"amount": 1
+				},
+				{
+					"materialId": 294,
+					"amount": 5
+				},
+				{
+					"materialId": 272,
+					"amount": 1
+				}
+			]
+		},
+		{
+			"materialId": 339,
+			"moduleCategory": "cat_mod_sensors",
+			"iconId": "itm_proximity_sensor",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 30,
+			"outputAmount": 1,
+			"sellPrice": 160,
+			"moduleId": 276,
+			"name": {
+				"en": "Proximity Sensor",
+				"de": "Näherungssensor",
+				"fr": "Capteur de proximité",
+				"es": "Sensor de proximidad",
+				"pt": "Sensor de Proximidade",
+				"ru": "Бесконтактный датчик",
+				"ja": "近接センサー",
+				"zh": "接近传感器"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 293,
+					"amount": 5
+				},
+				{
+					"materialId": 338,
+					"amount": 1
+				},
+				{
+					"materialId": 271,
+					"amount": 5
+				}
+			]
+		},
+		{
+			"materialId": 296,
+			"moduleCategory": "cat_mod_low_power",
+			"iconId": "itm_quadruple_battery_stack",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 20,
+			"outputAmount": 1,
+			"sellPrice": 290,
+			"moduleId": 233,
+			"name": {
+				"en": "Quadruple Battery Stack",
+				"de": "Vierfaches Batteriepack",
+				"fr": "Quadruple ensemble de batteries",
+				"es": "Pila de carga cuádruple",
+				"pt": "Conjunto de Bateria Quádruplo",
+				"ru": "Четверной пакет батарей",
+				"ja": "四倍電源スタック",
+				"zh": "四电池组"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 256,
+					"amount": 1
+				},
+				{
+					"materialId": 238,
+					"amount": 3
+				},
+				{
+					"materialId": 273,
+					"amount": 15
+				}
+			]
+		},
+		{
+			"materialId": 360,
+			"moduleCategory": "cat_mod_drawback_reduction",
+			"iconId": "itm_rebond_foam",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 50,
+			"outputAmount": 1,
+			"sellPrice": 70,
+			"moduleId": 298,
+			"name": {
+				"en": "Rebond Foam",
+				"de": "Verbundschaum",
+				"fr": "Mousse à rebond",
+				"es": "Espuma de poliuretano aglomerado",
+				"pt": "Espuma de Rebote",
+				"ru": "Плотный поролон",
+				"ja": "リボンデッドフォーム",
+				"zh": "再生泡沫"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 291,
+					"amount": 1
+				},
+				{
+					"materialId": 237,
+					"amount": 2
+				},
+				{
+					"materialId": 238,
+					"amount": 1
+				}
+			]
+		},
+		{
+			"materialId": 282,
+			"moduleCategory": "cat_mod_components",
+			"iconId": "itm_refined_wood",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_components",
+			"stackSize": 25,
+			"outputAmount": 5,
+			"sellPrice": 25,
+			"moduleId": 219,
+			"name": {
+				"en": "Refined Wood",
+				"de": "Veredeltes Holz",
+				"fr": "Bois raffiné",
+				"es": "Madera refinada",
+				"pt": "Madeira Refinada",
+				"ru": "Высокосортная древесина",
+				"ja": "再生木材",
+				"zh": "精制木"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 253,
+					"amount": 5
+				},
+				{
+					"materialId": 238,
+					"amount": 5
+				}
+			]
+		},
+		{
+			"materialId": 278,
+			"moduleCategory": "cat_mod_data_storage",
+			"iconId": "itm_register_array",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 40,
+			"outputAmount": 1,
+			"sellPrice": 110,
+			"moduleId": 215,
+			"name": {
+				"en": "Register Array",
+				"de": "Register-Array",
+				"fr": "Réseau de registre",
+				"es": "Matriz de registro",
+				"pt": "Conjunto de Registrador",
+				"ru": "Массив регистров",
+				"ja": "レジスタ配列",
+				"zh": "寄存器阵列"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 277,
+					"amount": 1
+				},
+				{
+					"materialId": 294,
+					"amount": 5
+				},
+				{
+					"materialId": 273,
+					"amount": 5
+				}
+			]
+		},
+		{
+			"materialId": 312,
+			"moduleCategory": "cat_mod_bot_chassis",
+			"iconId": "itm_reinforced_bot_chassis",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 20,
+			"outputAmount": 1,
+			"sellPrice": 190,
+			"moduleId": 249,
+			"name": {
+				"en": "Reinforced Bot Chassis",
+				"de": "Verstärkter Roboter-Gehäuserahmen",
+				"fr": "Châssis de robot renforcé",
+				"es": "Chasis de robot reforzado",
+				"pt": "Chassis de Robô Reforçado",
+				"ru": "Упрочненное шасси робота",
+				"ja": "強化ロボットシャーシ",
+				"zh": "强化机器人底盘"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 311,
+					"amount": 1
+				},
+				{
+					"materialId": 293,
+					"amount": 5
+				},
+				{
+					"materialId": 287,
+					"amount": 1
+				}
+			]
+		},
+		{
+			"materialId": 279,
+			"moduleCategory": "cat_mod_case",
+			"iconId": "itm_reinforced_case",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 20,
+			"outputAmount": 1,
+			"sellPrice": 190,
+			"moduleId": 216,
+			"name": {
+				"en": "Reinforced Case",
+				"de": "Verstärktes Gehäuse",
+				"fr": "Boîtier renforcé",
+				"es": "Carcasa reforzada",
+				"pt": "Invólucro Reforçado",
+				"ru": "Упрочненный корпус",
+				"ja": "強化筐体",
+				"zh": "强化外壳"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 245,
+					"amount": 1
+				},
+				{
+					"materialId": 236,
+					"amount": 7
+				}
+			]
+		},
+		{
+			"materialId": 364,
+			"moduleCategory": "cat_mod_drawback_reduction",
+			"iconId": "itm_rugged_frame",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 50,
+			"outputAmount": 1,
+			"sellPrice": 50,
+			"moduleId": 302,
+			"name": {
+				"en": "Rugged Frame",
+				"de": "Robuster Rahmen",
+				"fr": "Châssis robuste",
+				"es": "Marco resistente",
+				"pt": "Estrutura Emborrachada",
+				"ru": "Усиленная рама",
+				"ja": "頑丈なフレーム",
+				"zh": "坚固框架"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 236,
+					"amount": 4
+				},
+				{
+					"materialId": 271,
+					"amount": 15
+				}
+			]
+		},
+		{
+			"materialId": 349,
+			"moduleCategory": "cat_mod_safety_fuse",
+			"iconId": "itm_safety_fuse_1",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 10,
+			"outputAmount": 1,
+			"sellPrice": 0,
+			"moduleId": 286,
+			"name": {
+				"en": "Safety Fuse MK1",
+				"de": "Sicherung V1",
+				"fr": "Fusible de sécurité modèle 1",
+				"es": "Fusible de seguridad MK1",
+				"pt": "MK1 de Fusível de Segurança",
+				"ru": "Предохранитель М1",
+				"ja": "安全ヒューズMK1",
+				"zh": "保险丝MK1"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 237,
+					"amount": 1
+				},
+				{
+					"materialId": 252,
+					"amount": 1
+				},
+				{
+					"materialId": 236,
+					"amount": 3
+				}
+			]
+		},
+		{
+			"materialId": 350,
+			"moduleCategory": "cat_mod_safety_fuse",
+			"iconId": "itm_safety_fuse_2",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 20,
+			"outputAmount": 1,
+			"sellPrice": 0,
+			"moduleId": 287,
+			"name": {
+				"en": "Safety Fuse MK2",
+				"de": "Sicherung V2",
+				"fr": "Fusible de sécurité modèle 2",
+				"es": "Fusible de seguridad MK2",
+				"pt": "MK2 de Fusível de Segurança",
+				"ru": "Предохранитель М2",
+				"ja": "安全ヒューズMK2",
+				"zh": "保险丝MK2"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 273,
+					"amount": 20
+				},
+				{
+					"materialId": 252,
+					"amount": 1
+				},
+				{
+					"materialId": 236,
+					"amount": 2
+				}
+			]
+		},
+		{
+			"materialId": 351,
+			"moduleCategory": "cat_mod_safety_fuse",
+			"iconId": "itm_safety_fuse_3",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 30,
+			"outputAmount": 1,
+			"sellPrice": 0,
+			"moduleId": 288,
+			"name": {
+				"en": "Safety Fuse MK3",
+				"de": "Sicherung V3",
+				"fr": "Fusible de sécurité modèle 3",
+				"es": "Fusible de seguridad MK3",
+				"pt": "MK3 de Fusível de Segurança",
+				"ru": "Предохранитель М3",
+				"ja": "安全ヒューズMK3",
+				"zh": "保险丝MK3"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 271,
+					"amount": 20
+				},
+				{
+					"materialId": 252,
+					"amount": 1
+				},
+				{
+					"materialId": 293,
+					"amount": 20
+				}
+			]
+		},
+		{
+			"materialId": 335,
+			"moduleCategory": "cat_mod_transmission",
+			"iconId": "itm_shortwave_radio_link",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 20,
+			"outputAmount": 1,
+			"sellPrice": 100,
+			"moduleId": 272,
+			"name": {
+				"en": "Shortwave Radio Link",
+				"de": "Kurzwellenfunk-Verbindung",
+				"fr": "Lien radio à ondes courtes",
+				"es": "Radioenlace de onda corta",
+				"pt": "Link de Rádio de Onda Curta",
+				"ru": "Модуль коротковолновой связи",
+				"ja": "短波ラジオリンク",
+				"zh": "短波无线电链路"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 334,
+					"amount": 1
+				},
+				{
+					"materialId": 294,
+					"amount": 10
+				},
+				{
+					"materialId": 293,
+					"amount": 5
+				}
+			]
+		},
+		{
+			"materialId": 334,
+			"moduleCategory": "cat_mod_transmission",
+			"iconId": "itm_simple_AM_radio_link",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 20,
+			"outputAmount": 1,
+			"sellPrice": 50,
+			"moduleId": 271,
+			"name": {
+				"en": "Simple AM Radio Link",
+				"de": "Einfache Mittelwellenfunkverbindung",
+				"fr": "Lien radio AM simple",
+				"es": "Radioenlace AM sencillo",
+				"pt": "Link de Rádio AM Simples",
+				"ru": "Модуль AM-связи",
+				"ja": "シンプルなAMラジオリンク",
+				"zh": "简单调幅无线电链路"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 273,
+					"amount": 10
+				},
+				{
+					"materialId": 272,
+					"amount": 2
+				},
+				{
+					"materialId": 294,
+					"amount": 5
+				}
+			]
+		},
+		{
+			"materialId": 241,
+			"moduleCategory": "cat_mod_case",
+			"iconId": "itm_simple_case",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 20,
+			"outputAmount": 1,
+			"sellPrice": 70,
+			"moduleId": 182,
+			"name": {
+				"en": "Simple Case",
+				"de": "Einfaches Gehäuse",
+				"fr": "Boîtier simple",
+				"es": "Carcasa sencilla",
+				"pt": "Invólucro Simples",
+				"ru": "Простой корпус",
+				"ja": "シンプルな筐体",
+				"zh": "简单外壳"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 237,
+					"amount": 10
+				}
+			]
+		},
+		{
+			"materialId": 242,
+			"moduleCategory": "cat_mod_circuits",
+			"iconId": "itm_simple_circuit",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 30,
+			"outputAmount": 1,
+			"sellPrice": 70,
+			"moduleId": 183,
+			"name": {
+				"en": "Simple Circuit",
+				"de": "Einfache Schaltung",
+				"fr": "Circuit simple",
+				"es": "Circuito sencillo",
+				"pt": "Circuito Simples",
+				"ru": "Простая схема",
+				"ja": "簡素な回路",
+				"zh": "简单电路"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 272,
+					"amount": 4
+				},
+				{
+					"materialId": 251,
+					"amount": 10
+				}
+			]
+		},
+		{
+			"materialId": 343,
+			"moduleCategory": "cat_mod_actuator",
+			"iconId": "itm_simple_gearbox",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 40,
+			"outputAmount": 1,
+			"sellPrice": 30,
+			"moduleId": 280,
+			"name": {
+				"en": "Simple Gearbox",
+				"de": "Einfaches Getriebe",
+				"fr": "Boîte de vitesse simple",
+				"es": "Caja de cambios sencilla",
+				"pt": "Caixa de Engrenagem Simples",
+				"ru": "Простой редуктор",
+				"ja": "簡素な変速機",
+				"zh": "简单变速箱"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 269,
+					"amount": 5
+				},
+				{
+					"materialId": 270,
+					"amount": 2
+				},
+				{
+					"materialId": 288,
+					"amount": 1
+				}
+			]
+		},
+		{
+			"materialId": 299,
+			"moduleCategory": "cat_mod_small_display",
+			"iconId": "itm_simple_lcd_display",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 20,
+			"outputAmount": 1,
+			"sellPrice": 270,
+			"moduleId": 236,
+			"name": {
+				"en": "Simple LCD Display",
+				"de": "Einfaches LCD-Anzeige",
+				"fr": "Écran simple à cristaux liquides",
+				"es": "Pantalla LCD sencilla",
+				"pt": "Tela LCD Simples",
+				"ru": "Простой ЖК-индикатор",
+				"ja": "簡素なLCDディスプレイ",
+				"zh": "简单液晶显示器"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 261,
+					"amount": 1
+				},
+				{
+					"materialId": 290,
+					"amount": 1
+				},
+				{
+					"materialId": 294,
+					"amount": 5
+				}
+			]
+		},
+		{
+			"materialId": 362,
+			"moduleCategory": "cat_mod_drawback_reduction",
+			"iconId": "itm_simple_reinforcement",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 50,
+			"outputAmount": 1,
+			"sellPrice": 40,
+			"moduleId": 300,
+			"name": {
+				"en": "Simple Reinforcement",
+				"de": "Einfache Verstärkung",
+				"fr": "Renforcement simple",
+				"es": "Refuerzo sencillo",
+				"pt": "Reforço Simples",
+				"ru": "Простое усиление конструкции",
+				"ja": "簡素な補強材",
+				"zh": "简单加固件"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 236,
+					"amount": 3
+				},
+				{
+					"materialId": 271,
+					"amount": 10
+				}
+			]
+		},
+		{
+			"materialId": 240,
+			"moduleCategory": "cat_mod_low_power",
+			"iconId": "itm_single_cell_battery",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 30,
+			"outputAmount": 1,
+			"sellPrice": 70,
+			"moduleId": 181,
+			"name": {
+				"en": "Single Cell Battery",
+				"de": "Knopfzelle",
+				"fr": "Élément de batterie unique",
+				"es": "Batería de una celda",
+				"pt": "Célula de Bateria Simples",
+				"ru": "Одноячеечная батарея",
+				"ja": "単一電源",
+				"zh": "单芯电池"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 238,
+					"amount": 4
+				}
+			]
+		},
+		{
+			"materialId": 344,
+			"moduleCategory": "cat_mod_actuator",
+			"iconId": "itm_single_jointed_segment",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 40,
+			"outputAmount": 1,
+			"sellPrice": 30,
+			"moduleId": 281,
+			"name": {
+				"en": "Single Jointed Segment",
+				"de": "Gelenk Segment",
+				"fr": "Segment d'étanchéité unique",
+				"es": "Segmento articulado sencillo",
+				"pt": "Segmento Articulado Único",
+				"ru": "Одношарнирный сегмент",
+				"ja": "単一関節セグメント",
+				"zh": "单节段"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 270,
+					"amount": 4
+				},
+				{
+					"materialId": 271,
+					"amount": 5
+				},
+				{
+					"materialId": 269,
+					"amount": 5
+				}
+			]
+		},
+		{
+			"materialId": 332,
+			"moduleCategory": "cat_mod_storage",
+			"iconId": "itm_small_cargo_bay",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 20,
+			"outputAmount": 1,
+			"sellPrice": 190,
+			"moduleId": 269,
+			"name": {
+				"en": "Small Cargo Bay",
+				"de": "Kleiner Frachtraum",
+				"fr": "Petite soute",
+				"es": "Plataforma de carga pequeña",
+				"pt": "Compartimento de Carga Pequeno",
+				"ru": "Малый грузовой отсек",
+				"ja": "小型カーゴベイ",
+				"zh": "小货舱"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 331,
+					"amount": 1
+				},
+				{
+					"materialId": 270,
+					"amount": 4
+				},
+				{
+					"materialId": 293,
+					"amount": 5
+				}
+			]
+		},
+		{
+			"materialId": 330,
+			"moduleCategory": "cat_mod_storage",
+			"iconId": "itm_small_compartment",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 20,
+			"outputAmount": 1,
+			"sellPrice": 110,
+			"moduleId": 267,
+			"name": {
+				"en": "Small Compartment",
+				"de": "Kleines Fach",
+				"fr": "Petit compartiment",
+				"es": "Compartimento pequeño",
+				"pt": "Compartimento Pequeno",
+				"ru": "Малый отсек",
+				"ja": "小型ケース",
+				"zh": "小隔舱"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 271,
+					"amount": 10
+				},
+				{
+					"materialId": 270,
+					"amount": 4
+				},
+				{
+					"materialId": 236,
+					"amount": 8
+				}
+			]
+		},
+		{
+			"materialId": 353,
+			"moduleCategory": "cat_mod_drawback_reduction",
+			"iconId": "itm_small_cooler",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 50,
+			"outputAmount": 1,
+			"sellPrice": 60,
+			"moduleId": 291,
+			"name": {
+				"en": "Small Fan Cooler",
+				"de": "Kleiner Luftkühler",
+				"fr": "Petit ventilateur",
+				"es": "Ventilador pequeño",
+				"pt": "Refrigerador Ventilador Pequeno",
+				"ru": "Малый вентилятор",
+				"ja": "小型ファンクーラー",
+				"zh": "小风扇冷却器"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 236,
+					"amount": 3
+				},
+				{
+					"materialId": 273,
+					"amount": 10
+				},
+				{
+					"materialId": 251,
+					"amount": 5
+				}
+			]
+		},
+		{
+			"materialId": 322,
+			"moduleCategory": "cat_mod_locomotion",
+			"iconId": "itm_small_DC_motor",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 30,
+			"outputAmount": 1,
+			"sellPrice": 130,
+			"moduleId": 259,
+			"name": {
+				"en": "Small DC Motor",
+				"de": "Kleiner Elektromotor",
+				"fr": "Petit moteur à courant continu",
+				"es": "Motor de CC pequeño",
+				"pt": "Motor CC Pequeno",
+				"ru": "Малый двигатель пост. тока",
+				"ja": "小型DCモーター",
+				"zh": "小直流电机"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 269,
+					"amount": 5
+				},
+				{
+					"materialId": 288,
+					"amount": 1
+				},
+				{
+					"materialId": 236,
+					"amount": 10
+				}
+			]
+		},
+		{
+			"materialId": 277,
+			"moduleCategory": "cat_mod_data_storage",
+			"iconId": "itm_small_register_bank",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 40,
+			"outputAmount": 1,
+			"sellPrice": 80,
+			"moduleId": 214,
+			"name": {
+				"en": "Small Register Bank",
+				"de": "Kleiner Registerspeicher",
+				"fr": "Petite banque de registre",
+				"es": "Banco de registro pequeño",
+				"pt": "Banco Registrador Pequeno",
+				"ru": "Малый банк регистров",
+				"ja": "小型レジスタバンク",
+				"zh": "小寄存器组"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 272,
+					"amount": 2
+				},
+				{
+					"materialId": 251,
+					"amount": 15
+				},
+				{
+					"materialId": 273,
+					"amount": 5
+				}
+			]
+		},
+		{
+			"materialId": 323,
+			"moduleCategory": "cat_mod_locomotion",
+			"iconId": "itm_small_stepper_motor",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 30,
+			"outputAmount": 1,
+			"sellPrice": 130,
+			"moduleId": 260,
+			"name": {
+				"en": "Small Stepper Motor",
+				"de": "Kleiner Schrittmotor",
+				"fr": "Petit moteur pas-à-pas",
+				"es": "Motor de paso pequeño",
+				"pt": "Motor Deslizante Pequeno",
+				"ru": "Малый шаговый двигатель",
+				"ja": "小型ステッピングモーター",
+				"zh": "小步进电机"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 288,
+					"amount": 1
+				},
+				{
+					"materialId": 270,
+					"amount": 2
+				},
+				{
+					"materialId": 236,
+					"amount": 10
+				}
+			]
+		},
+		{
+			"materialId": 341,
+			"moduleCategory": "cat_mod_sensors",
+			"iconId": "itm_stereo_camera",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 30,
+			"outputAmount": 1,
+			"sellPrice": 290,
+			"moduleId": 278,
+			"name": {
+				"en": "Stereo Camera",
+				"de": "Stereokamera",
+				"fr": "Caméra stéréo",
+				"es": "Cámara estéreo",
+				"pt": "Câmera Estéreo",
+				"ru": "Стереоскопическая камера",
+				"ja": "ステレオカメラ",
+				"zh": "立体摄像头"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 340,
+					"amount": 1
+				},
+				{
+					"materialId": 294,
+					"amount": 10
+				},
+				{
+					"materialId": 293,
+					"amount": 5
+				}
+			]
+		},
+		{
+			"materialId": 304,
+			"moduleCategory": "cat_mod_audio",
+			"iconId": "itm_stereo_speaker",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 20,
+			"outputAmount": 1,
+			"sellPrice": 290,
+			"moduleId": 241,
+			"name": {
+				"en": "Stereo Speaker",
+				"de": "Stereolautsprecher",
+				"fr": "Haut-parleur stéréo",
+				"es": "Altavoz estéreo",
+				"pt": "Alto-falante Estéreo",
+				"ru": "Стереофонический динамик",
+				"ja": "ステレオスピーカー",
+				"zh": "立体声扬声器"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 293,
+					"amount": 5
+				},
+				{
+					"materialId": 276,
+					"amount": 1
+				},
+				{
+					"materialId": 273,
+					"amount": 10
+				}
+			]
+		},
+		{
+			"materialId": 280,
+			"moduleCategory": "cat_mod_case",
+			"iconId": "itm_stylish_case",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 20,
+			"outputAmount": 1,
+			"sellPrice": 190,
+			"moduleId": 217,
+			"name": {
+				"en": "Stylish Case",
+				"de": "Schickes Gehäuse",
+				"fr": "Boîtier chic",
+				"es": "Carcasa estilosa",
+				"pt": "Invólucro Elegante",
+				"ru": "Стильный корпус",
+				"ja": "おしゃれな筐体",
+				"zh": "时尚外壳"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 253,
+					"amount": 3
+				},
+				{
+					"materialId": 243,
+					"amount": 1
+				},
+				{
+					"materialId": 236,
+					"amount": 1
+				}
+			]
+		},
+		{
+			"materialId": 358,
+			"moduleCategory": "cat_mod_drawback_reduction",
+			"iconId": "itm_thriftness_module",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 50,
+			"outputAmount": 1,
+			"sellPrice": 50,
+			"moduleId": 296,
+			"name": {
+				"en": "Thriftness Module",
+				"de": "Effizienzmodul",
+				"fr": "Module économe",
+				"es": "Módulo de eficiencia",
+				"pt": "Módulo de Economia",
+				"ru": "Модуль экономии",
+				"ja": "倹約モジュール",
+				"zh": "节约模块"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 294,
+					"amount": 10
+				},
+				{
+					"materialId": 289,
+					"amount": 1
+				}
+			]
+		},
+		{
+			"materialId": 348,
+			"moduleCategory": "cat_mod_actuator",
+			"iconId": "itm_tripple_jointed_segment",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 30,
+			"outputAmount": 1,
+			"sellPrice": 110,
+			"moduleId": 285,
+			"name": {
+				"en": "Tripple Jointed Segment",
+				"de": "Dreifach-Gelenk Segment",
+				"fr": "Triple segment d'étanchéité",
+				"es": "Segmento articulado triple",
+				"pt": "Segmento Articulado Triplo",
+				"ru": "Трехшарнирный сегмент",
+				"ja": "三重関節セグメント",
+				"zh": "三节段"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 346,
+					"amount": 1
+				},
+				{
+					"materialId": 271,
+					"amount": 10
+				},
+				{
+					"materialId": 294,
+					"amount": 10
+				}
+			]
+		},
+		{
+			"materialId": 347,
+			"moduleCategory": "cat_mod_actuator",
+			"iconId": "itm_tripple_staged_gearbox",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 30,
+			"outputAmount": 1,
+			"sellPrice": 100,
+			"moduleId": 284,
+			"name": {
+				"en": "Tripple Staged Gearbox",
+				"de": "Dreistufiges Getriebe",
+				"fr": "Triple boîtier de vitesses",
+				"es": "Caja de cambios gradual triple",
+				"pt": "Caixa de Engrenagem Faseada Tripla",
+				"ru": "Треххступенчатый редуктор",
+				"ja": "三段式変速装置",
+				"zh": "三级变速箱"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 345,
+					"amount": 1
+				},
+				{
+					"materialId": 288,
+					"amount": 1
+				},
+				{
+					"materialId": 294,
+					"amount": 5
+				}
+			]
+		},
+		{
+			"materialId": 281,
+			"moduleCategory": "cat_mod_case",
+			"iconId": "itm_windowed_case",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 20,
+			"outputAmount": 1,
+			"sellPrice": 220,
+			"moduleId": 220,
+			"name": {
+				"en": "Windowed Case",
+				"de": "Sichtfenster-Gehäuse",
+				"fr": "Boîtier à vitre",
+				"es": "Carcasa con vidrio",
+				"pt": "Invólucro com Janela",
+				"ru": "Корпус с окошком",
+				"ja": "窓付き筐体",
+				"zh": "开窗外壳"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 244,
+					"amount": 1
+				},
+				{
+					"materialId": 236,
+					"amount": 2
+				},
+				{
+					"materialId": 252,
+					"amount": 3
+				}
+			]
+		},
+		{
+			"materialId": 253,
+			"moduleCategory": "cat_material",
+			"iconId": "itm_wood",
+			"stackBuyPrice": 360,
+			"iconSprite": "icons_materials",
+			"stackSize": 30,
+			"name": {
+				"en": "Wood",
+				"de": "Holz",
+				"fr": "Bois",
+				"es": "Madera",
+				"pt": "Madeira",
+				"ru": "Дерево",
+				"ja": "木材",
+				"zh": "木材"
 			}
+		},
+		{
+			"materialId": 243,
+			"moduleCategory": "cat_mod_case",
+			"iconId": "itm_wood_case",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 20,
+			"outputAmount": 1,
+			"sellPrice": 110,
+			"moduleId": 184,
+			"name": {
+				"en": "Wooden Case",
+				"de": "Hölzernes Gehäuse",
+				"fr": "Boîtier en bois",
+				"es": "Caja de madera",
+				"pt": "Invólucro de Madeira",
+				"ru": "Деревянный корпус",
+				"ja": "木製筐体",
+				"zh": "木制外壳"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 253,
+					"amount": 4
+				},
+				{
+					"materialId": 236,
+					"amount": 2
+				}
+			]
+		},
+		{
+			"materialId": 313,
+			"moduleCategory": "cat_mod_bot_chassis",
+			"iconId": "itm_wooden_bot_chassis",
+			"stackBuyPrice": 0,
+			"iconSprite": "icons_modules",
+			"stackSize": 20,
+			"outputAmount": 1,
+			"sellPrice": 90,
+			"moduleId": 250,
+			"name": {
+				"en": "Wooden Bot Chassis",
+				"de": "Hölzerner Roboter-Gehäuserahmen",
+				"fr": "Châssis de robot en bois",
+				"es": "Chasis de robot de madera",
+				"pt": "Chassis de Robô de Madeira",
+				"ru": "Деревянное шасси робота",
+				"ja": "木製ロボットシャーシ",
+				"zh": "木制机器人底盘"
+			},
+			"inputMaterials": [
+				{
+					"materialId": 282,
+					"amount": 2
+				},
+				{
+					"materialId": 271,
+					"amount": 5
+				},
+				{
+					"materialId": 287,
+					"amount": 1
+				}
+			]
 		}
 	],
 	"crafters": [
 		{
-			"equipId": 23,
-			"iconSprite": "icons_buildables", 
-			"iconId": "bld_tinker_tier01",
+			"equipId": 4,
+			"iconId": "bld_electronics_tier01",
+			"iconSprite": "icons_buildables",
+			"name": {
+				"en": "Electronics Workbench",
+				"de": "Elektronik-Werkbank",
+				"fr": "Établi d'électronique",
+				"es": "Mesa de trabajo de electrónica",
+				"pt": "Bancada de Eletrônica",
+				"ru": "Электромонтажный стол",
+				"ja": "電子機器用作業台",
+				"zh": "电子工作台"
+			},
 			"craftingList": [
+				{
+					"moduleId": 215,
+					"craftDuration": 4
+				},
+				{
+					"moduleId": 231,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 294,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 183,
+					"craftDuration": 4
+				},
+				{
+					"moduleId": 192,
+					"craftDuration": 4
+				},
+				{
+					"moduleId": 203,
+					"craftDuration": 4
+				},
+				{
+					"moduleId": 238,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 239,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 240,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 214,
+					"craftDuration": 4
+				},
+				{
+					"moduleId": 242,
+					"craftDuration": 4
+				},
+				{
+					"moduleId": 243,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 257,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 271,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 272,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 211,
+					"craftDuration": 4
+				},
+				{
+					"moduleId": 212,
+					"craftDuration": 4
+				},
+				{
+					"moduleId": 213,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 241,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 275,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 276,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 286,
+					"craftDuration": 4
+				},
+				{
+					"moduleId": 287,
+					"craftDuration": 7
+				},
+				{
+					"moduleId": 288,
+					"craftDuration": 10
+				}
+			]
+		},
+		{
+			"equipId": 15,
+			"iconId": "bld_workbench_tier01",
+			"iconSprite": "icons_buildables",
+			"name": {
+				"en": "Basic Workbench",
+				"de": "Standard-Werkbank",
+				"fr": "Établi de base",
+				"es": "Mesa de trabajo básica",
+				"pt": "Bancada Básica",
+				"ru": "Базовый верстак",
+				"ja": "ベーシックな作業台",
+				"zh": "基础工作台"
+			},
+			"craftingList": [
+				{
+					"moduleId": 207,
+					"craftDuration": 4
+				},
+				{
+					"moduleId": 208,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 224,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 225,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 210,
+					"craftDuration": 4
+				},
+				{
+					"moduleId": 219,
+					"craftDuration": 4
+				},
+				{
+					"moduleId": 232,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 291,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 300,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 182,
+					"craftDuration": 4
+				},
+				{
+					"moduleId": 186,
+					"craftDuration": 4
+				},
+				{
+					"moduleId": 216,
+					"craftDuration": 4
+				},
+				{
+					"moduleId": 222,
+					"craftDuration": 4
+				},
+				{
+					"moduleId": 185,
+					"craftDuration": 4
+				},
+				{
+					"moduleId": 220,
+					"craftDuration": 4
+				},
+				{
+					"moduleId": 184,
+					"craftDuration": 4
+				},
+				{
+					"moduleId": 217,
+					"craftDuration": 4
+				},
+				{
+					"moduleId": 223,
+					"craftDuration": 4
+				},
+				{
+					"moduleId": 244,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 245,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 247,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 248,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 250,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 259,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 260,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 261,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 262,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 267,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 268,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 289,
+					"craftDuration": 10
+				}
+			]
+		},
+		{
+			"equipId": 23,
+			"iconId": "bld_tinker_tier01",
+			"iconSprite": "icons_buildables",
+			"name": {
+				"en": "Tinker Table",
+				"de": "Bastlertisch",
+				"fr": "Table de bricolage",
+				"es": "Mesa de trabajo sencilla",
+				"pt": "Mesa de Invenção",
+				"ru": "Простой верстак",
+				"ja": "シンプルな作業台",
+				"zh": "工匠台"
+			},
+			"craftingList": [
+				{
+					"moduleId": 209,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 210,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 230,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 207,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 208,
+					"craftDuration": 22
+				},
+				{
+					"moduleId": 231,
+					"craftDuration": 22
+				},
+				{
+					"moduleId": 228,
+					"craftDuration": 22
+				},
 				{
 					"moduleId": 182,
 					"craftDuration": 10
@@ -142,18 +4093,590 @@
 				{
 					"moduleId": 186,
 					"craftDuration": 10
+				},
+				{
+					"moduleId": 216,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 222,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 185,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 220,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 184,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 217,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 223,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 181,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 187,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 188,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 194,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 180,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 189,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 191,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 183,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 192,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 203,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 214,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 215,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 211,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 212,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 206,
+					"craftDuration": 10
 				}
-			],
+			]
+		},
+		{
+			"equipId": 27,
+			"iconId": "bld_mechanical_tier01",
+			"iconSprite": "icons_buildables",
 			"name": {
-				"en": "Tinker table",
-				"de": "",
-				"fr": "",
-				"es": "",
-				"pt": "",
-				"ru": "",
-				"ja": "",
-				"zh": ""
-			}
+				"en": "Mechanics Workbench",
+				"de": "Mechanik-Werkbank",
+				"fr": "Établi de mécanique",
+				"es": "Mesa de trabajo de mecánica",
+				"pt": "Bancada de Mecânica",
+				"ru": "Механический верстак",
+				"ja": "機械用作業台",
+				"zh": "机械工作台"
+			},
+			"craftingList": [
+				{
+					"moduleId": 289,
+					"craftDuration": 4
+				},
+				{
+					"moduleId": 206,
+					"craftDuration": 4
+				},
+				{
+					"moduleId": 225,
+					"craftDuration": 4
+				},
+				{
+					"moduleId": 291,
+					"craftDuration": 4
+				},
+				{
+					"moduleId": 292,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 293,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 259,
+					"craftDuration": 4
+				},
+				{
+					"moduleId": 260,
+					"craftDuration": 4
+				},
+				{
+					"moduleId": 261,
+					"craftDuration": 4
+				},
+				{
+					"moduleId": 262,
+					"craftDuration": 4
+				},
+				{
+					"moduleId": 263,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 264,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 265,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 266,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 280,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 281,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 282,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 283,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 284,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 285,
+					"craftDuration": 10
+				}
+			]
+		},
+		{
+			"equipId": 29,
+			"iconId": "bld_precision_tier01",
+			"iconSprite": "icons_buildables",
+			"name": {
+				"en": "Precision Workbench",
+				"de": "Präzisionswerkbank",
+				"fr": "Établi de précision",
+				"es": "Mesa de trabajo de precisión",
+				"pt": "Bancada de Precisão",
+				"ru": "Верстак для точных манипуляций",
+				"ja": "精密機器用作業台",
+				"zh": "精密工作台"
+			},
+			"craftingList": [
+				{
+					"moduleId": 230,
+					"craftDuration": 4
+				},
+				{
+					"moduleId": 229,
+					"craftDuration": 4
+				},
+				{
+					"moduleId": 232,
+					"craftDuration": 4
+				},
+				{
+					"moduleId": 297,
+					"craftDuration": 4
+				},
+				{
+					"moduleId": 298,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 299,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 244,
+					"craftDuration": 4
+				},
+				{
+					"moduleId": 245,
+					"craftDuration": 4
+				},
+				{
+					"moduleId": 250,
+					"craftDuration": 4
+				},
+				{
+					"moduleId": 246,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 251,
+					"craftDuration": 10
+				}
+			]
+		},
+		{
+			"equipId": 31,
+			"iconId": "bld_welding_tier01",
+			"iconSprite": "icons_buildables",
+			"name": {
+				"en": "Welding Table",
+				"de": "Schweißtisch",
+				"fr": "Table de soudure",
+				"es": "Mesa de soldadura",
+				"pt": "Mesa de Solda",
+				"ru": "Сварочный стол",
+				"ja": "溶接台",
+				"zh": "焊接台"
+			},
+			"craftingList": [
+				{
+					"moduleId": 224,
+					"craftDuration": 4
+				},
+				{
+					"moduleId": 300,
+					"craftDuration": 4
+				},
+				{
+					"moduleId": 301,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 302,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 247,
+					"craftDuration": 4
+				},
+				{
+					"moduleId": 248,
+					"craftDuration": 4
+				},
+				{
+					"moduleId": 249,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 267,
+					"craftDuration": 4
+				},
+				{
+					"moduleId": 268,
+					"craftDuration": 4
+				},
+				{
+					"moduleId": 269,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 270,
+					"craftDuration": 10
+				}
+			]
+		},
+		{
+			"equipId": 33,
+			"iconId": "bld_hydraulics_tier01",
+			"iconSprite": "icons_buildables",
+			"name": {
+				"en": "Hydraulics Workbench",
+				"de": "Hydraulik Werkbank",
+				"fr": "Établi hydraulique",
+				"es": "Mesa de trabajo de hidráulica",
+				"pt": "Bancada de Hidráulica",
+				"ru": "Гидравлический верстак",
+				"ja": "油圧式作業台",
+				"zh": "液压工作台"
+			},
+			"craftingList": []
+		},
+		{
+			"equipId": 35,
+			"iconId": "bld_placement_tier01",
+			"iconSprite": "icons_buildables",
+			"name": {
+				"en": "Pick-and-Place Machine",
+				"de": "Bestückungsmaschine",
+				"fr": "Machine de placement",
+				"es": "Máquina de recogida y colocación",
+				"pt": "Máquina de Pegar-e-Colocar",
+				"ru": "Перегрузочный автомат",
+				"ja": "ピック＆プレースマシン",
+				"zh": "贴片机"
+			},
+			"craftingList": [
+				{
+					"moduleId": 209,
+					"craftDuration": 15
+				},
+				{
+					"moduleId": 183,
+					"craftDuration": 5
+				},
+				{
+					"moduleId": 192,
+					"craftDuration": 7.5
+				},
+				{
+					"moduleId": 203,
+					"craftDuration": 10
+				}
+			]
+		},
+		{
+			"equipId": 73,
+			"iconId": "bld_chemical_tier01",
+			"iconSprite": "icons_buildables",
+			"name": {
+				"en": "Chemistry Table",
+				"de": "Chemie-Tisch",
+				"fr": "Table de chimie",
+				"es": "Mesa química",
+				"pt": "Mesa de Química",
+				"ru": "Химический стол",
+				"ja": "化学用テーブル",
+				"zh": "化学台"
+			},
+			"craftingList": [
+				{
+					"moduleId": 209,
+					"craftDuration": 4
+				},
+				{
+					"moduleId": 226,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 228,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 227,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 297,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 181,
+					"craftDuration": 4
+				},
+				{
+					"moduleId": 187,
+					"craftDuration": 4
+				},
+				{
+					"moduleId": 188,
+					"craftDuration": 4
+				},
+				{
+					"moduleId": 194,
+					"craftDuration": 4
+				},
+				{
+					"moduleId": 235,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 233,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 234,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 252,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 253,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 254,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 180,
+					"craftDuration": 4
+				},
+				{
+					"moduleId": 189,
+					"craftDuration": 4
+				},
+				{
+					"moduleId": 191,
+					"craftDuration": 4
+				},
+				{
+					"moduleId": 199,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 236,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 237,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 229,
+					"craftDuration": 10
+				}
+			]
+		},
+		{
+			"equipId": 100,
+			"iconId": "bld_electronics_tier02",
+			"iconSprite": "icons_buildables",
+			"name": {
+				"en": "Advanced Electronics Workbench",
+				"de": "Erweiterte Elektronik-Werkbank",
+				"fr": "Établi d'électronique avancé",
+				"es": "Mesa de electrónica avanzada",
+				"pt": "Bancada Avançada de Eletrônica",
+				"ru": "Улучшенный электромонтажный стол",
+				"ja": "高性能電子機器用作業台",
+				"zh": "高级电子工作台"
+			},
+			"craftingList": [
+				{
+					"moduleId": 231,
+					"craftDuration": 4
+				},
+				{
+					"moduleId": 294,
+					"craftDuration": 4
+				},
+				{
+					"moduleId": 295,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 296,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 238,
+					"craftDuration": 4
+				},
+				{
+					"moduleId": 239,
+					"craftDuration": 4
+				},
+				{
+					"moduleId": 240,
+					"craftDuration": 4
+				},
+				{
+					"moduleId": 255,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 242,
+					"craftDuration": 4
+				},
+				{
+					"moduleId": 243,
+					"craftDuration": 4
+				},
+				{
+					"moduleId": 257,
+					"craftDuration": 4
+				},
+				{
+					"moduleId": 258,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 271,
+					"craftDuration": 4
+				},
+				{
+					"moduleId": 272,
+					"craftDuration": 4
+				},
+				{
+					"moduleId": 273,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 274,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 213,
+					"craftDuration": 4
+				},
+				{
+					"moduleId": 241,
+					"craftDuration": 4
+				},
+				{
+					"moduleId": 256,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 275,
+					"craftDuration": 4
+				},
+				{
+					"moduleId": 276,
+					"craftDuration": 4
+				},
+				{
+					"moduleId": 277,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 278,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 279,
+					"craftDuration": 10
+				},
+				{
+					"moduleId": 287,
+					"craftDuration": 4
+				},
+				{
+					"moduleId": 288,
+					"craftDuration": 4
+				}
+			]
 		}
 	]
 }

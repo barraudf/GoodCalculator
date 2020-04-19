@@ -28,7 +28,7 @@
 </div>
 
 <div class="recipe-list">
-	<div class="card text-center material-card" ng-repeat="material in scope.getFilteredMaterials()|orderBy:'name'|filter:scope.filter">
+	<div class="card text-center material-card" ng-repeat="material in scope.getFilteredMaterials()|orderBy:'name[\'en\']'|filter:scope.filter">
 		<a class="recipe-name stretched-link" ui-sref="material({material: material.materialId})">
 			<img class="recipe-image" ng-src="/assets/images/{{material.iconSprite}}/{{material.iconId}}.png">
 			{{material.name['en']}}

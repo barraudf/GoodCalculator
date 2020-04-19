@@ -1,0 +1,37 @@
+<ol class="breadcrumb">
+	<li class="breadcrumb-item"><a ui-sref="home">Good Calculator</a></li>
+	<li class="breadcrumb-item active">Settings</li>
+</ol>
+
+<div class="row">
+	<div class="col-sm-6">
+		<h1>Settings</h1>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-6">
+		<div class="card mb-3">
+			<div class="card-body">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Unlocked crafters</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="crafter in scope.crafters|orderBy:'prototype.name[\'en\']'">
+							<td>
+								<label>
+									<img ng-src="/assets/images/{{crafter.prototype.iconSprite}}/{{crafter.prototype.iconId}}.png" width="32" height="32" title="{{crafter.prototype.name['en']}}" tooltip />
+									{{crafter.prototype.name['en']}}
+									<input type="checkbox" ng-model="crafter.unlocked" ng-change="scope.Save()"/>
+								</label>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

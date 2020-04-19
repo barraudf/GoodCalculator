@@ -2,7 +2,6 @@ import {ProductionTool} from '@src/Tools/Production/ProductionTool';
 import model from '@src/Data/Model';
 import {Material} from '@src/Data/Material';
 import {MaterialAmount} from '@src/Data/MaterialAmount';
-import {IMaterialAmountSchema} from '@src/Schema/IMaterialAmountSchema';
 import vis from 'vis-network';
 import {IRootScopeService} from 'angular';
 
@@ -13,19 +12,29 @@ export class ProductionController
 	public readonly craftableMaterials: Material[] = model.getCraftableMaterials();
 	public result: string;
 
-	public static $inject = ['$rootScope'];
+	public static $inject = ['$rootScope', '$cookies'];
 
-	public constructor(rootScope: IRootScopeService)
+	public constructor(rootScope: IRootScopeService, private $cookies: any)
 	{
 		this.tool = new ProductionTool;
 		this.recalculate();
 		rootScope.$watch(() => {
-			return this.tool.production.map((itemAmount: MaterialAmount) => {
-				return [itemAmount.material.prototype.materialId, itemAmount.prototype.amount];
+			return this.tool.production.map((materialAmount: MaterialAmount) => {
+				return [materialAmount.material.prototype.materialId, materialAmount.prototype.amount];
 			});
 		}, () => {
 			this.recalculate();
 		}, true);
+
+		// TODO : load globally
+		for (const k in model.crafters) {
+			const crafter = model.crafters[k];
+			const locked: boolean = this.$cookies.get('Locked' + crafter.prototype.equipId);
+			if (locked)
+			{
+				crafter.unlocked = false;
+			}
+		}
 	}
 
 	public addEmptyProduct(): void

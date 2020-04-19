@@ -1,52 +1,46 @@
-import {Recipe} from '@src/Data/Recipe';
 import {IMachinesResult} from '@src/Tools/Production/IMachinesResult';
+import { CraftDetail } from '@src/Data/CraftDetail';
+import { Material } from '@src/Data/Material';
+import model from '@src/Data/Model';
 
 export class RecipeResult
 {
 
-	public machines: IMachinesResult[] = [];
+	public machine: IMachinesResult;
 	public nodeId: number;
-	public productAmountCache: Array<{
-		product: string,
+	public productAmountCache: {
+		product: Material,
 		amount: number,
 		maxAmount: number,
-	}> = [];
+	};
 
-	public constructor(public readonly recipe: Recipe, public readonly amount: number)
+	public constructor(public readonly recipe: CraftDetail, public readonly amount: number)
 	{
-		const machines = amount * recipe.prototype.time;
-		this.machines.push({
+		const machines = amount * recipe.prototype.craftDuration;
+		this.machine = {
 			amount: machines,
 			maxAmount: null,
 			overclock: 100,
 			lastMachineOverclock: 100,
-		});
-		for (const product of recipe.products) {
-			const itemsPerMachine = 15 / recipe.prototype.time;
-			this.productAmountCache.push({
-				product: product.item.prototype.slug,
-				maxAmount: itemsPerMachine * machines * product.amount,
-				amount: itemsPerMachine * machines * product.amount,
-			});
-		}
+		};
+
+		const product: Material = model.getMaterialByModuleId(recipe.prototype.moduleId);
+		const itemsPerMachine = 15 * recipe.prototype.craftDuration;
+		this.productAmountCache = {
+			product: product,
+			maxAmount: itemsPerMachine * machines * (product.prototype.outputAmount ? product.prototype.outputAmount : 0),
+			amount: itemsPerMachine * machines * (product.prototype.outputAmount ? product.prototype.outputAmount : 0),
+		};
 	}
 
 	public getMachineCount(): number
 	{
-		let count = 0;
-		for (const machine of this.machines) {
-			count += machine.amount;
-		}
-		return count;
+		return this.machine.amount;
 	}
 
 	public getMachineTooltip(): string
 	{
-		const texts: string[] = [];
-		for (const machine of this.machines) {
-			texts.push(machine.amount.toFixed(2) + 'x at ' + machine.overclock + '%');
-		}
-		return texts.join('\n');
+		return this.machine.amount.toFixed(2) + 'x at ' + this.machine.overclock + '%';
 	}
 
 }

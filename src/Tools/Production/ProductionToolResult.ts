@@ -1,7 +1,8 @@
 import {RecipeResult} from '@src/Tools/Production/RecipeResult';
-import {ItemAmount} from '@src/Data/ItemAmount';
+import {MaterialAmount} from '@src/Data/MaterialAmount';
 import vis from 'vis-network';
-import model, {Model} from '@src/Data/Model';
+import model from '@src/Data/Model';
+import { Material } from '@src/Data/Material';
 
 export class ProductionToolResult
 {
@@ -20,7 +21,7 @@ export class ProductionToolResult
 		title?: string,
 		id?: number,
 	}>();
-	public rawResources: {[key: string]: {amount: number, data: Array<{amount: number, id: number}>}} = {};
+	public rawResources: {[key: number]: {amount: number, data: Array<{amount: number, id: number}>}} = {};
 
 	public constructor(public readonly recipes: RecipeResult[])
 	{
@@ -39,40 +40,39 @@ export class ProductionToolResult
 		}
 
 		for (const recipe of recipes) {
-			const item = recipe.recipe.products[0].item;
+			const material: Material = model.getMaterialByModuleId(recipe.recipe.prototype.moduleId);
 			ingredientLoop:
-			for (const ingredient of item.ingredients) {
-				let amount = ingredient.amount * recipe.getMachineCount() * 15 / recipe.recipe.prototype.time;
+			for (const input of material.inputMaterials) {
+				let amount = input.prototype.amount * recipe.getMachineCount() * 15  / recipe.recipe.prototype.craftDuration;
 				for (const re of recipes) {
-					for (const product of re.productAmountCache) {
-						if (product.product === ingredient.item.prototype.slug && product.amount > 0) {
-							const diff = Math.min(product.amount, amount);
+					const product = re.productAmountCache;
+					if (product.product.prototype.materialId === input.prototype.materialId && product.amount > 0) {
+						const diff = Math.min(product.amount, amount);
 
-							product.amount -= diff;
+						product.amount -= diff;
 
-							this.edges.add({
-								from: re.nodeId,
-								to: recipe.nodeId,
-								label: ingredient.item.prototype.name + '\n' + diff.toFixed(2) + '/day',
-							});
+						this.edges.add({
+							from: re.nodeId,
+							to: recipe.nodeId,
+							label: /*input.material.prototype.name['en'] + '\n' + */diff.toFixed(2) + ' / day',
+						});
 
-							amount -= diff;
-							if (amount <= 1e-6) {
-								continue ingredientLoop;
-							}
+						amount -= diff;
+						if (amount <= 1e-6) {
+							continue ingredientLoop;
 						}
 					}
 				}
 
-				if (amount >= 1e-6 && Model.isRawResource(ingredient.item)) {
-					if (!(ingredient.item.prototype.slug in this.rawResources)) {
-						this.rawResources[ingredient.item.prototype.slug] = {
+				if (amount >= 1e-6 && Material.isRawResource(input.material)) {
+					if (!(input.material.prototype.materialId in this.rawResources)) {
+						this.rawResources[input.prototype.materialId] = {
 							amount: 0,
 							data: [],
 						};
 					}
-					this.rawResources[ingredient.item.prototype.slug].amount += amount;
-					this.rawResources[ingredient.item.prototype.slug].data.push({
+					this.rawResources[input.prototype.materialId].amount += amount;
+					this.rawResources[input.prototype.materialId].data.push({
 						id: recipe.nodeId,
 						amount: amount,
 					});
@@ -83,21 +83,22 @@ export class ProductionToolResult
 		for (const k in this.rawResources) {
 			if (this.rawResources.hasOwnProperty(k)) {
 				const resource = this.rawResources[k];
-				const item = model.getItem(k);
+				const materialId = parseInt(k, undefined);
+				const item = model.getMaterial(materialId);
 
 				this.nodes.add({
 					id: id,
-					label: ProductionToolResult.getRecipeDisplayedName(item.prototype.name) + '\n' + resource.amount.toFixed(2) + ' / day',
+					label: item.prototype.name['en'] + '\n' + resource.amount.toFixed(2) + ' / day',
 					title: '',
 					shape: 'image',
-					image: '/assets/images/items/' + item.prototype.slug + '.png',
+					image: '/assets/images/' + item.prototype.iconSprite + '/' + item.prototype.iconId + '.png',
 				});
 
 				for (const data of resource.data) {
 					this.edges.add({
 						from: id,
 						to: data.id,
-						label: item.prototype.name + '\n' + data.amount.toFixed(2) + ' / day',
+						label: /*item.prototype.name['en'] + '\n' + */data.amount.toFixed(2) + ' / day',
 					});
 				}
 
@@ -120,20 +121,12 @@ export class ProductionToolResult
 		}
 		this.nodes.update({
 			id: id,
-			label: ProductionToolResult.getRecipeDisplayedName(recipe.recipe.prototype.name) + '\n' + recipe.getMachineCount().toFixed(2) + 'x ' + recipe.recipe.machine.name,
+			label: model.getMaterialByModuleId(recipe.recipe.prototype.moduleId).prototype.name['en'] + '\n' + recipe.getMachineCount().toFixed(2) + 'x ' + recipe.recipe.crafter.prototype.name['en'],
 			title: recipe.getMachineTooltip(),
 			shape: 'image',
-			image: '/assets/images/items/' + recipe.recipe.products[0].item.prototype.slug + '.png',
+			image: '/assets/images/' + model.getMaterialByModuleId(recipe.recipe.prototype.moduleId).prototype.iconSprite + '/' +
+			 model.getMaterialByModuleId(recipe.recipe.prototype.moduleId).prototype.iconId + '.png',
 		});
-	}
-
-	private static getRecipeDisplayedName(name: string): string
-	{
-		const parts = name.split(' ');
-		if (parts.length >= 4) {
-			parts.splice(Math.ceil(parts.length / 2), 0, '</b>\n<b>');
-		}
-		return '<b>' + parts.join(' ') + '</b>';
 	}
 
 }

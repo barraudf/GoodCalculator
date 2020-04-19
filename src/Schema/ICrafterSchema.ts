@@ -1,4 +1,5 @@
 import {ICraftDetailSchema} from '@src/Schema/ICraftDetailSchema';
+import { ILocalizedStringSchema } from './ILocalizedStringSchema';
 
 export interface ICrafterSchema
 {
@@ -6,8 +7,7 @@ export interface ICrafterSchema
 	equipId: number;
 	iconSprite: string;
 	iconId: string;
-	locaString: string;
 	craftingList: ICraftDetailSchema[];
-	name: {[locale: string]: string};
+	name: ILocalizedStringSchema;
 
 }

@@ -1,4 +1,5 @@
 import {IMaterialAmountSchema} from '@src/Schema/IMaterialAmountSchema';
+import {ILocalizedStringSchema} from '@src/Schema/ILocalizedStringSchema';
 
 export interface IMaterialSchema
 {
@@ -7,12 +8,12 @@ export interface IMaterialSchema
 	moduleCategory: string;
 	iconId: string;
 	stackBuyPrice: number;
-	locaString: string;
 	iconSprite: string;
 	stackSize: number;
 	inputMaterials?: IMaterialAmountSchema[];
 	outputAmount?: number;
 	sellPrice?: number;
 	moduleId?: number;
-	name: {[locale: string]: string};
+	name: ILocalizedStringSchema;
+
 }

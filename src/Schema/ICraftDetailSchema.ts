@@ -1,7 +1,7 @@
 export interface ICraftDetailSchema
 {
 
-	moduleId?: number;
+	moduleId: number;
 	equipId?: number;
 	craftDuration: number;
 

@@ -3,17 +3,18 @@ import data from '@src/Data/Data';
 import {IMaterialSchema} from '@src/Schema/IMaterialSchema';
 import {ITransitionObject} from '@src/Types/ITransitionObject';
 import {ICrafterSchema} from '@src/Schema/ICrafterSchema';
+import { Crafter } from '@src/Data/Crafter';
 
 export class CrafterController
 {
-	public crafter: ICrafterSchema;
+	public crafter: Crafter;
 
 	public static $inject = ['$state', '$transition$', 'RecentlyVisitedMaterialsService'];
 
 	public constructor($state: any, $transition$: ITransitionObject<{crafter: string}>)
 	{
 
-		const crafter = data.getCrafterById(parseInt($transition$.params().crafter, undefined));
+		const crafter = model.crafters[parseInt($transition$.params().crafter, undefined)];
 		if (crafter === null) {
 			$state.go('home');
 			return;
