@@ -22,3 +22,7 @@ yarn-error.log
 www/assets/app.js
 
 Thumbs.db
+www/assets/images/icons_buildables
+www/assets/images/icons_components
+www/assets/images/icons_modules
+www/assets/images/icons_materials

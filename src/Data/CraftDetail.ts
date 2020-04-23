@@ -10,7 +10,7 @@ export class CraftDetail
 	public constructor(private readonly model: Model, public readonly crafter: Crafter, public readonly prototype: ICraftDetailSchema)
 	{
 		const material = model.getMaterialByModuleId(prototype.moduleId);
-		this.logisticTime = CraftDetail.logisticTimePerItem + CraftDetail.logisticTimePerItem * material.inputMaterials.length;
+		this.logisticTime = 2 * CraftDetail.logisticTimePerItem;
 	}
 
 	public getTotalCraftingTime(): number
