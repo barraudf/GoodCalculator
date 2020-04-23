@@ -19,7 +19,7 @@
 	<div class="card text-center material-card" ng-repeat="crafter in scope.getFilteredCrafters()|orderBy:'name'|filter:scope.filter">
 		<a class="recipe-name stretched-link" ui-sref="crafter({crafter: crafter.equipId})">
 			<img class="recipe-image" ng-src="/assets/images/{{crafter.iconSprite}}/{{crafter.iconId}}.png">
-			{{crafter.name['en']}}
+			{{crafter.name[scope.model.language]}}
 		</a>
 	</div>
 </div>

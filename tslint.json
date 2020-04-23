@@ -37,7 +37,6 @@
 			"severity": "warning",
 			"options": ["debug", "info", "log", "time", "timeEnd", "trace"]
 		},
-		"no-string-literal": false,
 		"no-empty": [true, "allow-empty-functions"],
 		"no-var-requires": false,
 		"object-literal-shorthand": [true, "never"],

@@ -15,21 +15,21 @@ const locZh = JSON.parse(fs.readFileSync(path.join(__dirname, '..', '..', 'data'
 
 export default function localize(locaString: string): ILocalizedStringSchema
 {
-    const result: ILocalizedStringSchema = {
-        'en': localizeSingle(locaString, locEn),
-        'de': localizeSingle(locaString, locDe),
-        'fr': localizeSingle(locaString, locFr),
-        'es': localizeSingle(locaString, locEs),
-        'pt': localizeSingle(locaString, locPt),
-        'ru': localizeSingle(locaString, locRu),
-        'ja': localizeSingle(locaString, locJa),
-        'zh': localizeSingle(locaString, locZh)
-    }
+	const result: ILocalizedStringSchema = {
+		'en': localizeSingle(locaString, locEn),
+		'de': localizeSingle(locaString, locDe),
+		'fr': localizeSingle(locaString, locFr),
+		'es': localizeSingle(locaString, locEs),
+		'pt': localizeSingle(locaString, locPt),
+		'ru': localizeSingle(locaString, locRu),
+		'ja': localizeSingle(locaString, locJa),
+		'zh': localizeSingle(locaString, locZh)
+	}
 
-    return result;
+	return result;
 }
 
 function localizeSingle(locaString: string, locJson: any) : string
 {
-    return locJson[locaString];
+	return locJson[locaString];
 }

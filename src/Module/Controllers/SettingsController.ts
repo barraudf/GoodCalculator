@@ -1,9 +1,10 @@
-import model from '@src/Data/Model';
+import model, { Model } from '@src/Data/Model';
 import { Crafter } from '@src/Data/Crafter';
 
 export class SettingsController
 {
 
+	public readonly model: Model = model;
 	public crafters: Crafter[];
 
 	public static $inject = ['$cookies'];
@@ -11,15 +12,6 @@ export class SettingsController
 	public constructor(private $cookies: any)
 	{
 		this.crafters = Object.values(model.crafters);
-
-		// TODO : load globally
-		this.crafters.forEach((crafter: Crafter) => {
-			const locked: boolean = this.$cookies.get('Locked' + crafter.prototype.equipId);
-			if (locked)
-			{
-				crafter.unlocked = false;
-			}
-		});
 	}
 
 	public Save(): void
@@ -32,6 +24,8 @@ export class SettingsController
 				this.$cookies.remove('Locked' + crafter.prototype.equipId);
 			}
 		});
+
+		this.$cookies.put('language', this.model.language);
 	}
 
 }

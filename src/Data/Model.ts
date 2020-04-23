@@ -3,14 +3,16 @@ import {IJsonSchema} from '@src/Schema/IJsonSchema';
 import {Material} from '@src/Data/Material';
 import {Crafter} from '@src/Data/Crafter';
 import { CraftDetail } from './CraftDetail';
+import angular from 'angular';
 
 export class Model
 {
 
 	public materials: {[key: number]: Material} = {};
 	public crafters: {[key: number]: Crafter} = {};
+	public language: string = 'en';
 
-	public constructor(public readonly data: IJsonSchema)
+	private constructor(public readonly data: IJsonSchema)
 	{
 		for (const k in data.materials) {
 			const material = data.materials[k];
@@ -24,6 +26,9 @@ export class Model
 			const crafter = data.crafters[k];
 			this.crafters[crafter.equipId] = new Crafter(this, crafter);
 		}
+
+		const $injector = angular.injector(['ngCookies']);
+		$injector.invoke(['$cookies', ($cookies: any) => this.loadCookies($cookies)]);
 	}
 
 	public getMaterial(materialId: number): Material
@@ -76,6 +81,28 @@ export class Model
 		return null;
 	}
 
+	public static Instanciate(data: IJsonSchema): Model
+	{
+		return new Model(data);
+	}
+
+	private loadCookies($cookies: any)
+	{
+		for (const k in this.crafters) {
+			const crafter = this.crafters[k];
+			const locked: boolean = $cookies.get('Locked' + crafter.prototype.equipId);
+			if (locked)
+			{
+				crafter.unlocked = false;
+			}
+		}
+
+		const lang = $cookies.get('language');
+		if (lang) {
+			this.language = lang;
+		}
+	}
+
 }
 
-export default new Model(rawData as any);
+export default Model.Instanciate(rawData as any);

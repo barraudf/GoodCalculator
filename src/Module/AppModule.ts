@@ -5,7 +5,6 @@ import {AppDirective} from '@src/Module/Directives/AppDirective';
 import {MaterialController} from '@src/Module/Controllers/MaterialController';
 import {CrafterController} from '@src/Module/Controllers/CrafterController';
 import {CraftersController} from '@src/Module/Controllers/CraftersController';
-import {MaterialIconDirective} from '@src/Module/Directives/MaterialIconDirective';
 import {RecentlyVisitedMaterialsService} from '@src/Module/Services/RecentlyVisitedItemsService';
 import {ProductionController} from '@src/Module/Controllers/ProductionController';
 import { SettingsController } from './Controllers/SettingsController';
@@ -94,10 +93,6 @@ export class AppModule
 
 		this.app.directive('app', () => {
 			return new AppDirective;
-		});
-
-		this.app.directive('material-icon', () => {
-			return new MaterialIconDirective;
 		});
 
 		this.app.directive('tooltip', () => {

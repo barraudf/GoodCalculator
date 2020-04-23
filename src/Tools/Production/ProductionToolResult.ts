@@ -54,7 +54,7 @@ export class ProductionToolResult
 						this.edges.add({
 							from: re.nodeId,
 							to: recipe.nodeId,
-							label: /*input.material.prototype.name['en'] + '\n' + */diff.toFixed(2) + ' / day',
+							label: /*input.material.prototype.name[model.language] + '\n' + */diff.toFixed(2) + ' / day',
 						});
 
 						amount -= diff;
@@ -88,7 +88,7 @@ export class ProductionToolResult
 
 				this.nodes.add({
 					id: id,
-					label: item.prototype.name['en'] + '\n' + resource.amount.toFixed(2) + ' / day',
+					label: item.prototype.name[model.language] + '\n' + resource.amount.toFixed(2) + ' / day',
 					title: '',
 					shape: 'image',
 					image: '/assets/images/' + item.prototype.iconSprite + '/' + item.prototype.iconId + '.png',
@@ -98,7 +98,7 @@ export class ProductionToolResult
 					this.edges.add({
 						from: id,
 						to: data.id,
-						label: /*item.prototype.name['en'] + '\n' + */data.amount.toFixed(2) + ' / day',
+						label: /*item.prototype.name[model.language] + '\n' + */data.amount.toFixed(2) + ' / day',
 					});
 				}
 
@@ -121,7 +121,8 @@ export class ProductionToolResult
 		}
 		this.nodes.update({
 			id: id,
-			label: model.getMaterialByModuleId(recipe.recipe.prototype.moduleId).prototype.name['en'] + '\n' + recipe.getMachineCount().toFixed(2) + 'x ' + recipe.recipe.crafter.prototype.name['en'],
+			label: model.getMaterialByModuleId(recipe.recipe.prototype.moduleId).prototype.name[model.language] +
+				'\n' + recipe.getMachineCount().toFixed(2) + 'x ' + recipe.recipe.crafter.prototype.name[model.language],
 			title: recipe.getMachineTooltip(),
 			shape: 'image',
 			image: '/assets/images/' + model.getMaterialByModuleId(recipe.recipe.prototype.moduleId).prototype.iconSprite + '/' +

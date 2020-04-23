@@ -1,5 +1,5 @@
 import data from '@src/Data/Data';
-import model from '@src/Data/Model';
+import model, { Model } from '@src/Data/Model';
 import {IMaterialSchema} from '@src/Schema/IMaterialSchema';
 import {ITransitionObject} from '@src/Types/ITransitionObject';
 import {ICrafterSchema} from '@src/Schema/ICrafterSchema';
@@ -9,6 +9,7 @@ import { ICraftDetailSchema } from '@src/Schema/ICraftDetailSchema';
 export class MaterialController
 {
 
+	public readonly model: Model = model;
 	public material: IMaterialSchema;
 	public recipesAsOutput: ICraftDetailSchema[];
 	public recipesAsInput: IMaterialSchema[];

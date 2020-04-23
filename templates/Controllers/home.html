@@ -21,17 +21,17 @@
 		<div class="card text-center material-card" ng-repeat="materialId in scope.recentlyVisited.recent">
 			<a class="stretched-link recipe-name" ui-sref="material({material: materialId})">
 				<img class="recipe-image" ng-src="/assets/images/{{scope.getMaterialById(materialId).iconSprite}}/{{scope.getMaterialById(materialId).iconId}}.png">
-				{{scope.getMaterialById(materialId).name['en']}}
+				{{scope.getMaterialById(materialId).name[scope.model.language]}}
 			</a>
 		</div>
 	</div>
 </div>
 
 <div class="recipe-list">
-	<div class="card text-center material-card" ng-repeat="material in scope.getFilteredMaterials()|orderBy:'name[\'en\']'|filter:scope.filter">
+	<div class="card text-center material-card" ng-repeat="material in scope.getFilteredMaterials()|orderBy:'name[scope.model.language]'|filter:scope.filter">
 		<a class="recipe-name stretched-link" ui-sref="material({material: material.materialId})">
 			<img class="recipe-image" ng-src="/assets/images/{{material.iconSprite}}/{{material.iconId}}.png">
-			{{material.name['en']}}
+			{{material.name[scope.model.language]}}
 		</a>
 	</div>
 </div>

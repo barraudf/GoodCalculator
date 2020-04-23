@@ -19,6 +19,11 @@ export class Material
 		}
 	}
 
+	public toString(): string
+	{
+		return this.prototype.name[this.model.language];
+	}
+
 	public static isRawResource(material: Material): boolean
 	{
 		return material.prototype.moduleCategory === 'cat_material';

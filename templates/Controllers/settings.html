@@ -20,13 +20,39 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr ng-repeat="crafter in scope.crafters|orderBy:'prototype.name[\'en\']'">
+						<tr ng-repeat="crafter in scope.crafters|orderBy:'prototype.name[scope.model.language]'">
 							<td>
 								<label>
-									<img ng-src="/assets/images/{{crafter.prototype.iconSprite}}/{{crafter.prototype.iconId}}.png" width="32" height="32" title="{{crafter.prototype.name['en']}}" tooltip />
-									{{crafter.prototype.name['en']}}
+									<img ng-src="/assets/images/{{crafter.prototype.iconSprite}}/{{crafter.prototype.iconId}}.png" width="32" height="32" title="{{crafter.prototype.name[scope.model.language]}}" tooltip />
+									{{crafter.prototype.name[scope.model.language]}}
 									<input type="checkbox" ng-model="crafter.unlocked" ng-change="scope.Save()"/>
 								</label>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-md-6">
+		<div class="card mb-3">
+			<div class="card-body">
+				<table class="table">
+					<tbody>
+						<tr>
+							<td>Language (only for material/crafter names)</td>
+							<td>
+								<select ng-model="scope.model.language" ng-change="scope.Save()">
+									<option value="de">Deutsch</option>
+									<option value="en">English</option>
+									<option value="es">Espanol</option>
+									<option value="fr">Français</option>
+									<option value="ja">日本人</option>
+									<option value="pt">Portugues</option>
+									<option value="ru">русский</option>
+									<option value="zh">中国人</option>
+								</select>
 							</td>
 						</tr>
 					</tbody>

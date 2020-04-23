@@ -1,12 +1,12 @@
 <ol class="breadcrumb">
 	<li class="breadcrumb-item"><a ui-sref="home">Good Calculator</a></li>
 	<li class="breadcrumb-item"><a ui-sref="crafters">Crafter Browser</a></li>
-	<li class="breadcrumb-item active">{{scope.crafter.prototype.name['en']}}</li>
+	<li class="breadcrumb-item active">{{scope.crafter.prototype.name[scope.model.language]}}</li>
 </ol>
 
 <div class="d-flex flex-column flex-sm-row">
 	<div class="p-2 flex-grow-1">
-		<h1>{{scope.crafter.prototype.name['en']}}</h1>
+		<h1>{{scope.crafter.prototype.name[scope.model.language]}}</h1>
 	</div>
 	<div class="p-2">
 		<a ui-sref="home" class="btn btn-secondary">Back to material list</a>
@@ -18,7 +18,7 @@
 		<div class="card mb-3">
 			<div class="card-body">
 				<span class="float-left mr-3">
-					<img ng-src="/assets/images/{{scope.crafter.prototype.iconSprite}}/{{scope.crafter.prototype.iconId}}.png" width="128" height="128" class="float-left" title="{{scope.crafter.prototype.name['en']}}" tooltip>
+					<img ng-src="/assets/images/{{scope.crafter.prototype.iconSprite}}/{{scope.crafter.prototype.iconId}}.png" width="128" height="128" class="float-left" title="{{scope.crafter.prototype.name[scope.model.language]}}" tooltip>
 				</span>
 				<p style="white-space: pre-line;"><!--description --></p>
 			</div>
@@ -32,7 +32,7 @@
 					<thead>
 						<tr>
 							<th>Crafter</th>
-							<th>{{scope.crafter.prototype.name['en']}}</th>
+							<th>{{scope.crafter.prototype.name[scope.model.language]}}</th>
 						</tr>
 					</thead>
 				</table>
@@ -61,7 +61,7 @@
 							<tr ng-repeat="output in scope.crafter.prototype.craftingList">
 								<td>
 									<a ui-sref="material({material: scope.getMaterialByModuleId(output.moduleId).materialId})">
-										<img ng-src="/assets/images/{{scope.getMaterialByModuleId(output.moduleId).iconSprite}}/{{scope.getMaterialByModuleId(output.moduleId).iconId}}.png" width="32" height="32" title="{{scope.getMaterialByModuleId(output.moduleId).name['en']}}" tooltip>
+										<img ng-src="/assets/images/{{scope.getMaterialByModuleId(output.moduleId).iconSprite}}/{{scope.getMaterialByModuleId(output.moduleId).iconId}}.png" width="32" height="32" title="{{scope.getMaterialByModuleId(output.moduleId).name[scope.model.language]}}" tooltip>
 									</a>
 								</td>
 								<td>
@@ -78,7 +78,7 @@
 										<span class="material-amount">
 											{{input.amount}}x
 											<a ui-sref="material({material: input.materialId})">
-												<img ng-src="/assets/images/{{scope.getMaterialById(input.materialId).iconSprite}}/{{scope.getMaterialById(input.materialId).iconId}}.png" width="32" height="32" title="{{scope.getMaterialById(input.materialId).name['en']}}" tooltip>
+												<img ng-src="/assets/images/{{scope.getMaterialById(input.materialId).iconSprite}}/{{scope.getMaterialById(input.materialId).iconId}}.png" width="32" height="32" title="{{scope.getMaterialById(input.materialId).name[scope.model.language]}}" tooltip>
 											</a>
 											<br>
 										</span>

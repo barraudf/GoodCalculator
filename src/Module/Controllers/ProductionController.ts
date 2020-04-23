@@ -1,5 +1,5 @@
 import {ProductionTool} from '@src/Tools/Production/ProductionTool';
-import model from '@src/Data/Model';
+import model, { Model } from '@src/Data/Model';
 import {Material} from '@src/Data/Material';
 import {MaterialAmount} from '@src/Data/MaterialAmount';
 import vis from 'vis-network';
@@ -8,6 +8,7 @@ import {IRootScopeService} from 'angular';
 export class ProductionController
 {
 
+	public readonly model: Model = model;
 	public readonly tool: ProductionTool;
 	public readonly craftableMaterials: Material[] = model.getCraftableMaterials();
 	public result: string;
@@ -25,16 +26,6 @@ export class ProductionController
 		}, () => {
 			this.recalculate();
 		}, true);
-
-		// TODO : load globally
-		for (const k in model.crafters) {
-			const crafter = model.crafters[k];
-			const locked: boolean = this.$cookies.get('Locked' + crafter.prototype.equipId);
-			if (locked)
-			{
-				crafter.unlocked = false;
-			}
-		}
 	}
 
 	public addEmptyProduct(): void

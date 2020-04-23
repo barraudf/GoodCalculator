@@ -1,4 +1,4 @@
-import model from '@src/Data/Model';
+import model, { Model } from '@src/Data/Model';
 import data from '@src/Data/Data';
 import {IMaterialSchema} from '@src/Schema/IMaterialSchema';
 import {ITransitionObject} from '@src/Types/ITransitionObject';
@@ -7,6 +7,7 @@ import { Crafter } from '@src/Data/Crafter';
 
 export class CrafterController
 {
+	public readonly model: Model = model;
 	public crafter: Crafter;
 
 	public static $inject = ['$state', '$transition$', 'RecentlyVisitedMaterialsService'];

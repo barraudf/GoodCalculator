@@ -14,7 +14,7 @@
 
 <div>
 	<div ng-repeat="product in scope.tool.production">
-		<select ng-model="product.material" ng-options="material as material.prototype.name['en'] for material in scope.craftableMaterials|orderBy:'prototype.name[\'en\']'"></select>
+		<select ng-model="product.material" ng-options="material as material.prototype.name[scope.model.language] for material in scope.craftableMaterials|orderBy:'toString()'"></select>
 		<input type="number" ng-model="product.prototype.amount">
 		<span class="btn btn-danger" ng-click="scope.removeProduct(product)">
 			<span class="fas fa-times"></span>

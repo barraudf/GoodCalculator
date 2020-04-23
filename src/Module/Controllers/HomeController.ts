@@ -1,10 +1,12 @@
 import data from '@src/Data/Data';
+import model, { Model } from '@src/Data/Model';
 import {IMaterialSchema} from '@src/Schema/IMaterialSchema';
 import {RecentlyVisitedMaterialsService} from '@src/Module/Services/RecentlyVisitedItemsService';
 
 export class HomeController
 {
 
+	public readonly model: Model = model;
 	public materials: IMaterialSchema[] = Object.values(data.getAllMaterials());
 	public filter = '';
 
@@ -19,7 +21,7 @@ export class HomeController
 		}
 
 		return this.materials.filter((material) => {
-			return material.name['en'].toLowerCase().indexOf(this.filter.toLowerCase()) !== -1;
+			return material.name[model.language].toLowerCase().indexOf(this.filter.toLowerCase()) !== -1;
 		});
 	}
 
