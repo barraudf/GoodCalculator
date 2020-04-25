@@ -26,6 +26,7 @@ export class SettingsController
 		});
 
 		this.$cookies.put('language', this.model.language);
+		this.$cookies.put('cycleLength', this.model.cycleLength);
 	}
 
 }

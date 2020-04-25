@@ -35,7 +35,7 @@ export class ProductionTool
 			{
 				throw new Error('Unknown craft (equipId=' + equipId.toString() + ', moduleId=' + moduleId.toString());
 			}
-			recipes.push(new RecipeResult(craftDetail, result[k] / 15));
+			recipes.push(new RecipeResult(craftDetail, result[k] / model.cycleLength));
 		}
 
 		if (!recipes.length) {

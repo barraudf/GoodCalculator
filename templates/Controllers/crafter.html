@@ -70,7 +70,7 @@
 											{{scope.getMaterialByModuleId(output.moduleId).outputAmount}}
 											<br>
 										</span>
-										<span>{{scope.getMaterialByModuleId(output.moduleId).outputAmount * 15 / output.craftDuration|number}}&nbsp;/&nbsp;day</span>
+										<span>{{scope.getMaterialByModuleId(output.moduleId).outputAmount * scope.model.cycleLength / output.craftDuration|number}}&nbsp;/&nbsp;{{scope.model.cycleNames[scope.model.cycleLength]}}</span>
 									</div>
 								</td>
 								<td>
@@ -82,11 +82,11 @@
 											</a>
 											<br>
 										</span>
-										<span>{{input.amount * 15 / output.craftDuration|number}}&nbsp;/&nbsp;day</span>
+										<span>{{input.amount * scope.model.cycleLength / output.craftDuration|number}}&nbsp;/&nbsp;{{scope.model.cycleNames[scope.model.cycleLength]}}</span>
 									</div>
 								</td>
 								<td>
-									<span>{{output.craftDuration}}s ({{15 / output.craftDuration|number}} cycles&nbsp;/&nbsp;day)</span>
+									<span>{{output.craftDuration}}s ({{scope.model.cycleLength / output.craftDuration|number}} crafts&nbsp;/&nbsp;{{scope.model.cycleNames[scope.model.cycleLength]}})</span>
 								</td>
 							</tr>
 						</tbody>

@@ -25,7 +25,7 @@ export class RecipeResult
 		};
 
 		const product: Material = model.getMaterialByModuleId(recipe.prototype.moduleId);
-		const itemsPerMachine = 15 * recipe.getTotalCraftingTime();
+		const itemsPerMachine = model.cycleLength * recipe.getTotalCraftingTime();
 		this.productAmountCache = {
 			product: product,
 			maxAmount: itemsPerMachine * machines * (product.prototype.outputAmount ? product.prototype.outputAmount : 0),

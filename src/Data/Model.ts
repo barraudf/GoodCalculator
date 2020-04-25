@@ -11,6 +11,8 @@ export class Model
 	public materials: {[key: number]: Material} = {};
 	public crafters: {[key: number]: Crafter} = {};
 	public language: string = 'en';
+	public cycleLength: number = 15;
+	public cycleNames: {[key: number]: string} = {15: 'Day', 105: 'Week', 450: 'Month'};
 
 	private constructor(public readonly data: IJsonSchema)
 	{
@@ -100,6 +102,11 @@ export class Model
 		const lang = $cookies.get('language');
 		if (lang) {
 			this.language = lang;
+		}
+
+		const cycle = $cookies.get('cycleLength');
+		if (cycle) {
+			this.cycleLength = parseInt(cycle, undefined);
 		}
 	}
 

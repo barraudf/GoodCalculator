@@ -55,6 +55,14 @@
 								</select>
 							</td>
 						</tr>
+						<tr>
+							<td>Displayed cycle length</td>
+							<td>
+								<span class="btn-group">
+									<label class="btn btn-primary" ng-repeat="(key, value) in scope.model.cycleNames" ng-model="scope.model.cycleLength" ng-change="scope.Save()" uib-btn-radio="{{key}}">{{value}}</label>
+								</span>
+							</td>
+						</tr>
 					</tbody>
 				</table>
 			</div>

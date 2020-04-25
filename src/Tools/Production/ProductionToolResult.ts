@@ -43,7 +43,7 @@ export class ProductionToolResult
 			const material: Material = model.getMaterialByModuleId(recipe.recipe.prototype.moduleId);
 			ingredientLoop:
 			for (const input of material.inputMaterials) {
-				let amount = input.prototype.amount * recipe.getMachineCount() * 15  / recipe.recipe.getTotalCraftingTime();
+				let amount = input.prototype.amount * recipe.getMachineCount() * model.cycleLength  / recipe.recipe.getTotalCraftingTime();
 				for (const re of recipes) {
 					const product = re.productAmountCache;
 					if (product.product.prototype.materialId === input.prototype.materialId && product.amount > 0) {
@@ -54,7 +54,7 @@ export class ProductionToolResult
 						this.edges.add({
 							from: re.nodeId,
 							to: recipe.nodeId,
-							label: /*input.material.prototype.name[model.language] + '\n' + */diff.toFixed(2) + ' / day',
+							label: /*input.material.prototype.name[model.language] + '\n' + */diff.toFixed(2) + ' / ' + model.cycleNames[model.cycleLength],
 						});
 
 						amount -= diff;
@@ -85,10 +85,15 @@ export class ProductionToolResult
 				const resource = this.rawResources[k];
 				const materialId = parseInt(k, undefined);
 				const item = model.getMaterial(materialId);
+				let daily: string = '';
+
+				if (model.cycleLength !== 15) {
+					daily = '\n(' + (resource.amount * 15 / model.cycleLength).toFixed(2) + ' / Day)';
+				}
 
 				this.nodes.add({
 					id: id,
-					label: item.prototype.name[model.language] + '\n' + resource.amount.toFixed(2) + ' / day',
+					label: item.prototype.name[model.language] + '\n' + resource.amount.toFixed(2) + ' / ' + model.cycleNames[model.cycleLength] + daily,
 					title: '',
 					shape: 'image',
 					image: '/assets/images/' + item.prototype.iconSprite + '/' + item.prototype.iconId + '.png',
@@ -98,7 +103,7 @@ export class ProductionToolResult
 					this.edges.add({
 						from: id,
 						to: data.id,
-						label: /*item.prototype.name[model.language] + '\n' + */data.amount.toFixed(2) + ' / day',
+						label: data.amount.toFixed(2) + ' / ' + model.cycleNames[model.cycleLength],
 					});
 				}
 
