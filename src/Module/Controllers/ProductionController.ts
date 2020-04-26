@@ -47,6 +47,9 @@ export class ProductionController
 	{
 		this.tool.calculate();
 		if (!this.tool.result) {
+			if (this.tool.production.length > 0) {
+				alert('Error : unable to solve this production. Some required crafters are not unlocked.');
+			}
 			return;
 		}
 
