@@ -4,6 +4,7 @@ import {Material} from '@src/Data/Material';
 import {MaterialAmount} from '@src/Data/MaterialAmount';
 import vis from 'vis-network';
 import {IRootScopeService} from 'angular';
+import { IMaterialAmountSchema } from '@src/Schema/IMaterialAmountSchema';
 
 export class ProductionController
 {
@@ -18,6 +19,7 @@ export class ProductionController
 	public constructor(rootScope: IRootScopeService, private $cookies: any)
 	{
 		this.tool = new ProductionTool;
+		this.LoadProduction();
 		this.recalculate();
 		rootScope.$watch(() => {
 			return this.tool.production.map((materialAmount: MaterialAmount) => {
@@ -118,6 +120,34 @@ export class ProductionController
 				hierarchical: false,
 			},
 		});
+
+		this.SaveProduction();
+	}
+
+	private SaveProduction(): void
+	{
+		const prod: IMaterialAmountSchema[] = [];
+
+		for (const material of this.tool.production)
+		{
+			material.prototype.materialId = material.material.prototype.materialId; // TODO : changing MaterialAmount.material doesn't change MaterialAmount.prototype.materialId
+			prod.push(material.prototype);
+		}
+
+		this.$cookies.putObject('production', prod);
+	}
+
+	private LoadProduction(): void
+	{
+		this.tool.production = [];
+		const prods: IMaterialAmountSchema[] = this.$cookies.getObject('production');
+		if (prods) {
+			for (const prod of prods) {
+				this.tool.production.push(new MaterialAmount(model.getMaterial(prod.materialId), { materialId: prod.materialId, amount: prod.amount }));
+			}
+
+			this.recalculate();
+		}
 	}
 
 }
