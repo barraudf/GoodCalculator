@@ -29,4 +29,9 @@ export class Crafter
 
 		return null;
 	}
+
+	public toString(): string
+	{
+		return this.prototype.name[this.model.language];
+	}
 }

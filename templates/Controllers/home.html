@@ -28,10 +28,10 @@
 </div>
 
 <div class="recipe-list">
-	<div class="card text-center material-card" ng-repeat="material in scope.getFilteredMaterials()|orderBy:'name[scope.model.language]'|filter:scope.filter">
-		<a class="recipe-name stretched-link" ui-sref="material({material: material.materialId})">
-			<img class="recipe-image" ng-src="/assets/images/{{material.iconSprite}}/{{material.iconId}}.png">
-			{{material.name[scope.model.language]}}
+	<div class="card text-center material-card" ng-repeat="material in scope.getFilteredMaterials()|orderBy:'toString()'|filter:scope.filter">
+		<a class="recipe-name stretched-link" ui-sref="material({material: material.prototype.materialId})">
+			<img class="recipe-image" ng-src="/assets/images/{{material.prototype.iconSprite}}/{{material.prototype.iconId}}.png">
+			{{material.toString()}}
 		</a>
 	</div>
 </div>
