@@ -7,13 +7,13 @@ export default function parseCrafters(crafters: {
 	equip_id: number,
 	icon_id: string,
 	icon_sprite: string,
-	crafter_properties: any,
+	crafter_properties?: any,
 	loca_string: string
 }[]): ICrafterSchema[]
 {
 	const result: ICrafterSchema[] = [];
 	for (const crafter of crafters) {
-		if (crafter.crafter_properties.length === 0 || crafter.equip_id === 3) {
+		if ( (crafter.crafter_properties && crafter.crafter_properties.length === 0) || crafter.equip_id === 3) {
 			// Not a crafter or Assembly Table
 			continue;
 		}
