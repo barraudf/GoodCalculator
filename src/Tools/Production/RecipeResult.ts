@@ -16,7 +16,7 @@ export class RecipeResult
 
 	public constructor(public readonly recipe: CraftDetail, public readonly amount: number)
 	{
-		const machines = amount * recipe.getTotalCraftingTime();
+		const machines = amount * recipe.getTotalCraftingTime() / recipe.prototype.craftBatch;
 		this.machine = {
 			amount: machines,
 			maxAmount: null,
@@ -25,7 +25,7 @@ export class RecipeResult
 		};
 
 		const product: Material = model.getMaterialByModuleId(recipe.prototype.moduleId);
-		const itemsPerMachine = model.cycleLength * recipe.getTotalCraftingTime();
+		const itemsPerMachine = model.cycleLength * recipe.getTotalCraftingTime() * recipe.prototype.craftBatch;
 		this.productAmountCache = {
 			product: product,
 			maxAmount: itemsPerMachine * machines * (product.prototype.outputAmount ? product.prototype.outputAmount : 0),

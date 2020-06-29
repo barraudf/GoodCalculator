@@ -7,12 +7,15 @@ import angular from 'angular';
 
 export class Model
 {
-
+	public materialVersion: string;
+	public equipmentVersion: string;
 	public materials: {[key: number]: Material} = {};
 	public crafters: {[key: number]: Crafter} = {};
 	public language: string = 'en';
-	public cycleLength: number = 15;
-	public cycleNames: {[key: number]: string} = {15: 'Day', 105: 'Week', 450: 'Month'};
+	public cycleLength: number = Model.DAY_DURATION;
+	public cycleNames: {[key: number]: string} = {20: 'Day', 140: 'Week', 600: 'Month'};
+
+	public static DAY_DURATION: number = 20;
 
 	private constructor(public readonly data: IJsonSchema)
 	{
@@ -28,6 +31,9 @@ export class Model
 			const crafter = data.crafters[k];
 			this.crafters[crafter.equipId] = new Crafter(this, crafter);
 		}
+
+		this.materialVersion = data.materialVersion;
+		this.equipmentVersion  = data.equipmentVersion;
 
 		const $injector = angular.injector(['ngCookies']);
 		$injector.invoke(['$cookies', ($cookies: any) => this.loadCookies($cookies)]);
@@ -107,6 +113,11 @@ export class Model
 		const cycle = $cookies.get('cycleLength');
 		if (cycle) {
 			this.cycleLength = parseInt(cycle, undefined);
+
+			if (!this.cycleNames.hasOwnProperty(this.cycleLength))
+			{
+				this.cycleLength = Model.DAY_DURATION;
+			}
 		}
 	}
 

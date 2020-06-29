@@ -1,7 +1,7 @@
 import {RecipeResult} from '@src/Tools/Production/RecipeResult';
 import {MaterialAmount} from '@src/Data/MaterialAmount';
 import vis from 'vis-network';
-import model from '@src/Data/Model';
+import model, {Model} from '@src/Data/Model';
 import { Material } from '@src/Data/Material';
 
 export class ProductionToolResult
@@ -43,7 +43,7 @@ export class ProductionToolResult
 			const material: Material = model.getMaterialByModuleId(recipe.recipe.prototype.moduleId);
 			ingredientLoop:
 			for (const input of material.inputMaterials) {
-				let amount = input.prototype.amount * recipe.getMachineCount() * model.cycleLength  / recipe.recipe.getTotalCraftingTime();
+				let amount = input.prototype.amount * recipe.getMachineCount() * model.cycleLength * recipe.recipe.prototype.craftBatch  / recipe.recipe.getTotalCraftingTime();
 				for (const re of recipes) {
 					const product = re.productAmountCache;
 					if (product.product.prototype.materialId === input.prototype.materialId && product.amount > 0) {
@@ -87,8 +87,8 @@ export class ProductionToolResult
 				const item = model.getMaterial(materialId);
 				let daily: string = '';
 
-				if (model.cycleLength !== 15) {
-					daily = '\n(' + (resource.amount * 15 / model.cycleLength).toFixed(2) + ' / Day)';
+				if (model.cycleLength !== Model.DAY_DURATION) {
+					daily = '\n(' + (resource.amount * Model.DAY_DURATION / model.cycleLength).toFixed(2) + ' / Day)';
 				}
 
 				this.nodes.add({

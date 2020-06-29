@@ -10,7 +10,9 @@ const equipmentsDocs  = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'd
 
 const json: IJsonSchema = {
 	materials: [],
-	crafters: []
+	crafters: [],
+	materialVersion: '',
+	equipmentVersion: '',
 };
 
 for (const material of parseMaterial(materialsDocs.materials)) {
@@ -32,5 +34,8 @@ for (const crafter of parseCrafter(equipmentsDocs.equipment)) {
 		await download(url, dest);
 	})();
 }
+
+json.materialVersion = materialsDocs.version;
+json.equipmentVersion = equipmentsDocs.version;
 
 fs.writeFileSync(path.join(__dirname, '..', 'data', 'data.json'), JSON.stringify(json, null, '\t') + '\n');

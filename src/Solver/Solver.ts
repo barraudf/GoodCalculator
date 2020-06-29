@@ -38,7 +38,7 @@ export class Solver
 						continue;
 					}
 
-					if (fastest === null || craft.prototype.craftDuration < fastest.prototype.craftDuration) {
+					if (fastest === null ||  craft.prototype.craftDuration / craft.prototype.craftBatch  < fastest.prototype.craftDuration / fastest.prototype.craftBatch) {
 						fastest = craft;
 					}
 				}

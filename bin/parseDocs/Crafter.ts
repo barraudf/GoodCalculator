@@ -8,7 +8,8 @@ export default function parseCrafters(crafters: {
 	icon_id: string,
 	icon_sprite: string,
 	crafter_properties?: any,
-	loca_string: string
+	loca_string: string,
+	automatic: boolean,
 }[]): ICrafterSchema[]
 {
 	const result: ICrafterSchema[] = [];
@@ -23,7 +24,8 @@ export default function parseCrafters(crafters: {
 		iconId: crafter.icon_id,
 		iconSprite: crafter.icon_sprite,
 		name: localize(crafter.loca_string),
-		craftingList: parseCraftDetail(crafter.crafter_properties[0].crafting_list)
+		craftingList: parseCraftDetail(crafter.crafter_properties[0].crafting_list),
+		automatic: crafter.crafter_properties[0].automatic
 		});
 	}
 	return result;

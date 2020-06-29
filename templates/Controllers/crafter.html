@@ -67,10 +67,10 @@
 								<td>
 									<div class="d-inline-block p-2">
 										<span class="material-amount">
-											{{scope.getMaterialByModuleId(output.moduleId).outputAmount}}
+											{{scope.getMaterialByModuleId(output.moduleId).outputAmount * output.craftBatch}}
 											<br>
 										</span>
-										<span>{{scope.getMaterialByModuleId(output.moduleId).outputAmount * scope.model.cycleLength / output.craftDuration|number}}&nbsp;/&nbsp;{{scope.model.cycleNames[scope.model.cycleLength]}}</span>
+										<span>{{scope.getMaterialByModuleId(output.moduleId).outputAmount * scope.model.cycleLength * output.craftBatch / output.craftDuration|number}}&nbsp;/&nbsp;{{scope.model.cycleNames[scope.model.cycleLength]}}</span>
 									</div>
 								</td>
 								<td>
@@ -82,7 +82,7 @@
 											</a>
 											<br>
 										</span>
-										<span>{{input.amount * scope.model.cycleLength / output.craftDuration|number}}&nbsp;/&nbsp;{{scope.model.cycleNames[scope.model.cycleLength]}}</span>
+										<span>{{input.amount * scope.model.cycleLength * output.craftBatch / output.craftDuration|number}}&nbsp;/&nbsp;{{scope.model.cycleNames[scope.model.cycleLength]}}</span>
 									</div>
 								</td>
 								<td>

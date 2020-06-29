@@ -6,5 +6,7 @@ export interface IJsonSchema
 
 	materials: IMaterialSchema[];
 	crafters: ICrafterSchema[];
+	materialVersion: string;
+	equipmentVersion: string;
 
 }

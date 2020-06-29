@@ -9,5 +9,6 @@ export interface ICrafterSchema
 	iconId: string;
 	craftingList: ICraftDetailSchema[];
 	name: ILocalizedStringSchema;
+	automatic: boolean;
 
 }

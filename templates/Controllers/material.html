@@ -90,7 +90,7 @@
 										</a>
 									</span>
 									<br>
-									<span>{{output.craftDuration}}s ({{scope.model.cycleLength / output.craftDuration | number:2}} crafts&nbsp;/&nbsp;{{scope.model.cycleNames[scope.model.cycleLength]}})</span>
+									<span>{{output.craftDuration}}s ({{scope.model.cycleLength * output.craftBatch / output.craftDuration | number:2}} crafts&nbsp;/&nbsp;{{scope.model.cycleNames[scope.model.cycleLength]}})</span>
 								</td>
 								<td>
 									<div ng-repeat="input in scope.material.inputMaterials" class="d-inline-block p-2">
@@ -101,12 +101,12 @@
 											</a>
 											<br>
 										</span>
-										<span>{{input.amount * scope.model.cycleLength / output.craftDuration | number:2}}&nbsp;/&nbsp;{{scope.model.cycleNames[scope.model.cycleLength]}}</span>
+										<span>{{input.amount * scope.model.cycleLength * output.craftBatch / output.craftDuration | number:2}}&nbsp;/&nbsp;{{scope.model.cycleNames[scope.model.cycleLength]}}</span>
 									</div>
 								</td>
 								<td>
 									<div class="d-inline-block p-2">
-										<span>{{scope.material.outputAmount * scope.model.cycleLength / output.craftDuration | number:2}}&nbsp;/&nbsp;{{scope.model.cycleNames[scope.model.cycleLength]}}</span>
+										<span>{{scope.material.outputAmount * scope.model.cycleLength * output.craftBatch / output.craftDuration | number:2}}&nbsp;/&nbsp;{{scope.model.cycleNames[scope.model.cycleLength]}}</span>
 									</div>
 								</td>
 							</tr>
