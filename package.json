@@ -7,6 +7,7 @@
 	"scripts": {
 		"build": "webpack --mode production",
 		"start": "webpack --mode development --progress --color --watch",
+		"start:dev": "webpack-dev-server",
 		"parseDocs": "ts-node -r tsconfig-paths/register bin/parseDocs.ts",
 		"images": "ts-node -r tsconfig-paths/register bin/images.ts",
 		"downloadData": "ts-node -r tsconfig-paths/register bin/downloadData.ts"
@@ -31,20 +32,21 @@
 		"tslint-webpack-plugin": "^2.1.0",
 		"typescript": "^3.7.2",
 		"webpack": "^4.41.2",
-		"webpack-cli": "^3.3.10"
+		"webpack-cli": "^3.3.10",
+		"webpack-dev-server": "^3.11.0"
 	},
 	"dependencies": {
 		"angular": "^1.7.8",
-		"angular-sanitize": "^1.7.9",
-		"angular-ui-router": "^1.0.25",
 		"angular-cookies": "^1.7.9",
-		"angular-ui-bootstrap":"^2.5.6",
+		"angular-sanitize": "^1.7.9",
+		"angular-ui-bootstrap": "^2.5.6",
+		"angular-ui-router": "^1.0.25",
 		"bootstrap": "^4.4.1",
+		"download": "^8.0.0",
 		"javascript-lp-solver": "^0.4.24",
 		"jquery": "^3.4.1",
 		"popper.js": "^1.16.1",
 		"vis-data": "^6.4.1",
-		"vis-network": "^7.3.6",
-		"download":"^8.0.0"
+		"vis-network": "^7.3.6"
 	}
 }

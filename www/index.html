@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="app">
+
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -16,7 +17,12 @@
 	<meta name="theme-color" content="#ffffff">
 
 	<style>
-		[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+		[ng\:cloak],
+		[ng-cloak],
+		[data-ng-cloak],
+		[x-ng-cloak],
+		.ng-cloak,
+		.x-ng-cloak {
 			display: none !important;
 		}
 
@@ -33,12 +39,13 @@
 		}
 	</style>
 	<link rel="stylesheet" href="/assets/css/fontawesome.min.css">
-	<base href="/">
 </head>
+
 <body>
 
-<app></app>
+	<app></app>
 
-<script src="/assets/app.js?v=<?= filemtime(__DIR__ . '/assets/app.js') ?>" async></script>
+	<script src="/assets/app.js" async></script>
 </body>
+
 </html>

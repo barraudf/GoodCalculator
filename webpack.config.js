@@ -1,10 +1,15 @@
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const TSLintPlugin = require('tslint-webpack-plugin');
 const webpack = require('webpack');
+const path = require('path');
 
 module.exports = {
 	mode: 'development',
 	entry: './src/app.ts',
+	devServer: {
+		contentBase: path.join(__dirname, 'www'),
+		port: 4200
+	},
 	output: {
 		path: __dirname,
 		filename: './www/assets/app.js'
@@ -21,6 +26,7 @@ module.exports = {
 		],
 		extensions: ['.ts', '.tsx', '.js'],
 	},
+	devtool: 'source-map',
 	module: {
 		rules: [
 			{

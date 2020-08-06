@@ -20,6 +20,7 @@ yarn-error.log
 
 # Generated sources
 www/assets/app.js
+data/data.json
 
 Thumbs.db
 www/assets/images/icons_buildables
