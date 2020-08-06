@@ -4,11 +4,12 @@ Good Calculator for planning and building the perfect production line.
 ## Requirements
 - node.js
 - yarn
-- PHP 7.1+
 
 ## Installation
 - `git clone https://github.com/barraudf/GoodCalculator.git`
-- `yarn install`
+- `yarn install` to install dependencies
+- `yarn downloadData` to fetch official game data files
+- `yarn parseDocs` to parse data files and generate local data used by the app
 - Set up a virtual host pointing to `/www` directory (using e.g. Apache or ngnix)
 
 ## Contributing
@@ -19,3 +20,4 @@ Any pull requests are welcome, though some rules must be followed:
 
 ## Development
 Run `yarn start` to start the automated build process. It will watch over the code and rebuild it on change.
+You can also use `yarn start:dev` to start a local webserver for debugging purposes.
